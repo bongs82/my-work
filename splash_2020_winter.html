@@ -7,14 +7,97 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
 <script src="jquery-1.11.3.min.js"></script>
 <style>
-
+    body {margin: 0;}
+    .winter_type01 {display: none; height: 100vh; background: url('images/2020_winter_type01_bg01.png') no-repeat 0 0,url('images/2020_winter_type01_bg01.png') repeat-y 0 0; background-size: 100% auto, 100% auto; font-size: 0;}
+    .winter_type01 img {width: 100%;}
+    .winter_type01 .img01 {position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+    .winter_type01 .img02 {position: absolute; left: 0; bottom: -24%;}
+    .winter_type01 .img03 {position: absolute; left: 0; top: 50%; transform: translateY(-96%);}
+    .winter_type01 .img03 img {transform: translateY(-100%);}
+    .winter_type01.on .img03 img {animation: type01 2s ease-out forwards;}
+    @keyframes type01 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .winter_type02 {display: none; height: 100vh; background: url('images/2020_winter_type02_bg01.png') no-repeat 0 0; background-size: 100% auto; font-size: 0;}
+    .winter_type02 img {width: 100%;}
+    .winter_type02 .img01 {position: absolute; left: 0; bottom: 0;}
+    .winter_type02 .img02 {position: absolute; left: 0; top: 45%;}
+    .winter_type02 .img03 {position: absolute; left: 0; top: 0;}
+    .winter_type02 .img03 img {transform: translateY(-100%);}
+    .winter_type02.on .img03 img {animation: type02 2s ease-out forwards;}
+    @keyframes type02 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .winter_type03 {display: none; height: 100vh; background: url('images/2020_winter_type03_bg01.png') no-repeat 0 0; background-size: 100% auto; font-size: 0;}
+    .winter_type03 img {width: 100%;}
+    .winter_type03 .img01 {position: absolute; left: 0; top: 18%;}
+    .winter_type03 .img02 {position: absolute; left: 0; bottom: 14%;}
+    .winter_type03 .img03 {position: absolute; left: 0; top: 0;}
+    .winter_type03 .img03 img {transform: translateY(-100%);}
+    .winter_type03 .img04 {position: absolute; left: 0; top: 0;}
+    .winter_type03.on .img03 img {animation: type03 1.5s ease-out forwards;}
+    @keyframes type03 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 </style>
 </head>
 <body>
     <div class="winter_type01">
         <div class="img01">
             <img src="images/2020_winter_type01_img01.png" alt="">
+            <div class="img02">
+                <img src="images/2020_winter_type01_img02.png" alt="">
+            </div>
+        </div>
+        <div class="img03">
+            <img src="images/2020_winter_type01_img03.png" alt="">
         </div>
     </div>
+    <div class="winter_type02">
+        <div class="img01">
+            <img src="images/2020_winter_type02_img01.png" alt="">
+        </div>
+        <div class="img02">
+            <img src="images/2020_winter_type02_img02.png" alt="">
+        </div>
+        <div class="img03">
+            <img src="images/2020_winter_type02_img03.png" alt="">
+        </div>
+    </div>
+    <div class="winter_type03">
+        <div class="img01">
+            <img src="images/2020_winter_type03_img01.png" alt="">
+        </div>
+        <div class="img02">
+            <img src="images/2020_winter_type03_img02.png" alt="">
+        </div>
+        <div class="img03">
+            <img src="images/2020_winter_type03_img03.png" alt="">
+        </div>
+        <div class="img04">
+            <img src="images/2020_winter_type03_img04.png" alt="">
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var randomNum = [1,2,3];
+            $('.winter_type0' + randomNum[Math.floor(Math.random() * randomNum.length)]).show().addClass('on');
+        });
+    </script>
 </body>
 </html>
