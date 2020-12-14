@@ -8,7 +8,7 @@
 <script src="jquery-1.11.3.min.js"></script>
 <style>
     body {margin: 0;}
-    .winter_type01 {display: none; height: 100vh; background: url('images/2020_winter_type01_bg01.png') no-repeat 0 0,url('images/2020_winter_type01_bg02.png') repeat-y 0 0; background-size: 100% auto, 100% auto; font-size: 0;}
+    .winter_type01 {display: none; height: 100vh; background: url('images/2020_winter_type01_bg01.jpg') no-repeat 0 0,url('images/2020_winter_type01_bg02.png') repeat-y 0 0; background-size: 100% auto, 100% auto; font-size: 0;}
     .winter_type01 img {width: 100%;}
     .winter_type01 .img01 {position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
     .winter_type01 .img02 {position: absolute; left: 0; bottom: -24%;}
@@ -324,18 +324,24 @@
     .winter_type03 .img01 {position: absolute; left: 0; top: 18%;}
     .winter_type03 .img02 {position: absolute; left: 0; bottom: 14%; z-index: 1;}
     .winter_type03 .img03 {position: absolute; left: 0; top: 0;}
-    .winter_type03 .img03 img {transform: translateY(-100%);}
+    .winter_type03 .img03 img {transform: translateY(-100%); opacity: 0.3;}
+    .winter_type03 .img03-1 {position: absolute; left: 0; top: 0; transform: rotateY(180deg);}
+    .winter_type03 .img03-1 img {transform: translateY(-100%);}
+    .winter_type03 .img03-2 {position: absolute; left: 5%; top: 0;}
+    .winter_type03 .img03-2 img {transform: translateY(-100%); opacity: 0.6;}
     .winter_type03 .img04 {position: absolute; left: 0; top: 18%;}
     .winter_type03 .img05 {position: absolute; left: 0; top: 7%;}
     .winter_type03 .img06 {position: absolute; left: 0; top: 11%;}
     .winter_type03 .img07 {position: absolute; left: 0; top: 2%;}
     .winter_type03 .img08 {position: absolute; left: 0; top: 0;}
-    .winter_type03.on .img03 img {animation: type03_1 3s ease-out forwards;}
+    .winter_type03.on .img03 img {animation: type03_1 4s ease-out forwards;}
+    .winter_type03.on .img03-1 img {animation: type03_1_1 4s ease-out 0.3s forwards;}
+    .winter_type03.on .img03-2 img {animation: type03_1_2 4s ease-out 0.6s forwards;}
     .winter_type03.on .img04 img {animation: type03_2 2s ease-out forwards;}
     .winter_type03.on .img05 img {animation: type03_3 2s ease-out forwards;}
     .winter_type03.on .img06 img {animation: type03_4 2s ease-out forwards;}
     .winter_type03.on .img07 img {animation: type03_5 2s ease-out forwards;}
-    @keyframes type03_1 {
+    /* @keyframes type03_1 {
         0% {
             transform: translateY(-100%);
         }
@@ -398,6 +404,30 @@
         }
         100% {
             transform: translateY(0);
+        }
+    } */
+    @keyframes type03_1 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes type03_1_1 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(-20%);
+        }
+    }
+    @keyframes type03_1_2 {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(-40%);
         }
     }
     @keyframes type03_2 {
@@ -519,6 +549,12 @@
             <img src="images/2020_winter_type03_img02.png" alt="">
         </div>
         <div class="img03">
+            <img src="images/2020_winter_type03_img03.png" alt="">
+        </div>
+        <div class="img03-1">
+            <img src="images/2020_winter_type03_img03.png" alt="">
+        </div>
+        <div class="img03-2">
             <img src="images/2020_winter_type03_img03.png" alt="">
         </div>
         <div class="img04">
