@@ -8,7 +8,7 @@
         <style type="text/css">
             .button {display: flex; justify-content: space-between;}
             #sortable {overflow: hidden; display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 50px 0; list-style: none;}
-            #sortable li {display: flex; flex-direction: column; align-items: center; width: 25vw; text-align: center;}
+            #sortable li {display: flex; flex-direction: column; align-items: center; width: 25vw; margin-top: 30px; text-align: center;}
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: green;}
         </style>
     </head>
@@ -1172,14 +1172,26 @@
                 <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
             </ul>
         </div>
+        <button type="button" id="editor">편집</button>
+        <button type="button" id="save">저장</button>
+
         <script>
             $( function() {
-            $( "#sortable" ).sortable({
-                containment: "#contSort",
-                distance: 5,
-                opacity: 0.5
-            });
-            $( "#sortable" ).disableSelection();
+                $( "#sortable" ).sortable({
+                    containment: "#contSort",
+                    //distance: 5,
+                    opacity: 0.5,
+                    //revert: true,
+                    cancel: "#cancel"
+                });
+                $( "#sortable" ).disableSelection();
+                $( "#sortable" ).sortable( "disable" );
+                $('#editor').on('click',function() {
+                    $( "#sortable" ).sortable( "enable" );
+                });
+                $('#save').on('click',function() {
+                    $( "#sortable" ).sortable( "disable" );
+                });
             } );
         </script>
     </body>
