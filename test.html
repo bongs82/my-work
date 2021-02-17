@@ -7,12 +7,12 @@
 
         <style type="text/css">
             .button {display: flex; justify-content: space-between;}
-            #sortable {display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 0; list-style: none;}
+            #sortable {overflow: hidden; display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 50px 0; list-style: none;}
             #sortable li {display: flex; flex-direction: column; align-items: center; width: 25vw; text-align: center;}
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: green;}
         </style>
     </head>
-    <body style="margin: 0; padding: 0;">
+    <body style="margin: 0; padding: 100px 0;">
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -1161,20 +1161,23 @@
             });
 
         </script>
-
-        <ul id="sortable">
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-        </ul>
+        <div id="contSort">
+            <ul id="sortable">
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+            </ul>
+        </div>
         <script>
             $( function() {
             $( "#sortable" ).sortable({
-                containment: "window"
+                containment: "#contSort",
+                distance: 5,
+                opacity: 0.5
             });
             $( "#sortable" ).disableSelection();
             } );
