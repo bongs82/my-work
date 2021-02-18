@@ -1111,6 +1111,7 @@
                     dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)),
                     scrollM = false;
                 $(chart.scrollingContainer).scroll(function() {
+                    clearInterval(scrollMove);
                     scrollM = true;
                     console.log('c');
                 });
