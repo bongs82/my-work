@@ -1108,31 +1108,57 @@
                 })
                 .add();
                 var scrollMove,
-                    dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60));
-                    //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                console.log(chart.scrollingContainer);
-                $(chart.scrollingContainer).scrollEnd(function(){
-                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                }, 100);
-                // if(dis < 0) {
-                //     scrollMove = setInterval(function() {
-                //         if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
-                //             clearInterval(scrollMove);
-                //             chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                //         }else {
-                //             chart.scrollingContainer.scrollLeft -= (dis/10);
-                //         }
-                //     },30);
-                // }else {
-                //     scrollMove = setInterval(function() {
-                //         if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
-                //             clearInterval(scrollMove);
-                //             chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                //         }else {
-                //             chart.scrollingContainer.scrollLeft -= (dis/10);
-                //         }
-                //     },30);
-                // }
+                    dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)),
+                    scrollM = false;
+                $(chart.scrollingContainer).scroll(function() {
+                    scrollM = true;
+                });
+                if(scrollM) {
+                    console.log('a');
+                    $(chart.scrollingContainer).scrollEnd(function(){
+                        if(dis < 0) {
+                            scrollMove = setInterval(function() {
+                                if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
+                                    clearInterval(scrollMove);
+                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                                }else {
+                                    chart.scrollingContainer.scrollLeft -= (dis/10);
+                                }
+                            },30);
+                        }else {
+                            scrollMove = setInterval(function() {
+                                if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
+                                    clearInterval(scrollMove);
+                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                                }else {
+                                    chart.scrollingContainer.scrollLeft -= (dis/10);
+                                }
+                            },30);
+                        }
+                        scrollM = true;
+                    }, 100);
+                }else {
+                    console.log('b');
+                    if(dis < 0) {
+                            scrollMove = setInterval(function() {
+                                if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
+                                    clearInterval(scrollMove);
+                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                                }else {
+                                    chart.scrollingContainer.scrollLeft -= (dis/10);
+                                }
+                            },30);
+                        }else {
+                        scrollMove = setInterval(function() {
+                            if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
+                                clearInterval(scrollMove);
+                                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                            }else {
+                                chart.scrollingContainer.scrollLeft -= (dis/10);
+                            }
+                        },30);
+                    }
+                }
             });
             $('#right').on('click',function() {
                 clearInterval(scrollMove);
