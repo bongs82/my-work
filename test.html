@@ -1168,21 +1168,21 @@
                     },30);
                 }
             });
-            // $.fn.scrollEnd = function(callback, timeout) {
-            //     $(this).scroll(function(){
-            //     var $this = $(this);
-            //     if ($this.data('scrollTimeout')) {
-            //         clearTimeout($this.data('scrollTimeout'));
-            //     }
+            $.fn.scrollEnd = function(callback, timeout) {
+                $(this).scroll(function(){
+                var $this = $(this);
+                if ($this.data('scrollTimeout')) {
+                    clearTimeout($this.data('scrollTimeout'));
+                }
             
-            //     $this.data('scrollTimeout', setTimeout(callback,timeout));
-            //     }); // 스크롤종료시를 감지하는 스크립트
-            // };
+                $this.data('scrollTimeout', setTimeout(callback,timeout));
+                }); // 스크롤종료시를 감지하는 스크립트
+            };
             
             
-            // chart.scrollingContainer.scrollEnd(function(){
-            //     console.log('a');
-            // }, 2000);
+            $('.wrap').scrollEnd(function(){
+                alert('a');
+            }, 1000);
         </script>
         <div id="contSort">
             <ul id="sortable">
