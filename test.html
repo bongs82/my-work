@@ -1094,7 +1094,15 @@
                     $this.data('scrollTimeout', setTimeout(callback,timeout));
                 });
             };
-            $('#left').on('click',function() {
+            $('#container').on('touchstart',function() {
+                $('#left').off('click');
+                $(chart.scrollingContainer).scrollEnd(function(){
+                    $('#left').on('click',leftMove);
+                    console.log('a');
+                },500);
+            });
+            $('#left').on('click',leftMove);
+            function leftMove() {
                 if (issuIdx <= 0) {
                     issuIdx = 0;
                 }else {
@@ -1109,12 +1117,12 @@
                     id: 'issu'
                 })
                 .add();
-                //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                $(chart.scrollingContainer).scrollEnd(function(){
-                    console.log('a');
-                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                },500);
-            });
+                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                // $(chart.scrollingContainer).scrollEnd(function(){
+                //     console.log('a');
+                //     chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                // },100);
+            };
             $('#right').on('click',function() {
                 if (issuIdx >= chart.series[2].xData.length -2) {
                     issuIdx = chart.series[2].xData.length -2;
