@@ -1105,27 +1105,50 @@
                     scrollM = false;
                 $(chart.scrollingContainer).scroll(function() {
                     scrollM = true;
-                    alert(scrollM);
                     return false;
                 });
-                if(dis < 0) {
-                    scrollMove = setInterval(function() {
-                        if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= screen.width*8) {
-                            clearInterval(scrollMove);
-                            chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                if(scrollM) {
+                    $(chart.scrollingContainer).scrollEnd(function(){
+                        if(dis < 0) {
+                            scrollMove = setInterval(function() {
+                                if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= screen.width*8) {
+                                    clearInterval(scrollMove);
+                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                                }else {
+                                    chart.scrollingContainer.scrollLeft -= (dis/10);
+                                }
+                            },30);
                         }else {
-                            chart.scrollingContainer.scrollLeft -= (dis/10);
+                            scrollMove = setInterval(function() {
+                                if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
+                                    clearInterval(scrollMove);
+                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                                }else {
+                                    chart.scrollingContainer.scrollLeft -= (dis/10);
+                                }
+                            },30);
                         }
-                    },30);
+                    }, 100);
                 }else {
-                    scrollMove = setInterval(function() {
-                        if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
-                            clearInterval(scrollMove);
-                            chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                        }else {
-                            chart.scrollingContainer.scrollLeft -= (dis/10);
-                        }
-                    },30);
+                    if(dis < 0) {
+                        scrollMove = setInterval(function() {
+                            if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= screen.width*8) {
+                                clearInterval(scrollMove);
+                                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                            }else {
+                                chart.scrollingContainer.scrollLeft -= (dis/10);
+                            }
+                        },30);
+                    }else {
+                        scrollMove = setInterval(function() {
+                            if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
+                                clearInterval(scrollMove);
+                                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                            }else {
+                                chart.scrollingContainer.scrollLeft -= (dis/10);
+                            }
+                        },30);
+                    }
                 }
             });
             $('#right').on('click',function() {
