@@ -1111,7 +1111,6 @@
                     dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)),
                     scrollM = false;
                 $(chart.scrollingContainer).scroll(function() {
-                    clearInterval(scrollMove);
                     scrollM = true;
                     console.log('c');
                 });
@@ -1143,20 +1142,24 @@
                 }else {
                     console.log('b');
                     if(dis < 0) {
-                            scrollMove = setInterval(function() {
-                                if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
-                                    clearInterval(scrollMove);
-                                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                                }else {
-                                    chart.scrollingContainer.scrollLeft -= (dis/10);
-                                }
-                            },30);
-                        }else {
                         scrollMove = setInterval(function() {
+                            console.log('e');
+                            if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
+                                clearInterval(scrollMove);
+                                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                            }else {
+                                clearInterval(scrollMove);
+                                chart.scrollingContainer.scrollLeft -= (dis/10);
+                            }
+                        },30);
+                    }else {
+                        scrollMove = setInterval(function() {
+                            console.log('f');
                             if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
                                 clearInterval(scrollMove);
                                 chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
                             }else {
+                                clearInterval(scrollMove);
                                 chart.scrollingContainer.scrollLeft -= (dis/10);
                             }
                         },30);
