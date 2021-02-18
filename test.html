@@ -1084,6 +1084,16 @@
                 .add();
             });
             
+            $.fn.scrollEnd = function(callback, timeout) {
+                $(this).scroll(function(){
+                var $this = $(this);
+                if ($this.data('scrollTimeout')) {
+                    clearTimeout($this.data('scrollTimeout'));
+                }
+            
+                $this.data('scrollTimeout', setTimeout(callback,timeout));
+                });
+            };
             $('#left').on('click',function() {
                 if (issuIdx <= 0) {
                     issuIdx = 0;
@@ -1100,6 +1110,9 @@
                 })
                 .add();
                 chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                $(chart.scrollingContainer).scrollEnd(function() {
+                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                },30);
             });
             $('#right').on('click',function() {
                 if (issuIdx >= chart.series[2].xData.length -2) {
@@ -1117,6 +1130,9 @@
                 })
                 .add();
                 chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                $(chart.scrollingContainer).scrollEnd(function() {
+                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                },30);
             });
         </script>
         <div id="contSort">
