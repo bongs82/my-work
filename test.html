@@ -28,9 +28,10 @@
         <script src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
         <script src="https://blacklabel.github.io/custom_events/js/customEvents.js"></script>
 
-        <div class="wrap">
+        <!-- <div class="wrap">
             <div id="container" style="height: 400px; width: 4300px;"></div>
-        </div>
+        </div> -->
+        <div id="container" style="height: 400px; width: 100%;"></div>
         <div id="tooltip"></div>
         <div class="button">
             <button type="button" id="left">&lt;</button>
@@ -827,13 +828,14 @@
             var issuIdx;
             var chart = Highcharts.stockChart('container', {
                 chart: {
-                    // scrollablePlotArea: {
-                    //     minWidth: screen.width*9,
-                    //     scrollPositionX: 1
-                    // },
-                    //margin: [0, 60, 0, 60]
+                    scrollablePlotArea: {
+                        minWidth: screen.width*9,
+                        scrollPositionX: 1
+                    },
+                    //margin: [0, 60, 0, 60],
                     marginLeft: 60,
-                    marginRight: 60
+                    marginRight: 60,
+                    //panning:true
                 },
 
                 navigator: {
@@ -1106,25 +1108,26 @@
                 .add();
                 var scrollMove,
                     dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60));
-                if(dis < 0) {
-                    scrollMove = setInterval(function() {
-                        if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
-                            clearInterval(scrollMove);
-                            chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                        }else {
-                            chart.scrollingContainer.scrollLeft -= (dis/10);
-                        }
-                    },30);
-                }else {
-                    scrollMove = setInterval(function() {
-                        if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
-                            clearInterval(scrollMove);
-                            chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                        }else {
-                            chart.scrollingContainer.scrollLeft -= (dis/10);
-                        }
-                    },30);
-                }
+                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                // if(dis < 0) {
+                //     scrollMove = setInterval(function() {
+                //         if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
+                //             clearInterval(scrollMove);
+                //             chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                //         }else {
+                //             chart.scrollingContainer.scrollLeft -= (dis/10);
+                //         }
+                //     },30);
+                // }else {
+                //     scrollMove = setInterval(function() {
+                //         if(chart.scrollingContainer.scrollLeft <= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft == 0) {
+                //             clearInterval(scrollMove);
+                //             chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                //         }else {
+                //             chart.scrollingContainer.scrollLeft -= (dis/10);
+                //         }
+                //     },30);
+                // }
             });
             $('#right').on('click',function() {
                 clearInterval(scrollMove);
