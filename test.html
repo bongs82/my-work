@@ -1111,8 +1111,9 @@
                 .add();
                 //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
                 $(chart.scrollingContainer).scrollEnd(function(){
+                    console.log('a');
                     chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                },1000);
+                },500);
             });
             $('#right').on('click',function() {
                 if (issuIdx >= chart.series[2].xData.length -2) {
