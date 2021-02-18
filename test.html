@@ -29,10 +29,10 @@
         <script src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
         <script src="https://blacklabel.github.io/custom_events/js/customEvents.js"></script>
 
-        <div class="wrap">
+        <!-- <div class="wrap">
             <div id="container" style="height: 400px; width: 4300px;"></div>
-        </div>
-        <!-- <div id="container" style="height: 400px; width: 100%; -webkit-overflow-scrolling:auto;"></div> -->
+        </div> -->
+        <div id="container" style="height: 400px; width: 100%;"></div>
         <div id="tooltip"></div>
         <div class="button">
             <button type="button" id="left">&lt;</button>
@@ -829,10 +829,10 @@
             var issuIdx;
             var chart = Highcharts.stockChart('container', {
                 chart: {
-                    // scrollablePlotArea: {
-                    //     minWidth: screen.width*9,
-                    //     scrollPositionX: 1
-                    // },
+                    scrollablePlotArea: {
+                        minWidth: screen.width*9,
+                        scrollPositionX: 1
+                    },
                     //margin: [0, 60, 0, 60],
                     marginLeft: 60,
                     marginRight: 60,
@@ -1081,18 +1081,18 @@
                 //     zIndex: 3
                 // })
                 // .add();
-                // chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
-                // .attr({
-                //     'stroke-width': 1,
-                //     stroke: '#000',
-                //     zIndex: 1,
-                //     id: 'issu'
-                // })
-                // .add();
+                chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
+                .attr({
+                    'stroke-width': 1,
+                    stroke: '#000',
+                    zIndex: 1,
+                    id: 'issu'
+                })
+                .add();
             });
             
             $('#left').on('click',function() {
-                //clearInterval(scrollMove);
+                clearInterval(scrollMove);
                 if (issuIdx <= 0) {
                     issuIdx = 0;
                 }else {
@@ -1107,9 +1107,13 @@
                     id: 'issu'
                 })
                 .add();
-                // var scrollMove,
-                //     dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60));
-                    $('.wrap').scrollLeft(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60));
+                var scrollMove,
+                    dis = chart.scrollingContainer.scrollLeft -(chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60));
+                    //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                console.log(chart.scrollingContainer);
+                $(chart.scrollingContainer).scrollEnd(function(){
+                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                }, 100);
                 // if(dis < 0) {
                 //     scrollMove = setInterval(function() {
                 //         if(chart.scrollingContainer.scrollLeft >= chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60) || chart.scrollingContainer.scrollLeft >= 4100) {
@@ -1180,9 +1184,9 @@
             };
             
             
-            $('.wrap').scrollEnd(function(){
-                alert('a');
-            }, 1000);
+            // chart.scrollingContainer.scrollEnd(function(){
+            //     console.log('a');
+            // }, 2000);
         </script>
         <div id="contSort">
             <ul id="sortable">
