@@ -1086,12 +1086,12 @@
             
             $.fn.scrollEnd = function(callback, timeout) {
                 $(this).scroll(function(){
-                var $this = $(this);
-                if ($this.data('scrollTimeout')) {
-                    clearTimeout($this.data('scrollTimeout'));
-                }
-            
-                $this.data('scrollTimeout', setTimeout(callback,timeout));
+                    var $this = $(this);
+                    if ($this.data('scrollTimeout')) {
+                        clearTimeout($this.data('scrollTimeout'));
+                    }
+                
+                    $this.data('scrollTimeout', setTimeout(callback,timeout));
                 });
             };
             $('#left').on('click',function() {
@@ -1109,7 +1109,10 @@
                     id: 'issu'
                 })
                 .add();
-                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                $(chart.scrollingContainer).scrollEnd(function(){
+                    chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                },1000);
             });
             $('#right').on('click',function() {
                 if (issuIdx >= chart.series[2].xData.length -2) {
