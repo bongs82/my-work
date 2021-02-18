@@ -1112,9 +1112,11 @@
                     scrollM = false;
                 $(chart.scrollingContainer).scroll(function() {
                     scrollM = true;
+                    console.log('c');
                 });
                 if(scrollM) {
                     console.log('a');
+                    clearInterval(scrollMove);
                     $(chart.scrollingContainer).scrollEnd(function(){
                         if(dis < 0) {
                             scrollMove = setInterval(function() {
