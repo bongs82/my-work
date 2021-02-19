@@ -1104,7 +1104,7 @@
                 .add();
                 $(chart.scrollingContainer).stop().animate({
                     scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
-                },1000);
+                }, Math.abs($(chart.scrollingContainer).scrollLeft() - (chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
             });
             $('#right').on('click',function() {
                 if($(chart.scrollingContainer).is(':animated')) {
@@ -1126,7 +1126,7 @@
                 .add();
                 $(chart.scrollingContainer).stop().animate({
                     scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
-                },1000);
+                }, Math.abs($(chart.scrollingContainer).scrollLeft() - (chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
             });
         </script>
         <div id="contSort">
