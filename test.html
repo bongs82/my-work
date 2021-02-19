@@ -1084,29 +1084,10 @@
                 .add();
             });
             
-            $.fn.scrollEnd = function(callback, timeout) {
-                $(this).scroll(function(){
-                    var $this = $(this);
-                    if ($this.data('scrollTimeout')) {
-                        clearTimeout($this.data('scrollTimeout'));
-                    }
-                
-                    $this.data('scrollTimeout', setTimeout(callback,timeout));
-                });
-            };
-            // $('#container').on('touchstart',function() {
-            //     $('#left').off('click');
-            //     $(chart.scrollingContainer).scrollEnd(function(){
-            //         $('#left').on('click',leftMove);
-            //         console.log('a');
-            //     },500);
-            // });
-            $('#left').on('click',leftMove);
-            function leftMove() {
+            $('#left').on('click', function () {
                 if($(chart.scrollingContainer).is(':animated')) {
                     return false;
                 }
-                console.log();
                 if (issuIdx <= 0) {
                     issuIdx = 0;
                 }else {
@@ -1124,12 +1105,11 @@
                 $(chart.scrollingContainer).stop().animate({
                     scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
                 },1000);
-                // $(chart.scrollingContainer).scrollEnd(function(){
-                //     console.log('a');
-                //     chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                // },100);
-            };
+            });
             $('#right').on('click',function() {
+                if($(chart.scrollingContainer).is(':animated')) {
+                    return false;
+                }
                 if (issuIdx >= chart.series[2].xData.length -2) {
                     issuIdx = chart.series[2].xData.length -2;
                 }else {
@@ -1144,7 +1124,9 @@
                     id: 'issu'
                 })
                 .add();
-                chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
+                $(chart.scrollingContainer).stop().animate({
+                    scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
+                },1000);
             });
         </script>
         <div id="contSort">
