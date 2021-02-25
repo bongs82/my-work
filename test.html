@@ -1247,16 +1247,16 @@
                 });
 
                 $('header').each(function() {
-                    alert($(window).scrollTop());
-                    if($(window).scrollTop() > $(this).offset().top) {
+                    alert($('html, body').scrollTop());
+                    if($('html, body').scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
                     }
                 });
-                $(window).scroll(function() {
+                $('html, body').scroll(function() {
                     $('header').each(function() {
-                        if($(window).scrollTop() > $(this).offset().top) {
+                        if($('html, body').scrollTop() > $(this).offset().top) {
                             $(this).addClass('on');
                         }else {
                             $(this).removeClass('on');
