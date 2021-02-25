@@ -1247,16 +1247,16 @@
                 });
 
                 $('header').each(function() {
-                    alert($(document).scrollTop());
-                    if($(document).scrollTop() > $(this).offset().top) {
+                    alert($(window).scrollTop());
+                    if($(window).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
                     }
                 });
-                $(document).scroll(function() {
+                $(window).scroll(function() {
                     $('header').each(function() {
-                        if($(document).scrollTop() > $(this).offset().top) {
+                        if($(window).scrollTop() > $(this).offset().top) {
                             $(this).addClass('on');
                         }else {
                             $(this).removeClass('on');
