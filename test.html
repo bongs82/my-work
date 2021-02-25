@@ -115,10 +115,11 @@
             </div>
         </div>
         <script type="text/javascript">
+        $(window).scroll(function() {
             alert('a');
+        });
             $('.card').on('click','li',function() {
-                     alert('a');
-                    
+                     $(this).parents('.card').addClass('on');
                  });
          </script>
     </body>
