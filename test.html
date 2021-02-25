@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Highstock Example</title>
-
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <style type="text/css">
             .button {display: flex; justify-content: space-between;}
             .button button {display: block; width: 60px; height: 60px;}
@@ -13,6 +13,40 @@
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: #47a7f5; background-position: center; transition: background 0.8s;}
             #sortable li span:hover {background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;}
             #sortable li span:active {background-color: #6eb9f7; background-size: 100%; transition: background 0s;}
+
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+            .card {position: relative; margin: 0 20px; perspective:1000px; }
+            .card .wrap { height: 500px; transform-style:preserve-3d; transition:transform 1s;}
+            .card.on .wrap { transform:rotateY(180deg);}
+            .front {position: relative; width: 100%; height: 100%; background-color: grey; border-radius: 30px; backface-visibility: hidden;}
+            .front ul {display: flex; justify-content: space-between; flex-wrap: wrap; list-style: none; padding-left: 0;}
+            .front ul li {display: flex; flex-direction: column; justify-content: center; align-items: center; width: 33.3%; margin-top: 40px;}
+            .front ul li span {display: block; width: 100px; height: 100px; border-radius: 100%; background-color: yellow;}
+            .back {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: blue; border-radius: 30px; transform: rotateY(-180deg); z-index: 1;  backface-visibility: hidden;}
+            .back .swiper-slide {color: #fff;}
+            .back button.close {position: absolute; right: 0; top: 0; z-index: 2;}
         </style>
     </head>
     <body style="margin: 0; padding: 100px 0;">
@@ -1143,6 +1177,33 @@
         <button type="button" id="editor">편집</button>
         <button type="button" id="save">저장</button>
 
+        <div class="card">
+            <div class="wrap">
+                <div class="front">
+                    <ul>
+                        <li><span></span>item1</li>
+                        <li><span></span>item2</li>
+                        <li><span></span>item3</li>
+                        <li><span></span>item4</li>
+                        <li><span></span>item5</li>
+                        <li><span></span>item6</li>
+                    </ul>
+                </div>
+                <div class="back swiper-container">
+                    <button type="button" class="close">닫기</button>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">item1</div>
+                        <div class="swiper-slide">item2</div>
+                        <div class="swiper-slide">item3</div>
+                        <div class="swiper-slide">item4</div>
+                        <div class="swiper-slide">item5</div>
+                        <div class="swiper-slide">item6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
             $( function() {
                 $( "#sortable" ).sortable({
@@ -1159,6 +1220,15 @@
                 });
                 $('#save').on('click',function() {
                     $( "#sortable" ).sortable( "disable" );
+                });
+
+                var swiper = new Swiper('.swiper-container');
+
+                $('.card').on('click','li',function() {
+                    $(this).parents('.card').addClass('on');
+                });
+                $('.card').on('click','.close',function () {
+                    $(this).parents('.card').removeClass('on');
                 });
             } );
         </script>
