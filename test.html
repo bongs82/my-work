@@ -115,9 +115,22 @@
             </div>
         </div>
         <script type="text/javascript">
-        $(window).scroll(function() {
-            alert('a');
-        });
+            $('header').each(function() {
+                if($(window).scrollTop() > $(this).offset().top) {
+                    $(this).addClass('on');
+                }else {
+                    $(this).removeClass('on');
+                }
+            });
+            $(window).scroll(function() {
+                $('header').each(function() {
+                    if($(window).scrollTop() > $(this).offset().top) {
+                        $(this).addClass('on');
+                    }else {
+                        $(this).removeClass('on');
+                    }
+                });
+            });
             $('.card').on('click','li',function() {
                      $(this).parents('.card').addClass('on');
                  });
