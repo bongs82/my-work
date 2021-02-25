@@ -67,7 +67,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.11
+                김신한님 반갑습니다.12
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1217,6 +1217,22 @@
             });
         </script>
         <script type="text/javascript">
+            $( "#sortable" ).sortable({
+                containment: "#contSort",
+                //distance: 5,
+                opacity: 0.5,
+                //revert: true,
+                cancel: "#cancel"
+            });
+            $( "#sortable" ).disableSelection();
+            $( "#sortable" ).sortable( "disable" );
+            $('#editor').on('click',function() {
+                $( "#sortable" ).sortable( "enable" );
+            });
+            $('#save').on('click',function() {
+                $( "#sortable" ).sortable( "disable" );
+            });
+
             $('header').each(function() {
                 if($(window).scrollTop() > $(this).offset().top) {
                     $(this).addClass('on');
@@ -1234,8 +1250,11 @@
                 });
             });
             $('.card').on('click','li',function() {
-                     $(this).parents('.card').addClass('on');
-                 });
+                $(this).parents('.card').addClass('on');
+            });
+            $('.card').on('click','.close',function () {
+                $(this).parents('.card').removeClass('on');
+            });
          </script>
     </body>
 </html>
