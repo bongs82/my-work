@@ -1226,6 +1226,7 @@
 
                 $('.card').on('click','li',function() {
                     $(this).parents('.card').addClass('on');
+                    swiper.slideTo($(this).index(),100);
                 });
                 $('.card').on('click','.close',function () {
                     $(this).parents('.card').removeClass('on');
