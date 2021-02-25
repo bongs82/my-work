@@ -1238,6 +1238,7 @@
                 var swiper = new Swiper('.swiper-container');
 
                 $('.card').on('click','li',function() {
+                    alert('a');
                     $(this).parents('.card').addClass('on');
                     swiper.slideTo($(this).index(),100);
                 });
@@ -1246,6 +1247,7 @@
                 });
 
                 $('header').each(function() {
+                    alert($(document).scrollTop());
                     if($(document).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
