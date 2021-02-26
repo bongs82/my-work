@@ -92,13 +92,10 @@
             .back .swiper-slide {color: #fff;}
             .back button.close {position: absolute; right: 0; top: 0; z-index: 2;}
 
-            header {position: -webkit-sticky;
-position: -moz-sticky;
-position: -o-sticky;
-position: -ms-sticky;position: sticky; left: 0; top: 0; z-index: 10;}
-            header div {width: 100%; height: 50px; background-color: #fff; z-index: 10;}
-            header.on div {background-color: #47a7f5;}
-            header.cont2 {top:50px;}
+            header {position: relative; height: 50px;}
+            header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10;}
+            header.on div {position: fixed; background-color: #47a7f5;}
+            header.cont2 div {top:50px;}
         </style>
     </head>
     <body style="margin: 0; padding: 0;">
@@ -1308,13 +1305,13 @@ position: -ms-sticky;position: sticky; left: 0; top: 0; z-index: 10;}
             }
             function scrollMove2() {
                 console.log('scroll');
-                // $('header').each(function() {
-                //     if($(window).scrollTop() > $(this).offset().top) {
-                //         $(this).addClass('on');
-                //     }else {
-                //         $(this).removeClass('on');
-                //     }
-                // });
+                $('header').each(function() {
+                    if($(window).scrollTop() > $(this).offset().top) {
+                        $(this).addClass('on');
+                    }else {
+                        $(this).removeClass('on');
+                    }
+                });
             }
             $(window).on('touchmove',scrollMove);
             $(window).on('touchend',function() {
