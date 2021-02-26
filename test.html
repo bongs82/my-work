@@ -68,7 +68,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.16
+                김신한님 반갑습니다.17
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1241,9 +1241,23 @@
                     $(this).removeClass('on');
                 }
             });
-            $(window).on('scroll touchmove',function() {
+            let touchStartY,
+                touchMoveY,
+                dis = 0,
+                touchStartScrollT;
+            $(window).on('touchstart',function(e) {
+                touchStartY = e.originalEvent.changedTouches[0].screenY;
+                touchStartScrollT = $(window).scrollTop();
+            });
+            $(window).on('touchmove',function(e) {
+                touchMoveY = e.originalEvent.changedTouches[0].screenY;
+            });
+            $(window).on('touchend',function(e) {
+                touchMoveY = e.originalEvent.changedTouches[0].screenY;
+            });
+            $(window).on('scroll touchmove touchend',function() {
                 $('header').each(function() {
-                    if($(window).scrollTop() > $(this).offset().top) {
+                    if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top || $(window).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
@@ -1254,6 +1268,7 @@
             var swiper = new Swiper('.swiper-container');
 
             $('.card').on('click','li',function() {
+                swiper.slideTo($(this).index(),100);
                 $(this).parents('.card').addClass('on');
             });
             $('.card').on('click','.close',function () {
