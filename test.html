@@ -92,11 +92,10 @@
             .back .swiper-slide {color: #fff;}
             .back button.close {position: absolute; right: 0; top: 0; z-index: 2;}
 
-            header {position: relative; left: 0; top: 0; height: 50px; z-index: 10; -webkit-transform: translateZ(0);}
-            header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10;}
-            header.on {position: -webkit-sticky; position: sticky;  background-color: #47a7f5;}
-            header.on div {background-color: #47a7f5;}
-            header.cont2.on {top:50px;}
+            header {position: relative; left: 0; top: 0; height: 50px; z-index: 10;}
+            header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10; -webkit-transform: translateZ(0);}
+            header.on div {position: fixed; background-color: #47a7f5;}
+            header.cont2.on div {top:50px;}
 
             .fix-button {height: 50px;}
             .fix-button button {position: fixed; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0);}
@@ -106,7 +105,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.40
+                김신한님 반갑습니다.41
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1311,7 +1310,7 @@
                 touchEndY,
                 dis = 0,
                 touchStartScrollT;
-            let scrollDis;
+            let scrollDis = $(window).scrollTop();
             $(window).on('touchstart',function(e) {
                 touchStartY = e.originalEvent.changedTouches[0].screenY;
                 touchStartScrollT = $(window).scrollTop();
@@ -1346,12 +1345,12 @@
                         $(this).removeClass('on');
                     }
                 });
-                if(touchStartScrollT - $(window).scrollTop() <= 0) {
+                if(scrollDis - $(window).scrollTop() <= 0) {
                     setTimeout(function() {$('.fix-button').addClass('off');},200);
                 }else {
                     setTimeout(function() {$('.fix-button').removeClass('off');},200);
-                    
                 }
+                scrollDis = $(window).scrollTop();
             }
             //$(window).on('touchmove',scrollMove);
             //$(window).on('touchend',scrollMove);
