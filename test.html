@@ -105,7 +105,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.41
+                김신한님 반갑습니다.42
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1339,7 +1339,7 @@
                 //alert($(window).scrollTop());
                 //$('header').addClass('on');
                 $('header').each(function() {
-                    if($(window).scrollTop() >= $(this).offset().top) {
+                    if($(window).scrollTop() >= $(this).offset().top + 5) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
