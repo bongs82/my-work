@@ -1256,6 +1256,22 @@
             });
         </script>
         <script type="text/javascript">
+        var _jqExtend = {};
+_jqExtend.scrollEndTimeout = null;
+_jqExtend.scrollEnd = {
+    delegateType:"scroll",
+    bindType:"scroll",
+    handle:function(event){
+        var me = this;
+        var handleObj = event.handleObj;
+        var arg = arguments;
+        clearTimeout(_jqExtend.scrollEndTimeout);
+        _jqExtend.scrollEndTimeout = setTimeout(function(){
+            handleObj.handler.apply( me, arg );
+        },50);
+    }
+};
+jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
             $( "#sortable" ).sortable({
                 containment: "#contSort",
                 //distance: 5,
@@ -1298,15 +1314,15 @@
             });
             function scrollMove(e) {
                 //console.log('touchmove');
-                // touchMoveY = e.originalEvent.changedTouches[0].screenY;
-                // $('header').each(function() {
-                //     if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top) {
-                //         $(this).addClass('on');
-                //     }else {
-                //         $(this).removeClass('on');
-                //     }
-                // });
-                // $(window).off('scroll');
+                touchMoveY = e.originalEvent.changedTouches[0].screenY;
+                $('header').each(function() {
+                    if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top) {
+                        $(this).addClass('on');
+                    }else {
+                        $(this).removeClass('on');
+                    }
+                });
+                $(window).off('scrollEnd');
             }
             var scrollDis = 0;
             function scrollMove2() {
@@ -1320,7 +1336,7 @@
                 });
                 
                 //console.log(scrollDis - $(window).scrollTop());
-                if(scrollDis - $(window).scrollTop() < 0) {
+                if(scrollDis - $(window).scrollTop() <= 0) {
                     $('.fix-button').addClass('off');
                 }else {
                     $('.fix-button').removeClass('off');
@@ -1329,10 +1345,12 @@
             }
             $(window).on('touchmove',scrollMove);
             $(window).on('touchend',function() {
-                //$(window).on('scroll');
-                console.log('touchend');
+                $(window).on('scrollEnd');
+                //console.log('touchend');
             });
-            $(window).on('scroll',scrollMove2);
+            //$(window).on('scroll',scrollMove2);
+
+            $(window).on('scrollEnd',scrollMove2);
 
             var swiper = new Swiper('.swiper-container');
 
