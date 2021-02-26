@@ -96,12 +96,15 @@
             header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10;}
             header.on div {position: fixed; background-color: #47a7f5;}
             header.cont2 div {top:50px;}
+
+            .fix-button button {position: fixed; left: 0; bottom: 0; width: 100%; height: 50px;}
+            .fix-button.off button {position: static;}
         </style>
     </head>
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.21
+                김신한님 반갑습니다.22
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -158,6 +161,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="fix-button"><button type="button">버튼</button></div>
         <script type="text/javascript">
             var categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             var data1 = [
@@ -1292,7 +1297,7 @@
                 touchStartScrollT = $(window).scrollTop();
             });
             function scrollMove(e) {
-                console.log('touchmove');
+                //console.log('touchmove');
                 // touchMoveY = e.originalEvent.changedTouches[0].screenY;
                 // $('header').each(function() {
                 //     if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top) {
@@ -1303,8 +1308,9 @@
                 // });
                 // $(window).off('scroll');
             }
+            var scrollDis = 0;
             function scrollMove2() {
-                console.log('scroll');
+                //console.log('scroll');
                 $('header').each(function() {
                     if($(window).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
@@ -1312,6 +1318,14 @@
                         $(this).removeClass('on');
                     }
                 });
+                
+                //console.log(scrollDis - $(window).scrollTop());
+                if(scrollDis - $(window).scrollTop() < 0) {
+                    $('.fix-button').addClass('off');
+                }else {
+                    $('.fix-button').removeClass('off');
+                }
+                scrollDis = $(window).scrollTop();
             }
             $(window).on('touchmove',scrollMove);
             $(window).on('touchend',function() {
