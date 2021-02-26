@@ -105,7 +105,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.42
+                김신한님 반갑습니다.43
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1345,10 +1345,10 @@
                         $(this).removeClass('on');
                     }
                 });
-                if(scrollDis - $(window).scrollTop() <= 0) {
-                    setTimeout(function() {$('.fix-button').addClass('off');},200);
+                if(scrollDis - $(window).scrollTop() <= 0 && $(window).scrollTop() < $('.fix-button').offset().top - screen.height) {
+                    $('.fix-button').addClass('off');
                 }else {
-                    setTimeout(function() {$('.fix-button').removeClass('off');},200);
+                    $('.fix-button').removeClass('off');
                 }
                 scrollDis = $(window).scrollTop();
             }
