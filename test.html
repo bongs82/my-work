@@ -92,10 +92,11 @@
             .back .swiper-slide {color: #fff;}
             .back button.close {position: absolute; right: 0; top: 0; z-index: 2;}
 
-            header {position: relative; height: 50px;}
+            header {position: relative; left: 0; top: 0; height: 50px; z-index: 10;}
             header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10;}
-            header.on div {position: sticky; position: -webkit-sticky; background-color: #47a7f5;}
-            header.cont2 div {top:50px;}
+            header.on {position: -webkit-sticky; position: sticky;  background-color: #47a7f5;}
+            header.on div {background-color: #47a7f5;}
+            header.cont2.on {top:50px;}
 
             .fix-button {height: 50px;}
             .fix-button button {position: fixed; left: 0; bottom: 0; width: 100%; height: 50px;}
