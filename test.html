@@ -1257,22 +1257,22 @@
             });
         </script>
         <script type="text/javascript">
-        let _jqExtend = {};
-_jqExtend.scrollEndTimeout = null;
-_jqExtend.scrollEnd = {
-    delegateType:"scroll",
-    bindType:"scroll",
-    handle:function(event){
-        let me = this;
-        let handleObj = event.handleObj;
-        let arg = arguments;
-        clearTimeout(_jqExtend.scrollEndTimeout);
-        _jqExtend.scrollEndTimeout = setTimeout(function(){
-            handleObj.handler.apply( me, arg );
-        },50);
-    }
-};
-jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
+            let _jqExtend = {};
+            _jqExtend.scrollEndTimeout = null;
+            _jqExtend.scrollEnd = {
+                delegateType:"scroll",
+                bindType:"scroll",
+                handle:function(event){
+                    let me = this;
+                    let handleObj = event.handleObj;
+                    let arg = arguments;
+                    clearTimeout(_jqExtend.scrollEndTimeout);
+                    _jqExtend.scrollEndTimeout = setTimeout(function(){
+                        handleObj.handler.apply( me, arg );
+                    },50);
+                }
+            };
+            jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
             $( "#sortable" ).sortable({
                 containment: "#contSort",
                 //distance: 5,
@@ -1327,7 +1327,7 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                         setTimeout(function() {_this.removeClass('on');},200);
                     }
                 });
-                $(window).off('scrollEnd');
+                //$(window).off('scrollEnd');
                 if(scrollDis - touchMoveY <= 0) {
                     setTimeout(function() {$('.fix-button').removeClass('off');},200);
                 }else {
@@ -1336,9 +1336,9 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                 //scrollDis = touchMoveY;
             }
             function scrollMove2() {
-                //console.log('scroll');
+                console.log('scroll');
                 $('header').each(function() {
-                    if($(window).scrollTop() > $(this).offset().top) {
+                    if($(window).scrollTop() >= $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
@@ -1346,17 +1346,7 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                 });
             }
             $(window).on('touchmove',scrollMove);
-            $(window).on('touchend',function(e) {
-                touchEndY = e.originalEvent.changedTouches[0].screenY;
-                //$(window).on('scrollEnd');
-                //console.log('touchend');
-                if(scrollDis - touchEndY <= 0) {
-                    setTimeout(function() {$('.fix-button').removeClass('off');},200);
-                }else {
-                    setTimeout(function() {$('.fix-button').addClass('off');},200);
-                }
-                //scrollDis = touchEndY;
-            });
+            $(window).on('touchend',scrollMove);
             //$(window).on('scroll',scrollMove2);
 
             $(window).on('scrollEnd',scrollMove2);
