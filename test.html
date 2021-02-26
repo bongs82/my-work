@@ -17,7 +17,7 @@
         <script src="swiper.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <style type="text/css">
-            html {width: 100%; overflow: hidden; position: relative;}
+            html {width: 100%;}
             .button {display: flex; justify-content: space-between;}
             .button button {display: block; width: 60px; height: 60px;}
             #sortable {overflow: hidden; display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 50px 0; list-style: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
@@ -92,7 +92,7 @@
             .back .swiper-slide {color: #fff;}
             .back button.close {position: absolute; right: 0; top: 0; z-index: 2;}
 
-            header {position: relative; left: 0; top: 0; height: 50px; z-index: 10;}
+            header {position: relative; left: 0; top: 0; height: 50px; z-index: 10; -webkit-transform: translateZ(0)}
             header div {position: static; top: 0; left: 0; width: 100%; height: 50px; background-color: #fff; z-index: 10;}
             header.on {position: -webkit-sticky; position: sticky;  background-color: #47a7f5;}
             header.on div {background-color: #47a7f5;}
@@ -106,7 +106,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.37
+                김신한님 반갑습니다.38
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
