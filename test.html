@@ -1336,7 +1336,7 @@
                 //scrollDis = touchMoveY;
             }
             function scrollMove2() {
-                console.log($(window).scrollTop());
+                alert($(window).scrollTop());
                 $('header').each(function() {
                     if($(window).scrollTop() >= $(this).offset().top) {
                         $(this).addClass('on');
