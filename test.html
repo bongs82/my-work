@@ -1312,6 +1312,7 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                 touchStartY = e.originalEvent.changedTouches[0].screenY;
                 touchStartScrollT = $(window).scrollTop();
             });
+            var scrollDis = 0;
             function scrollMove(e) {
                 //console.log('touchmove');
                 touchMoveY = e.originalEvent.changedTouches[0].screenY;
@@ -1323,8 +1324,14 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                     }
                 });
                 $(window).off('scrollEnd');
+                console.log(scrollDis - touchMoveY);
+                // if(scrollDis - $(window).scrollTop() <= 0) {
+                //     $('.fix-button').addClass('off');
+                // }else {
+                //     $('.fix-button').removeClass('off');
+                // }
+                // scrollDis = $(window).scrollTop();
             }
-            var scrollDis = 0;
             function scrollMove2() {
                 //console.log('scroll');
                 $('header').each(function() {
@@ -1334,14 +1341,6 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                         $(this).removeClass('on');
                     }
                 });
-                
-                //console.log(scrollDis - $(window).scrollTop());
-                if(scrollDis - $(window).scrollTop() <= 0) {
-                    $('.fix-button').addClass('off');
-                }else {
-                    $('.fix-button').removeClass('off');
-                }
-                scrollDis = $(window).scrollTop();
             }
             $(window).on('touchmove',scrollMove);
             $(window).on('touchend',function() {
