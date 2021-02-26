@@ -164,8 +164,8 @@
 
         <div class="fix-button"><button type="button">버튼</button></div>
         <script type="text/javascript">
-            var categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            var data1 = [
+            let categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            let data1 = [
                     [new Date('2020-01-01').getTime(),116.67,118.71,116.45,116.87],
                     [new Date('2020-01-02').getTime(),117.45,118.04,114.59,115.75],
                     [new Date('2020-01-03').getTime(),116.39,116.55,114.28,115.04],
@@ -540,7 +540,7 @@
                     [new Date('2020-12-31').getTime(),123.52,123.78,122.21,122.94],
                     [new Date('2021-01-01').getTime(),116.67,118.71,116.45,116.87],
                 ]
-            var data2 = [
+            let data2 = [
                     [new Date('2020-01-01').getTime(),116.67],
                     [new Date('2020-01-02').getTime(),117.45],
                     [new Date('2020-01-03').getTime(),116.39],
@@ -915,7 +915,7 @@
                     [new Date('2020-12-31').getTime(),123.5],
                     [new Date('2021-01-01').getTime(),116.6],
                 ]
-            var data3 = [
+            let data3 = [
                 [new Date('2020-01-01').getTime(),0],
                 [new Date('2020-01-06').getTime(),0],
                 [new Date('2020-01-13').getTime(),0],
@@ -946,8 +946,8 @@
                 [new Date('2020-12-31').getTime(),0],
                 [new Date('2021-01-01').getTime(),0]
             ]
-            var issuIdx;
-            var chart = Highcharts.stockChart('container', {
+            let issuIdx;
+            let chart = Highcharts.stockChart('container', {
                 chart: {
                     scrollablePlotArea: {
                         minWidth: screen.width*9,
@@ -992,7 +992,7 @@
                         format: '{value:%Y.%m.%d}',
                         events: {
                             // mouseover: function() {
-                            //     var chart = this.chart,
+                            //     let chart = this.chart,
                             //         tooltip = chart.tooltip,
                             //         points = chart.series[0].points,
                             //         thisValue = this.pos;
@@ -1182,7 +1182,7 @@
                     yAxis:1
                 }]
             }, function (chart) { // on complete
-                var i = 0;
+                let i = 0;
                 issuIdx = chart.series[2].xData.length -2;
 
                 // chart.renderer.button('do stuff',0, 0)
@@ -1256,15 +1256,15 @@
             });
         </script>
         <script type="text/javascript">
-        var _jqExtend = {};
+        let _jqExtend = {};
 _jqExtend.scrollEndTimeout = null;
 _jqExtend.scrollEnd = {
     delegateType:"scroll",
     bindType:"scroll",
     handle:function(event){
-        var me = this;
-        var handleObj = event.handleObj;
-        var arg = arguments;
+        let me = this;
+        let handleObj = event.handleObj;
+        let arg = arguments;
         clearTimeout(_jqExtend.scrollEndTimeout);
         _jqExtend.scrollEndTimeout = setTimeout(function(){
             handleObj.handler.apply( me, arg );
@@ -1308,29 +1308,31 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
                 touchMoveY,
                 dis = 0,
                 touchStartScrollT;
+            let scrollDis;
             $(window).on('touchstart',function(e) {
                 touchStartY = e.originalEvent.changedTouches[0].screenY;
                 touchStartScrollT = $(window).scrollTop();
+                scrollDis = touchStartY;
             });
-            var scrollDis = 0;
             function scrollMove(e) {
                 //console.log('touchmove');
                 touchMoveY = e.originalEvent.changedTouches[0].screenY;
                 $('header').each(function() {
-                    if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top) {
-                        $(this).addClass('on');
+                    let _this = $(this);
+                    if(touchStartScrollT + (touchStartY - touchMoveY) >= $(this).offset().top) {
+                        setTimeout(function() {_this.addClass('on');},200);
                     }else {
-                        $(this).removeClass('on');
+                        setTimeout(function() {_this.removeClass('on');},200);
                     }
                 });
                 $(window).off('scrollEnd');
-                console.log(scrollDis - touchMoveY);
-                // if(scrollDis - $(window).scrollTop() <= 0) {
-                //     $('.fix-button').addClass('off');
-                // }else {
-                //     $('.fix-button').removeClass('off');
-                // }
-                // scrollDis = $(window).scrollTop();
+                
+                if(scrollDis - touchMoveY <= 0) {
+                    setTimeout(function() {$('.fix-button').removeClass('off');},200);
+                }else {
+                    setTimeout(function() {$('.fix-button').addClass('off');},200);
+                }
+                scrollDis = touchMoveY;
             }
             function scrollMove2() {
                 //console.log('scroll');
@@ -1351,7 +1353,7 @@ jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
 
             $(window).on('scrollEnd',scrollMove2);
 
-            var swiper = new Swiper('.swiper-container');
+            let swiper = new Swiper('.swiper-container');
 
             $('.card').on('click','li',function() {
                 swiper.slideTo($(this).index(),100);
