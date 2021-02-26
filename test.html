@@ -105,7 +105,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.30
+                김신한님 반갑습니다.31
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1336,8 +1336,7 @@
                 //scrollDis = touchMoveY;
             }
             function scrollMove2() {
-                console.log('scroll');
-                alert('scroll');
+                console.log($(window).scrollTop());
                 $('header').each(function() {
                     if($(window).scrollTop() >= $(this).offset().top) {
                         $(this).addClass('on');
@@ -1346,8 +1345,8 @@
                     }
                 });
             }
-            $(window).on('touchmove',scrollMove);
-            $(window).on('touchend',scrollMove);
+            //$(window).on('touchmove',scrollMove);
+            //$(window).on('touchend',scrollMove);
             $(window).on('scroll',scrollMove2);
 
             //$(window).on('scrollEnd',scrollMove2);
