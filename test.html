@@ -97,15 +97,15 @@
             header.on div {position: fixed; background-color: #47a7f5;}
             header.cont2.on div {top:50px;}
 
-            .fix-button {height: 50px;}
-            .fix-button button {position: fixed; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0);}
-            .fix-button.off button {position: static;}
+            .fix-button {position: -webkit-sticky; position: sticky; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0);}
+            .fix-button button { width: 100%; height: 50px;}
+            .fix-button.off {position: static;}
         </style>
     </head>
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.44
+                김신한님 반갑습니다.46
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1318,21 +1318,21 @@
             });
             function scrollMove(e) {
                 //console.log('touchmove');
-                touchMoveY = e.originalEvent.changedTouches[0].screenY;
-                $('header').each(function() {
-                    let _this = $(this);
-                    if(touchStartScrollT + (touchStartY - touchMoveY) >= $(this).offset().top) {
-                        setTimeout(function() {_this.addClass('on');},200);
-                    }else {
-                        setTimeout(function() {_this.removeClass('on');},200);
-                    }
-                });
-                //$(window).off('scrollEnd');
-                if(scrollDis - touchMoveY <= 0) {
-                    setTimeout(function() {$('.fix-button').removeClass('off');},200);
-                }else {
-                    setTimeout(function() {$('.fix-button').addClass('off');},200);
-                }
+                // touchMoveY = e.originalEvent.changedTouches[0].screenY;
+                // $('header').each(function() {
+                //     let _this = $(this);
+                //     if(touchStartScrollT + (touchStartY - touchMoveY) >= $(this).offset().top) {
+                //         setTimeout(function() {_this.addClass('on');},200);
+                //     }else {
+                //         setTimeout(function() {_this.removeClass('on');},200);
+                //     }
+                // });
+                // //$(window).off('scrollEnd');
+                // if(scrollDis - touchMoveY <= 0) {
+                //     setTimeout(function() {$('.fix-button').removeClass('off');},200);
+                // }else {
+                //     setTimeout(function() {$('.fix-button').addClass('off');},200);
+                // }
                 //scrollDis = touchMoveY;
             }
             function scrollMove2() {
@@ -1345,16 +1345,21 @@
                         $(this).removeClass('on');
                     }
                 });
-                console.log(scrollDis - $(window).scrollTop());
-                // if(scrollDis - $(window).scrollTop() <= 0 && $(window).scrollTop() < $('.fix-button').offset().top - screen.height) {
-                //     $('.fix-button').addClass('off');
-                // }else {
-                //     $('.fix-button').removeClass('off');
-                // }
+                //console.log(scrollDis - $(window).scrollTop());
+                // $('.fix-button').addClass('off');
+                console.log(scrollDis - $(window).scrollTop);
+                if(scrollDis - $(window).scrollTop() <= 0) {
+                    console.log('a');
+                    $('.fix-button').addClass('off');
+                }else {
+                    $('.fix-button').removeClass('off');
+                }
                 scrollDis = $(window).scrollTop();
             }
             //$(window).on('touchmove',scrollMove);
             //$(window).on('touchend',scrollMove);
+            //$('.fix-button').addClass('off');
+            //scrollMove2();
             $(window).on('scroll',scrollMove2);
 
             //$(window).on('scrollEnd',scrollMove2);
