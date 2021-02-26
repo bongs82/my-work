@@ -17,11 +17,44 @@
         <script src="swiper.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <style type="text/css">
+            html {width: 100%;}
             .button {display: flex; justify-content: space-between;}
             .button button {display: block; width: 60px; height: 60px;}
             #sortable {overflow: hidden; display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 50px 0; list-style: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
             #sortable li {display: flex; flex-direction: column; align-items: center; width: 25vw; margin-top: 30px; text-align: center;}
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: #47a7f5; background-position: center; transition: background 0.8s;}
+            #sortable.on li {
+                -webkit-animation-name: imgMotion1;
+                -webkit-animation-duration: 0.4s;    
+                -webkit-animation-fill-mode: forwards;
+                -webkit-animation-timing-function:ease;
+                -webkit-animation-iteration-count: infinite;
+                animation-name: imgMotion1;
+                animation-duration: 0.4s;
+                animation-fill-mode: forwards;
+                animation-timing-function:ease;
+                animation-iteration-count: infinite;
+            }
+            @keyframes imgMotion1 {
+                0% {
+                    transform: rotate(0) translateX(0) translateY(0);
+                }
+                20% {
+                    transform: rotate(3deg) translateX(5%) translateY(0);
+                }
+                40% {
+                    transform: rotate(0) translateX(0) translateY(5%);
+                }
+                60% {
+                    transform: rotate(-3deg) translateX(-5%) translateY(0);
+                }
+                80% {
+                    transform: rotate(0) translateX(0) translateY(-5%);
+                }
+                100% {
+                    transform: rotate(3deg) translateX(0) translateY(0);
+                }
+            }
             #sortable li span:hover {background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;}
             #sortable li span:active {background-color: #6eb9f7; background-size: 100%; transition: background 0s;}
 
@@ -68,7 +101,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.17
+                김신한님 반갑습니다.18
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1223,15 +1256,18 @@
                 //distance: 5,
                 opacity: 0.5,
                 //revert: true,
-                cancel: "#cancel"
+                cancel: "#cancel",
+                scroll: false
             });
             $( "#sortable" ).disableSelection();
             $( "#sortable" ).sortable( "disable" );
             $('#editor').on('click',function() {
-                $( "#sortable" ).sortable( "enable" );
+                $( "#sortable" ).sortable( "enable" ).addClass('on');
+                $(window).off('touchmove');
             });
             $('#save').on('click',function() {
-                $( "#sortable" ).sortable( "disable" );
+                $( "#sortable" ).sortable( "disable" ).removeClass('on');
+                $(window).on('touchmove',scrollMove);
             });
 
             $('header').each(function() {
@@ -1249,15 +1285,21 @@
                 touchStartY = e.originalEvent.changedTouches[0].screenY;
                 touchStartScrollT = $(window).scrollTop();
             });
-            $(window).on('touchmove',function(e) {
+            function scrollMove(e) {
                 touchMoveY = e.originalEvent.changedTouches[0].screenY;
-            });
-            $(window).on('touchend',function(e) {
-                touchMoveY = e.originalEvent.changedTouches[0].screenY;
-            });
-            $(window).on('scroll touchmove touchend',function() {
                 $('header').each(function() {
-                    if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top || $(window).scrollTop() > $(this).offset().top) {
+                    if(touchStartScrollT + (touchStartY - touchMoveY) > $(this).offset().top) {
+                        $(this).addClass('on');
+                    }else {
+                        $(this).removeClass('on');
+                    }
+                });
+            }
+            $(window).on('touchmove',scrollMove);
+
+            $(window).on('scroll',function(e) {
+                $('header').each(function() {
+                    if($(window).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
                     }else {
                         $(this).removeClass('on');
