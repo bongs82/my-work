@@ -1336,14 +1336,15 @@
                 //scrollDis = touchMoveY;
             }
             function scrollMove2() {
-                alert($(window).scrollTop());
-                $('header').each(function() {
-                    if($(window).scrollTop() >= $(this).offset().top) {
-                        $(this).addClass('on');
-                    }else {
-                        $(this).removeClass('on');
-                    }
-                });
+                //alert($(window).scrollTop());
+                $('header').addClass('on');
+                // $('header').each(function() {
+                //     if($(window).scrollTop() >= $(this).offset().top) {
+                //         $(this).addClass('on');
+                //     }else {
+                //         $(this).removeClass('on');
+                //     }
+                // });
             }
             //$(window).on('touchmove',scrollMove);
             //$(window).on('touchend',scrollMove);
