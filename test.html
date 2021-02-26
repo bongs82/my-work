@@ -25,12 +25,12 @@
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: #47a7f5; background-position: center; transition: background 0.8s;}
             #sortable.on li {
                 -webkit-animation-name: imgMotion1;
-                -webkit-animation-duration: 0.4s;    
+                -webkit-animation-duration: 0.5s;    
                 -webkit-animation-fill-mode: forwards;
                 -webkit-animation-timing-function:ease;
                 -webkit-animation-iteration-count: infinite;
                 animation-name: imgMotion1;
-                animation-duration: 0.4s;
+                animation-duration: 0.5s;
                 animation-fill-mode: forwards;
                 animation-timing-function:ease;
                 animation-iteration-count: infinite;
@@ -40,16 +40,16 @@
                     transform: rotate(0) translateX(0) translateY(0);
                 }
                 20% {
-                    transform: rotate(3deg) translateX(5%) translateY(0);
+                    transform: rotate(3deg) translateX(3%) translateY(0);
                 }
                 40% {
-                    transform: rotate(0) translateX(0) translateY(5%);
+                    transform: rotate(0) translateX(0) translateY(3%);
                 }
                 60% {
-                    transform: rotate(-3deg) translateX(-5%) translateY(0);
+                    transform: rotate(-3deg) translateX(-3%) translateY(0);
                 }
                 80% {
-                    transform: rotate(0) translateX(0) translateY(-5%);
+                    transform: rotate(0) translateX(0) translateY(-3%);
                 }
                 100% {
                     transform: rotate(3deg) translateX(0) translateY(0);
@@ -101,7 +101,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.18
+                김신한님 반갑습니다.19
             </div>
         </header>
         <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1257,7 +1257,13 @@
                 opacity: 0.5,
                 //revert: true,
                 cancel: "#cancel",
-                scroll: false
+                scroll: false,
+                stop: function() {
+                    $( "#sortable" ).removeClass('on');
+                    setTimeout(function() {
+                        $( "#sortable" ).addClass('on');
+                    },50);
+                }
             });
             $( "#sortable" ).disableSelection();
             $( "#sortable" ).sortable( "disable" );
@@ -1294,10 +1300,9 @@
                         $(this).removeClass('on');
                     }
                 });
+                $(window).off('scroll');
             }
-            $(window).on('touchmove',scrollMove);
-
-            $(window).on('scroll',function(e) {
+            function scrollMove2() {
                 $('header').each(function() {
                     if($(window).scrollTop() > $(this).offset().top) {
                         $(this).addClass('on');
@@ -1305,7 +1310,12 @@
                         $(this).removeClass('on');
                     }
                 });
+            }
+            $(window).on('touchmove',scrollMove);
+            $(window).on('touchend',function() {
+                $(window).on('scroll');
             });
+            $(window).on('scroll',scrollMove2);
 
             var swiper = new Swiper('.swiper-container');
 
