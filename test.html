@@ -1316,6 +1316,15 @@
                 touchStartScrollT = $(window).scrollTop();
                 //scrollDis = touchStartY;
             });
+            $(window).on('touchmove', function (e) {
+                touchMoveY = e.originalEvent.changedTouches[0].screenY;
+                console.log(touchStartY - touchMoveY);
+                if(touchStartY - touchMoveY < 0) {
+                    $('.fix-button').removeClass('off');
+                }else {
+                    $('.fix-button').addClass('off');
+                }
+            });
             function scrollMove(e) {
                 //console.log('touchmove');
                 // touchMoveY = e.originalEvent.changedTouches[0].screenY;
@@ -1347,16 +1356,16 @@
                 });
                 //console.log(scrollDis - $(window).scrollTop());
                 // $('.fix-button').addClass('off');
-                if(scrollDis - $(window).scrollTop() < 0) {
-                    setTimeout(function() {
-                        $('.fix-button').addClass('off');
-                    },500);
-                }else {
-                    setTimeout(function() {
-                        $('.fix-button').removeClass('off');
-                    },500);
-                }
-                scrollDis = $(window).scrollTop();
+                // if(scrollDis - $(window).scrollTop() < 0) {
+                //     setTimeout(function() {
+                //         $('.fix-button').addClass('off');
+                //     },500);
+                // }else {
+                //     setTimeout(function() {
+                //         $('.fix-button').removeClass('off');
+                //     },500);
+                // }
+                // scrollDis = $(window).scrollTop();
             }
             //$(window).on('touchmove',scrollMove);
             //$(window).on('touchend',scrollMove);
