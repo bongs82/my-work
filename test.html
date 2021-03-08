@@ -5,7 +5,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
         <title>Highstock Example</title>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="jquery-ui.min.js"></script>
         <script src="jquery.ui.touch-punch.min.js"></script>
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/stock/modules/data.js"></script>
@@ -15,11 +15,14 @@
         <script src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
         <script src="https://blacklabel.github.io/custom_events/js/customEvents.js"></script>
         <script src="swiper.js"></script>
+        <script src="Chart.min.js"></script>
+        <script src="utils.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
         <style type="text/css">
             html {width: 100%;}
             .button {display: flex; justify-content: space-between;}
             .button button {display: block; width: 60px; height: 60px;}
+            .cont {position: fixed; left: 0; top: 50%; z-index: 10; transform: translateY(-50%); background-color: #fff;}
             #sortable {overflow: hidden; display: flex; flex-wrap: wrap; margin: 50px 0 0 0; padding: 50px 0; list-style: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
             #sortable li {display: flex; flex-direction: column; align-items: center; width: 25vw; margin-top: 30px; text-align: center;}
             #sortable li span {display: block; width: 20vw; height: 20vw; background-color: #47a7f5; background-position: center; transition: background 0.8s;}
@@ -100,6 +103,33 @@
             .fix-button {position: -webkit-sticky; position: sticky; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0);}
             .fix-button button { width: 100%; height: 50px;}
             .fix-button.off {position: static;}
+
+            .loading { 
+                overflow: hidden;
+            position: relative; 
+            background-color: rgb(199, 199, 199); 
+        } 
+            .loading::after { 
+            display: block; 
+            content: ""; 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            transform: translateX(-100%); 
+            background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.5)), to(transparent)); 
+                          
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent); 
+       
+            /* Adding animation */ 
+            animation: loading 1s infinite; 
+        } 
+       
+        /* Loading Animation */ 
+        @keyframes loading { 
+            100% { 
+                transform: translateX(100%); 
+            } 
+        } 
         </style>
     </head>
     <body style="margin: 0; padding: 0;">
@@ -108,7 +138,7 @@
                 김신한님 반갑습니다.1
             </div>
         </header>
-        <div id="container" style="height: 400px; width: 100%;"></div>
+        <!-- <div id="container" style="height: 400px; width: 100%;"></div>
         <div id="tooltip"></div>
         <div class="button">
             <button type="button" id="left">&lt;</button>
@@ -119,25 +149,83 @@
                 김신한님 반갑습니다.
             </div>
         </header>
+        <canvas id="canvas"></canvas> -->
 
+        <div class="loading" style="width: 100%; height: 50px; margin-top: 20px;"></div>
+        <div class="loading" style="width: 200px; height: 30px; margin-top: 20px;"></div>
+        <div class="loading" style="width: 100px; height: 100px; margin-top: 20px;"></div>
+        <div class="loading" style="width: 50px; height: 100px; margin-top: 20px;"></div>
 
-
-        
-        <div id="contSort">
-            <ul id="sortable">
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-            </ul>
+        <div class="cont">
+            <div id="contSort">
+                <ul id="sortable">
+                    <li class="ui-state-default" data-sort="1"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                    <li class="ui-state-default" data-sort="2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                    <li class="ui-state-default" data-sort="3"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                    <li class="ui-state-default" data-sort="4"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                    <li class="ui-state-default" data-sort="5"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                    <li class="ui-state-default" data-sort="6"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                    <li class="ui-state-default" data-sort="7"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+                </ul>
+            </div>
+            <button type="button" id="editor">편집</button>
+            <button type="button" id="save">저장</button>
         </div>
-        <button type="button" id="editor">편집</button>
-        <button type="button" id="save">저장</button>
 
-        <div class="card">
+        <div class="sortCont">
+            <div class="item" data-sort-cont="1">
+                <div id="container" style="height: 400px; width: 100%;"></div>
+                <div class="button">
+                    <button type="button" id="left">&lt;</button>
+                    <button type="button" id="right">&gt;</button>
+                </div>
+            </div>
+            <div class="item" data-sort-cont="2">item 2</div>
+            <div class="item" data-sort-cont="3"><canvas id="canvas"></canvas></div>
+            <div class="banner">banner 1</div>
+            <div class="item" data-sort-cont="4">item 4</div>
+            <div class="item" data-sort-cont="5">item 5</div>
+            <div class="item" data-sort-cont="6">
+                <div class="card">
+                    <div class="wrap">
+                        <div class="front">
+                            <ul>
+                                <li><span></span>item1</li>
+                                <li><span></span>item2</li>
+                                <li><span></span>item3</li>
+                                <li><span></span>item4</li>
+                                <li><span></span>item5</li>
+                                <li><span></span>item6</li>
+                            </ul>
+                        </div>
+                        <div class="back swiper-container">
+                            <button type="button" class="close">닫기</button>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">item1</div>
+                                <div class="swiper-slide">item2</div>
+                                <div class="swiper-slide">item3</div>
+                                <div class="swiper-slide">item4</div>
+                                <div class="swiper-slide">item5</div>
+                                <div class="swiper-slide">item6</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">banner 2</div>
+            <div class="item" data-sort-cont="7">item 7</div>
+        </div>
+        <!-- <div class="sortCont">
+            <div data-sort-cont="1">item 1</div>
+            <div data-sort-cont="2">item 2</div>
+            <div data-sort-cont="3">item 3</div>
+            <div data-sort-cont="4">item 4</div>
+            <div data-sort-cont="5">item 5</div>
+            <div data-sort-cont="6">item 6</div>
+            <div data-sort-cont="7">item 7</div>
+        </div> -->
+
+        <!-- <div class="card">
             <div class="wrap">
                 <div class="front">
                     <ul>
@@ -161,9 +249,90 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="fix-button"><button type="button">버튼</button></div>
+        <script>
+            var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'My First dataset',
+                        backgroundColor: window.chartColors.red,
+                        borderColor: window.chartColors.red,
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor()
+                        ],
+                        fill: false,
+                    }, {
+                        label: 'My Second dataset',
+                        fill: false,
+                        backgroundColor: window.chartColors.blue,
+                        borderColor: window.chartColors.blue,
+                        data: [
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor(),
+                            randomScalingFactor()
+                        ],
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Chart.js Line Chart'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Month'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value'
+                            }
+                        }]
+                    }
+                }
+            };
+    
+            window.onload = function() {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myLine = new Chart(ctx, config);
+            };
+    
+            
+    
+            var colorNames = Object.keys(window.chartColors);
+            
+    
+            
+        </script>
         <script type="text/javascript">
             let categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             let data1 = [
@@ -948,7 +1117,7 @@
                 [new Date('2021-01-01').getTime(),0]
             ]
             let issuIdx;
-            let chart = Highcharts.stockChart('container', {
+            let chartCont = Highcharts.stockChart('container', {
                 chart: {
                     scrollablePlotArea: {
                         minWidth: screen.width*9,
@@ -1211,8 +1380,8 @@
                 .add();
             });
             
-            $('#left').on('click', function () {
-                if($(chart.scrollingContainer).is(':animated')) {
+            $(document).on('click','#left', function () {
+                if($(chartCont.scrollingContainer).is(':animated')) {
                     return false;
                 }
                 if (issuIdx <= 0) {
@@ -1221,7 +1390,7 @@
                     issuIdx -= 1;
                 }
                 $('#issu').remove();
-                chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
+                chartCont.renderer.path(['M', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.xAxis[0].bottom, 'L', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.yAxis[0].height - chartCont.xAxis[0].bottom])
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
@@ -1229,21 +1398,21 @@
                     id: 'issu'
                 })
                 .add();
-                $(chart.scrollingContainer).stop().animate({
-                    scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
-                }, Math.abs($(chart.scrollingContainer).scrollLeft() - (chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
+                $(chartCont.scrollingContainer).stop().animate({
+                    scrollLeft : chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
+                }, Math.abs($(chartCont.scrollingContainer).scrollLeft() - (chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
             });
-            $('#right').on('click',function() {
-                if($(chart.scrollingContainer).is(':animated')) {
+            $(document).on('click','#right',function() {
+                if($(chartCont.scrollingContainer).is(':animated')) {
                     return false;
                 }
-                if (issuIdx >= chart.series[2].xData.length -2) {
-                    issuIdx = chart.series[2].xData.length -2;
+                if (issuIdx >= chartCont.series[2].xData.length -2) {
+                    issuIdx = chartCont.series[2].xData.length -2;
                 }else {
                     issuIdx += 1;
                 }
                 $('#issu').remove();
-                chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
+                chartCont.renderer.path(['M', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.xAxis[0].bottom, 'L', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.yAxis[0].height - chartCont.xAxis[0].bottom])
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
@@ -1251,29 +1420,12 @@
                     id: 'issu'
                 })
                 .add();
-                $(chart.scrollingContainer).stop().animate({
-                    scrollLeft : chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
-                }, Math.abs($(chart.scrollingContainer).scrollLeft() - (chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
+                $(chartCont.scrollingContainer).stop().animate({
+                    scrollLeft : chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
+                }, Math.abs($(chartCont.scrollingContainer).scrollLeft() - (chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
             });
-        </script>
-        <script type="text/javascript">
-            let _jqExtend = {};
-            _jqExtend.scrollEndTimeout = null;
-            _jqExtend.scrollEnd = {
-                delegateType:"scroll",
-                bindType:"scroll",
-                handle:function(event){
-                    let me = this;
-                    let handleObj = event.handleObj;
-                    let arg = arguments;
-                    clearTimeout(_jqExtend.scrollEndTimeout);
-                    _jqExtend.scrollEndTimeout = setTimeout(function(){
-                        handleObj.handler.apply( me, arg );
-                    },50);
-                }
-            };
-            jQuery.event.special.scrollEnd = _jqExtend.scrollEnd;
-            $( "#sortable" ).sortable({
+
+            $('#sortable').sortable({
                 containment: "#contSort",
                 //distance: 5,
                 opacity: 0.5,
@@ -1281,21 +1433,40 @@
                 cancel: "#cancel",
                 scroll: false,
                 stop: function() {
-                    $( "#sortable" ).removeClass('on');
+                    $('#sortable').removeClass('on');
                     setTimeout(function() {
-                        $( "#sortable" ).addClass('on');
+                        $('#sortable').addClass('on');
                     },50);
                 }
             });
-            $( "#sortable" ).disableSelection();
-            $( "#sortable" ).sortable( "disable" );
+            $('#sortable').disableSelection();
+            $('#sortable').sortable( "disable" );
             $('#editor').on('click',function() {
-                $( "#sortable" ).sortable( "enable" ).addClass('on');
+                $('#sortable').sortable( "enable" ).addClass('on');
                 $(window).off('touchmove');
             });
+            let sortArr = [];
             $('#save').on('click',function() {
-                $( "#sortable" ).sortable( "disable" ).removeClass('on');
+                let sortContArr = [];
+                $('#sortable').sortable( "disable" ).removeClass('on');
                 $(window).on('touchmove',scrollMove);
+                for (let i = 0; i < $('#sortable li').length; i++) {
+                    sortArr[i] = $('#sortable li').eq(i).attr('data-sort');
+                    for (let t = 0; t < $('.sortCont .item').length; t++) {
+                        if(sortArr[i] == $('.sortCont .item').eq(t).attr('data-sort-cont')) {
+                            sortContArr.push($('.sortCont .item').eq(t));
+                        }
+                    }
+                }
+                for (let m = 0; m < $('.sortCont .banner').length; m++) {
+                    sortContArr.splice(4*(m + 1) - 1,0,$('.sortCont .banner').eq(m));
+                }
+                $('.sortCont > div').remove();
+                for (let l = 0; l < sortContArr.length; l++) {
+                    $('.sortCont').append(sortContArr[l]);
+                }
+                
+                //chartCont.redraw();
             });
 
             $('header').each(function() {
@@ -1314,39 +1485,16 @@
             $(window).on('touchstart',function(e) {
                 touchStartY = e.originalEvent.changedTouches[0].screenY;
                 touchStartScrollT = $(window).scrollTop();
-                //scrollDis = touchStartY;
             });
             $(window).on('touchmove', function (e) {
                 touchMoveY = e.originalEvent.changedTouches[0].screenY;
-                console.log(touchStartY - touchMoveY);
                 if(touchStartY - touchMoveY < 0) {
                     $('.fix-button').removeClass('off');
                 }else {
                     $('.fix-button').addClass('off');
                 }
             });
-            function scrollMove(e) {
-                //console.log('touchmove');
-                // touchMoveY = e.originalEvent.changedTouches[0].screenY;
-                // $('header').each(function() {
-                //     let _this = $(this);
-                //     if(touchStartScrollT + (touchStartY - touchMoveY) >= $(this).offset().top) {
-                //         setTimeout(function() {_this.addClass('on');},200);
-                //     }else {
-                //         setTimeout(function() {_this.removeClass('on');},200);
-                //     }
-                // });
-                // //$(window).off('scrollEnd');
-                // if(scrollDis - touchMoveY <= 0) {
-                //     setTimeout(function() {$('.fix-button').removeClass('off');},200);
-                // }else {
-                //     setTimeout(function() {$('.fix-button').addClass('off');},200);
-                // }
-                //scrollDis = touchMoveY;
-            }
-            function scrollMove2() {
-                //alert($(window).scrollTop());
-                //$('header').addClass('on');
+            function scrollMove() {
                 $('header').each(function() {
                     if($(window).scrollTop() >= $(this).offset().top + 5) {
                         $(this).addClass('on');
@@ -1354,34 +1502,16 @@
                         $(this).removeClass('on');
                     }
                 });
-                //console.log(scrollDis - $(window).scrollTop());
-                // $('.fix-button').addClass('off');
-                // if(scrollDis - $(window).scrollTop() < 0) {
-                //     setTimeout(function() {
-                //         $('.fix-button').addClass('off');
-                //     },500);
-                // }else {
-                //     setTimeout(function() {
-                //         $('.fix-button').removeClass('off');
-                //     },500);
-                // }
-                // scrollDis = $(window).scrollTop();
             }
-            //$(window).on('touchmove',scrollMove);
-            //$(window).on('touchend',scrollMove);
-            //$('.fix-button').addClass('off');
-            //scrollMove2();
-            $(window).on('scroll',scrollMove2);
-
-            //$(window).on('scrollEnd',scrollMove2);
+            $(window).on('scroll',scrollMove);
 
             let swiper = new Swiper('.swiper-container');
 
-            $('.card').on('click','li',function() {
+            $(document).on('click','.card li',function() {
                 swiper.slideTo($(this).index(),100);
                 $(this).parents('.card').addClass('on');
             });
-            $('.card').on('click','.close',function () {
+            $(document).on('click','.card .close',function () {
                 $(this).parents('.card').removeClass('on');
             });
          </script>
