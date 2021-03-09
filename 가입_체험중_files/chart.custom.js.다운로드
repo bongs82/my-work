@@ -1,0 +1,146 @@
+Chart.defaults.LineWithLine = Chart.defaults.line;
+Chart.controllers.LineWithLine = Chart.controllers.line.extend({
+  draw: function(ease) {
+    Chart.controllers.line.prototype.draw.call(this, ease);
+    if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
+      var activePoint = this.chart.tooltip._active[0],
+      ctx = this.chart.ctx,
+      x = activePoint.tooltipPosition().x,
+      topY = this.chart.scales['y-axis-0'].top,
+      bottomY = this.chart.scales['y-axis-0'].bottom;
+      // draw line
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(x, topY);
+      ctx.lineTo(x, bottomY);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#333333';
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+});
+
+// Show tooltips always even the stats are zero
+Chart.pluginService.register({
+  beforeRender: function(chart) {
+    if (chart.config.options.showAllTooltips) {
+      // create an array of tooltips
+      // we can't use the chart tooltip because there is only one tooltip per chart
+      chart.pluginTooltips = [];
+      chart.config.data.datasets.forEach(function(dataset, i) {
+        chart.getDatasetMeta(i).data.forEach(function(sector, j) {
+          chart.pluginTooltips.push(new Chart.Tooltip({
+            _chart: chart.chart,
+            _chartInstance: chart,
+            _data: chart.data,
+            _options: chart.options.tooltips,
+            _active: [sector]
+          }, chart));
+        });
+      });
+      // turn off normal tooltips
+      chart.options.tooltips.enabled = false;
+    }
+  },
+  afterDraw: function(chart, easing) {
+    if (chart.config.options.showAllTooltips) {
+      // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+      if (!chart.allTooltipsOnce) {
+        if (easing !== 1)
+        return;
+        chart.allTooltipsOnce = true;
+      }
+
+      // turn on tooltips
+      chart.options.tooltips.enabled = true;
+      Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
+        tooltip.initialize();
+        tooltip.update();
+        // we don't actually need this since we are not animating tooltips
+        tooltip.pivot();
+        tooltip.transition(easing).draw();
+      });
+      chart.options.tooltips.enabled = false;
+    }
+  }
+});
+
+Chart.Tooltip.positioners.custom = function(elements) {
+  return {
+    x: elements[0].getCenterPoint().x,
+    y: -2
+  };
+};
+
+//horizontal line extension for chart.js
+var horizonalLinePlugin = {
+  afterDraw: function(chartInstance) {
+    //console.dir(chartInstance);
+    var yScale = chartInstance.scales["y-axis-0"];
+    var xScale = chartInstance.scales["x-axis-0"];
+    var canvas = chartInstance.chart;
+    var ctx = canvas.ctx;
+    var index;
+    var line;
+    var style;
+    var labelSize;
+
+    if (chartInstance.options.horizontalLine) {
+      for (index = 0; index < chartInstance.options.horizontalLine.length; index++) {
+        line = chartInstance.options.horizontalLine[index];
+
+        if (!line.style) {
+          //style = "rgba(169,169,169, .6)";
+        	style = 'rgba(0,0,0,100)';
+        } else {
+          style = line.style;
+        }
+        
+        if (line.y) {
+          yValue = yScale.getPixelForValue(line.y);
+        } else {
+          yValue = 0;
+        }
+        
+        ctx.lineWidth = 1;
+
+        if (yValue) {
+          ctx.beginPath();
+          ctx.moveTo(yScale.width, yValue);
+          //ctx.lineTo(canvas.width, yValue);
+          ctx.lineTo(yScale.width+xScale.width, yValue);
+          ctx.strokeStyle = style;
+          ctx.stroke();
+        }
+        
+        if (chartInstance.options.scales.yAxes[0].ticks.fontSize != undefined){
+            labelSize = parseInt(chartInstance.options.scales.yAxes[0].ticks.fontSize);
+        } else {
+            labelSize = parseInt(chartInstance.config.options.defaultFontSize);
+        }
+        
+        var ticks = yScale.ticks;
+        var ticks_label = '';
+        //line.y값이 tick내에 존재하는 하는 경우 line.text값을 클리어.
+        for(var i=0; i<=ticks.length; i++){
+            if(line.y == ticks[i]) ticks_label = ticks[i];
+        }
+        if(ticks_label){
+            line.text = '';  //※tick으로 표시 
+        }
+        
+        if (line.text) {
+          ctx.fillStyle = style;
+          ctx.textBaseline = 'alphabetic'; //<-- set this
+          //ctx.fillText(line.text, yScale.width, yValue-labelSize-4);
+          ctx.textAlign = 'right';
+          var yTick = yScale.getPixelForTick(0);
+          ctx.fillText(line.text, yScale.width-10, yValue+2.5);  //Tick위에 표시할 경우(※tick의 경우, right정렬이기 때문에 마이너스 값이 존재하는 경우 주의할것)
+        }
+      }
+      return;
+    };
+  }
+};
+Chart.pluginService.register(horizonalLinePlugin);
