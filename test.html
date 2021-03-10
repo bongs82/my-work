@@ -1130,6 +1130,7 @@
                     panning: false,
                     events: {
                         click: function (event) {
+                            alert('a');
                             var closePlot = [];
                             for(var i = 0; i < chartCont.series[2].xData.length; i++) {
                                 closePlot[i] = parseInt(Math.abs(this.mouseDownX - 60 - chartCont.series[2].points[i].plotX));
