@@ -1505,6 +1505,12 @@
                         $(this).removeClass('on');
                     }
                 });
+                if(scrollDis - $(window).scrollTop() > 0) {
+                    $('.fix-button').removeClass('off');
+                }else {
+                    $('.fix-button').addClass('off');
+                }
+                scrollDis = $(window).scrollTop();
             }
             $(window).on('scroll',scrollMove);
 
