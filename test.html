@@ -1098,7 +1098,7 @@
                 [new Date('2020-02-11').getTime(),0],
                 [new Date('2020-02-16').getTime(),0],
                 [new Date('2020-02-20').getTime(),0],
-                [new Date('2020-02-31').getTime(),0],
+                [new Date('2020-02-26').getTime(),0],
                 [new Date('2020-03-01').getTime(),0],
                 [new Date('2020-03-10').getTime(),0],
                 [new Date('2020-03-14').getTime(),0],
@@ -1125,9 +1125,27 @@
                     //margin: [0, 60, 0, 60]
                     marginLeft: 60,
                     marginRight: 60,
-                    zoomType: '',
-                    pinchType: '',
-                    panning: false
+                    // zoomType: '',
+                    // pinchType: '',
+                    panning: false,
+                    events: {
+                        click: function (event) {
+                            var closePlot = [];
+                            for(var i = 0; i < chartCont.series[2].xData.length; i++) {
+                                closePlot[i] = parseInt(Math.abs(this.mouseDownX - 60 - chartCont.series[2].points[i].plotX));
+                            }
+                            $('#issu').remove();
+                            issuIdx = closePlot.indexOf(Math.min.apply(null, closePlot));
+                            chartCont.renderer.path(['M', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.xAxis[0].bottom, 'L', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.yAxis[0].height - chartCont.xAxis[0].bottom])
+                            .attr({
+                                'stroke-width': 1,
+                                stroke: '#000',
+                                zIndex: 1,
+                                id: 'issu'
+                            })
+                            .add();
+                        }
+                    }
                 },
 
                 navigator: {
@@ -1229,7 +1247,7 @@
 
                 tooltip: {
                     //snap:0,
-                    //enabled: false,
+                    enabled: false,
                     followTouchMove: false,
                     //flollowPointer: false,
                     //split: false,
@@ -1253,6 +1271,7 @@
                         },
                         //stickyTracking: false,
                         // allowPointSelect: true
+                        
                     },
                     candlestick: {
                         color: 'blue',
@@ -1286,6 +1305,7 @@
                     type: 'line',
                     data: data2,
                     animation: false,
+                    lineColor: 'green',
                     // marker: {
                     //     enabled: true,
                     //     radius: 4,
@@ -1357,7 +1377,7 @@
                 }]
             }, function (chart) { // on complete
                 let i = 0;
-                issuIdx = chart.series[2].xData.length -2;
+                issuIdx = chart.series[2].xData.length -1;
 
                 // chart.renderer.button('do stuff',0, 0)
                 // .attr({
