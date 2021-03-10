@@ -1130,8 +1130,6 @@
                     // panning: false,
                     events: {
                         click: function (event) {
-                            alert(this.hoverPoint.plotX);
-                            console.log(this.hoverPoint.plotX);
                             var closePlot = [];
                             for(var i = 0; i < chartCont.series[2].xData.length; i++) {
                                 closePlot[i] = parseInt(Math.abs(this.hoverPoint.plotX - chartCont.series[2].points[i].plotX));
@@ -1142,10 +1140,13 @@
                             .attr({
                                 'stroke-width': 1,
                                 stroke: '#000',
-                                zIndex: 1,
+                                zIndex: 3,
                                 id: 'issu'
                             })
                             .add();
+                            $(chartCont.scrollingContainer).stop().animate({
+                                scrollLeft : chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
+                            }, Math.abs($(chartCont.scrollingContainer).scrollLeft() - (chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
                         }
                     }
                 },
@@ -1331,7 +1332,7 @@
                     data: data3,
                     animation: false,
                     marker: {
-                        enabled: true,
+                        enabled: false,
                         radius: 4,
                         symbol: 'circle',
                         fillColor: '#fff',
@@ -1367,7 +1368,7 @@
                                 .attr({
                                     'stroke-width': 1,
                                     stroke: '#000',
-                                    zIndex: 1,
+                                    zIndex: 3,
                                     id: 'issu'
                                 })
                                 .add();
@@ -1378,7 +1379,7 @@
                     yAxis:1
                 }]
             }, function (chart) { // on complete
-                let i = 0;
+                //let i = 0;
                 issuIdx = chart.series[2].xData.length -1;
 
                 // chart.renderer.button('do stuff',0, 0)
@@ -1396,11 +1397,23 @@
                 //     zIndex: 3
                 // })
                 // .add();
+                for(var i = 0; i < chart.series[2].xData.length; i++) {
+                    //closePlot[i] = parseInt(Math.abs(this.hoverPoint.plotX - chartCont.series[2].points[i].plotX));
+                    chart.renderer.circle(60 + chart.series[2].points[i].plotX, chart.chartHeight - chart.xAxis[0].bottom, 4)
+                    .attr({
+                        'stroke-width': 1,
+                        stroke: '#000',
+                        zIndex: 4,
+                        fill: '#fff',
+                        id: 'circle' + i
+                    })
+                    .add();
+                }
                 chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1420,7 +1433,7 @@
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1432,8 +1445,8 @@
                 if($(chartCont.scrollingContainer).is(':animated')) {
                     return false;
                 }
-                if (issuIdx >= chartCont.series[2].xData.length -2) {
-                    issuIdx = chartCont.series[2].xData.length -2;
+                if (issuIdx >= chartCont.series[2].xData.length -1) {
+                    issuIdx = chartCont.series[2].xData.length -1;
                 }else {
                     issuIdx += 1;
                 }
@@ -1442,7 +1455,7 @@
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1467,9 +1480,11 @@
             });
             $('#sortable').disableSelection();
             $('#sortable').sortable( "disable" );
+            var chartScrollLeft;
             $('#editor').on('click',function() {
                 $('#sortable').sortable( "enable" ).addClass('on');
                 $(window).off('touchmove');
+                chartScrollLeft = $(chartCont.scrollingContainer).scrollLeft();
             });
             let sortArr = [];
             $('#save').on('click',function() {
@@ -1492,7 +1507,7 @@
                     $('.sortCont').append(sortContArr[l]);
                 }
                 
-                //chartCont.redraw();
+                $(chartCont.scrollingContainer).scrollLeft(chartScrollLeft);
             });
 
             $('header').each(function() {
