@@ -134,7 +134,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.6
+                김신한님 반갑습니다.7
             </div>
         </header>
         <!-- <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1130,10 +1130,11 @@
                     panning: false,
                     events: {
                         click: function (event) {
-                            alert(this.mouseDownX);
+                            alert(this.hoverPoint.plotX);
+                            console.log(this.hoverPoint.plotX);
                             var closePlot = [];
                             for(var i = 0; i < chartCont.series[2].xData.length; i++) {
-                                closePlot[i] = parseInt(Math.abs(this.mouseDownX - 60 - chartCont.series[2].points[i].plotX));
+                                closePlot[i] = parseInt(Math.abs(this.hoverPoint.plotX - chartCont.series[2].points[i].plotX));
                             }
                             $('#issu').remove();
                             issuIdx = closePlot.indexOf(Math.min.apply(null, closePlot));
