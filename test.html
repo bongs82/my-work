@@ -1334,9 +1334,8 @@
                             click: function () {
                                 $('#issu').remove();
                                 issuIdx = this.index;
-                                console.log(chart);
                                 //chart.scrollingContainer.scrollLeft = chart.series[2].points[issuIdx].plotX - (screen.width/2 - 60);
-                                chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
+                                chartCont.renderer.path(['M', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.xAxis[0].bottom, 'L', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.yAxis[0].height - chartCont.xAxis[0].bottom])
                                 .attr({
                                     'stroke-width': 1,
                                     stroke: '#000',
