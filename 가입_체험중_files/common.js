@@ -3307,7 +3307,7 @@
         function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
-        console.log(opt);
+        console.log(stage);
     }
     commonJs.graph.basicCircle3 = function(opt)
     {
