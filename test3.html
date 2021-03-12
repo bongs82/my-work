@@ -204,13 +204,13 @@
                         graph.addChild(sround);
                         //graph.addChild(txt1);
                         content.addChild(graph);
-                        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+                        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
                         stage           =   new createjs.Stage(canvas.get(0));
                         //stage.autoClear =   true;
-                        //createjs.Ticker.setFPS(24);
-                        //createjs.Ticker.addEventListener("tick", tick);
-                        //function tick() { stage.update(); }
+                        createjs.Ticker.setFPS(24);
+                        createjs.Ticker.addEventListener("tick", tick);
+                        function tick() { stage.update(); }
                         stage.addChild(content);
                         stage.update();
                     }
