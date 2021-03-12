@@ -999,7 +999,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .viewTit .moreView{color:#999;font-size:12px;font-weight:normal;padding:4px 0 0 10px;}
 .inListType + .viewTit{border-top:1px solid #e6e6e6;padding-top:17px}
 .viewTit + .inListType{margin-top:7px}
-.graphInfo.flex{display:flex;display:-webkit-flex;justify-content:space-between;padding:12px 0;}
+
 .graphInfo.flex .graphTit{width:50%;display:flex;display:-webkit-flex;text-align:left;}
 .graphInfo.flex .rPrice{width: 50%;text-align: right;padding-right: 55px;}
 .graphInfo.flex .rPrice .fB{color:#000;font-weight:700}
@@ -1176,7 +1176,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .viewTit .moreView{color:#999;font-size:12px;font-weight:normal;padding:4px 0 0 10px;}
 .inListType + .viewTit{border-top:1px solid #e6e6e6;padding-top:17px}
 .viewTit + .inListType{margin-top:7px}
-.graphInfo.flex{display:flex;display:-webkit-flex;justify-content:space-between;padding:12px 0;}
+
 .graphInfo.flex .graphTit{width:50%;display:flex;display:-webkit-flex;text-align:left;}
 .graphInfo.flex .rPrice{width: 50%;text-align: right;padding-right: 55px;}
 .graphInfo.flex .rPrice .fB{color:#000;font-weight:700}
