@@ -797,6 +797,13 @@
                 <!-- // 종목분석 조건검색 랜덤 데이터형 -->
                 <script>
                     //종목분석 조건검색 그래프 샘플
+                    //원형그래프
+                    commonJs.graph.basicCircle({
+                        value   :   64
+                    });
+                    commonJs.graph.basicCircle2({
+                        value   :   63
+                    });
                     var config2 = {
                         type: 'LineWithLine',
                         data: {
@@ -1022,15 +1029,6 @@
                     window.config2 = new Chart(ctx3, config2);
                     var ctx4 = document.getElementById('graph3').getContext('2d');
                     window.config3 = new Chart(ctx4, config3);
-                    
-                    
-                    //원형그래프
-                    commonJs.graph.basicCircle({
-                        value   :   64
-                    });
-                    commonJs.graph.basicCircle2({
-                        value   :   63
-                    });
                 </script>
 
                 <!-- 종목점수 리스트형 -->
