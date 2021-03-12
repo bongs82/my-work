@@ -504,9 +504,9 @@ caption {
 .user-info .info-txt02 strong::after {content: ''; position: absolute; left: -0.0625rem; bottom: 0; width: calc(100% + 0.25rem); height: 0.5rem; background-color: #3e9fff; opacity: 0.45;}
 .user-info .util-link {position: absolute; right: 1.125rem; top: 0.4375rem; display: flex;}
 .user-info .util-link a {display: block; width: 1.5rem; height: 1.5rem; font-size: 0;}
-.user-info .util-link .notice {position: relative; background: url('../../../images/sp/ico_notice.png') no-repeat 0 0; background-size: 1.5rem;}
+.user-info .util-link .notice {position: relative; background-size: 1.5rem;}
 .user-info .util-link .notice .new {position: absolute; right: 0; top: 0; width: 0.3125rem; height: 0.3125rem; background-color: #ff6f67; border-radius: 100%;}
-.user-info .util-link .my {margin-left: 0.625rem; background: url('../../../images/sp/ico_my.png') no-repeat 0 0; background-size: 1.5rem;}
+.user-info .util-link .my {margin-left: 0.625rem; background-size: 1.5rem;}
 
 .alarm {position: relative; padding: 1.0625rem 1.125rem 1.5625rem;}
 .alarm::before {content: ''; position: absolute; left: 1.125rem; top: 0; width: calc(100% - 2.25rem); height: 1px; background-color: #efefef;}
@@ -517,15 +517,15 @@ caption {
 .alarm .alarm-view-all ul li::before {content: ''; position: absolute; left: 0.5625rem; top: 0.5625rem; width: 0.1875rem; height: 0.1875rem; background-color: #999; border-radius: 100%;}
 .alarm .alarm-view-all ul li a {overflow: hidden; display: block; width: 100%; font-size: 0.8125rem; line-height: 1.5rem; letter-spacing: -0.0125rem; color: #666; text-overflow: ellipsis; white-space: nowrap;}
 .alarm .alarm-view-all ul li a span {color: #009bfa;}
-.alarm .alarm-view-all p {height: 1.5rem; padding-left: 1.4375rem; background: url('../../../images/sp/ico_alarm.png') no-repeat 0 50%; background-size: 1.25rem;}
-.alarm .alarm-view-all p a {padding-right: 1.125rem; background: url('../../../images/sp/btn_arrow01.png') no-repeat 100% 50%; background-size: 1.125rem; font-size: 0.9375rem; font-weight: 700; color: #111; letter-spacing: -0.0143; line-height: 1.375rem;}
+.alarm .alarm-view-all p {height: 1.5rem; padding-left: 1.4375rem; background-size: 1.25rem;}
+.alarm .alarm-view-all p a {padding-right: 1.125rem;  background-size: 1.125rem; font-size: 0.9375rem; font-weight: 700; color: #111; letter-spacing: -0.0143; line-height: 1.375rem;}
 .alarm .alarm-view-single {overflow: hidden; position: relative; height: 1.5rem;}
 .alarm.on .alarm-view-single {display: none;}
 .alarm .alarm-view-single .swiper-slide {display: block;}
-.alarm .alarm-view-single {padding-left: 1.4375rem; background: url('../../../images/sp/ico_alarm.png') no-repeat 0 50%; background-size: 1.25rem;}
+.alarm .alarm-view-single {padding-left: 1.4375rem;  background-size: 1.25rem;}
 .alarm .alarm-view-single ul li a {overflow: hidden; display: block; width: calc(100% - 3.8125rem); font-size: 0.8125rem; line-height: 1.5rem; letter-spacing: -0.0125rem; color: #666; text-overflow: ellipsis; white-space: nowrap;}
 .alarm .alarm-view-single ul li a span {color: #009bfa;}
-.alarm .alarm-toggle {position: absolute; right: 1.125rem; top: 0.9375rem; width: 1.5rem; height: 1.5rem; background: url('../../../images/sp/btn_arrow02_down.png') no-repeat 0 0; background-size: 1.5rem; font-size: 0;}
+.alarm .alarm-toggle {position: absolute; right: 1.125rem; top: 0.9375rem; width: 1.5rem; height: 1.5rem;  background-size: 1.5rem; font-size: 0;}
 .alarm.on .alarm-toggle {transform: rotateZ(180deg)}
 
 .banner {position: relative; border-top: 0.625rem solid #e6e7e9; font-size: 0;}
@@ -547,42 +547,13 @@ caption {
 .subscribe-cont .txt02 p {color: #999;}
 .subscribe-cont .txt02 .btn button {height: 1.875rem; padding: 0 0.5rem; border: 1px solid #c9ced4; border-radius: 0.1875rem; color: #666;}
 .subscribe-cont .link {position: absolute; right: 1.125rem; top: 0.1875rem;}
-.subscribe-cont .link a {padding-left: 1rem; background: url('../../../images/sp/ico_all.png') no-repeat 0 0; background-size: 1rem; font-size: 0.875rem; line-height: 1.3125rem; letter-spacing: -0.013125rem; color: #111;}
+.subscribe-cont .link a {padding-left: 1rem;  background-size: 1rem; font-size: 0.875rem; line-height: 1.3125rem; letter-spacing: -0.013125rem; color: #111;}
 
 .subscribe-list {}
 .subscribe-list ul {display: flex; flex-wrap: wrap; padding: 1.125rem 1.125rem 1.0625rem;}
 .subscribe-list li {width: 24.9%;}
 .subscribe-list li a {position: relative; display: flex; flex-direction: column; align-items: center; width: 100%; height: 5.9375rem; font-size: 0.8125rem; line-height: 1.1875rem; letter-spacing: -0.020625rem; color: #000;}
-.subscribe-list li a::before {content: ''; display: block; width: 3.6875rem; height: 3.625rem; margin: 0.25rem 0 0.375rem;}
-.subscribe-list li .ico01::before {background: url('../../../images/sp/ico_sub01.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico02::before {background: url('../../../images/sp/ico_sub02.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico03::before {background: url('../../../images/sp/ico_sub03.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico04::before {background: url('../../../images/sp/ico_sub04.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico05::before {background: url('../../../images/sp/ico_sub05.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico06::before {background: url('../../../images/sp/ico_sub06.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico07::before {background: url('../../../images/sp/ico_sub07.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico08::before {background: url('../../../images/sp/ico_sub08.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico09::before {background: url('../../../images/sp/ico_sub09.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec01.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico10::before {background: url('../../../images/sp/ico_sub10.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico11::before {background: url('../../../images/sp/ico_sub11.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico12::before {background: url('../../../images/sp/ico_sub12.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico13::before {background: url('../../../images/sp/ico_sub13.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico14::before {background: url('../../../images/sp/ico_sub14.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico15::before {background: url('../../../images/sp/ico_sub15.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico16::before {background: url('../../../images/sp/ico_sub16.png') no-repeat 50% 50%, url('../../../images/sp/bg_rec02.png') no-repeat 50% 50%;  background-size: 2.375rem 2.375rem, 3.6875rem 3.6875rem;}
-.subscribe-list li .ico-pre::after {content: ''; position: absolute; left: calc(50% + 1.15625rem); top: 3rem; width: 0.9375rem; height: 0.9375rem; background: url('../../../images/sp/ico_pre.png') no-repeat 0 0; background-size: 0.9375rem;}
-.subscribe-list ul.on li {
-  -webkit-animation-name: modifyMotion;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: modifyMotion;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
+
 /* @keyframes modifyMotion {
   0% {
     transform: rotate(0) translateX(0) translateY(0);
@@ -836,7 +807,7 @@ caption {
 .popLayerCont{display:-webkit-box;display:flex;-webkit-box-orient:vertical;box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:center;box-pack:center;-webkit-justify-content:center;justify-content:center;z-index:200;min-height:100%;position:fixed;top:0;left:0;background-color:rgba(0,0,0,0.7);opacity:1;z-index:10;width:100%;}
 .layerInner{display:block;position:relative;-webkit-box-flex:0;box-flex:0;-webkit-flex-grow:0;flex-grow:0;background-color:#fff;border-radius:4px;margin:0 15px;}
 .layerInner h1{font-size:16px;font-weight:700;text-align:center;color:#000;padding:30px 0 0;position:relative;}
-.layerInner .close{width:20px;height:20px;display:block;background:url(../../../../static/images/common/btn_pop_close2.png) no-repeat center;-webkit-background-size:15px 15px;-moz-background-size:15px 15px;-o-background-size:15px 15px;background-size:15px 15px;font-size:0;line-height:0;margin-bottom:5px;position: absolute;top: 15px;right: 12px;}
+.layerInner .close{width:20px;height:20px;display:block;-webkit-background-size:15px 15px;-moz-background-size:15px 15px;-o-background-size:15px 15px;background-size:15px 15px;font-size:0;line-height:0;margin-bottom:5px;position: absolute;top: 15px;right: 12px;}
 .layerInner .btnL{border-radius:0 0 4px 4px;font-size:17px}
 .layerInner #popCon{padding-top:10px}
 .layerInner .centerTxt{font-size:12px;text-align:center;line-height:16px;letter-spacing:0;color:#666}
@@ -852,7 +823,7 @@ caption {
 .changeView .service{font-weight:700;line-height:18px;color:#4a4a4a}
 .changeView .before{border-radius:10px 10px 0 0;border:1px solid #f2f2f2;border-bottom:none}
 .changeView .after{border-radius:0 0 10px 10px;border:1px solid #009bfa;}
-.changeView .after:before{content:'';width:38px;height:18px;display:block;background: url(../../../../static/images/special/bg_point.png) no-repeat 0 0;background-size: 38px auto;position:absolute;top: -1px;left: 50%;transform: translateX(-50%);z-index:1;}
+.changeView .after:before{content:'';width:38px;height:18px;display:block;background-size: 38px auto;position:absolute;top: -1px;left: 50%;transform: translateX(-50%);z-index:1;}
 .changeView .after:after{content:'';width:38px;height:2px;display:block;background:#fff;position: absolute;top: -2px;left: 50%;transform: translateX(-50%);}
 .changeView [class^=icoList2]{width:38px;height:38px;border:1px solid #eee;border-radius:50%;display:inline-block;}
 .changeView [class^=icoList2]:before{width:30px;height:30px;background-size:30px auto;margin:4px auto}
@@ -895,10 +866,10 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .iconCont .slick-dots li{display:inline-block;}
 .iconCont .slick-dots button{width:8px;height:8px;margin:0 3px;border-radius:100%;display:inline-block;background:#000;opacity:0.2;font-size:0}
 .iconCont .slick-active button{background:#009bfa;opacity:1}
-[class^=icoList1]:before, .cardList .card.type2:after{content:'';width:39px;height:39px;background:url(../../../../static/images/special/sp_main_icon.png) no-repeat 0 0;background-size:39px auto;display:block;margin:auto auto 5px auto}
-.cardList .card.type2:after{content:'';width:52px;height:52px;background:url(../../../../static/images/special/sp_main_icon.png) no-repeat 0 0;background-size:52px auto;display:block;margin:auto auto 5px auto}
+[class^=icoList1]:before, .cardList .card.type2:after{content:'';width:39px;height:39px;background-size:39px auto;display:block;margin:auto auto 5px auto}
+.cardList .card.type2:after{content:'';width:52px;height:52px;background-size:52px auto;display:block;margin:auto auto 5px auto}
 .cardList .card.type2:after{position:absolute;right:10px;bottom:10px}
-[class^=icoList2]:before{content:'';width:39px;height:39px;background:url(../../../../static/images/special/sp_main_icon2.png) no-repeat 0 0;background-size:39px auto;display:block;margin:auto auto 5px auto}
+[class^=icoList2]:before{content:'';width:39px;height:39px;background-size:39px auto;display:block;margin:auto auto 5px auto}
 .icoList1_1:before, .icoList2_1:before{background-position:0 0}
 .icoList1_2:before, .icoList2_2:before{background-position:0 -39px}
 .icoList1_3:before, .icoList2_3:before{background-position:0 -78px}
@@ -921,7 +892,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .contBox .boxTit.bf{font-size:17px;line-height:20px}
 .contBox .text{color:#666;font-size:14px;line-height:16px}
 .contBox .btnInfo{float:right}
-.contBox .btnInfo::before{background-image:url(../../../../static/images/common/btn_info3.png);width:15px;height:15px;background-size:15px 15px;margin-top:-8px}
+.contBox .btnInfo::before{width:15px;height:15px;background-size:15px 15px;margin-top:-8px}
 .contBox .label{display:inline-block;background:#3583e3;color:#fff;font-size:12px;border-radius:10px;height:18px;line-height:18px;padding:0 7px; margin: 0 0 5px 0}
 .contBox .emData{font-weight:700;color:#3583e3}
 .contBox .emData2{font-weight:700;color:#fd575b}
@@ -934,12 +905,6 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .pattern{margin-bottom:15px;display: flex;text-align: center;justify-content: center;}
 .pattern li + li{margin-left:20px;}
 .pattern li a{font-size:12px;border:1px solid #c9c9c9;background-size:63px 49px;display:block;background-position: 0 0;background-repeat:no-repeat;padding-top: 49px;width: 65px;color:#666;line-height:21px}
-.pattern li a.up{background-image:url(../../../../static/images/special/chart_pattern01_off.png)}
-.pattern li a.up.on{background-image:url(../../../../static/images/special/chart_pattern01_on.png)}
-.pattern li a.mid{background-image:url(../../../../static/images/special/chart_pattern02_off.png)}
-.pattern li a.mid.on{background-image:url(../../../../static/images/special/chart_pattern02_on.png)}
-.pattern li a.dw{background-image:url(../../../../static/images/special/chart_pattern03_off.png);}
-.pattern li a.dw.on{background-image:url(../../../../static/images/special/chart_pattern03_on.png)}
 .pattern li a.on{background-color:#818994;color:#fff;border-color:#818994}
 .hash.swiper-container{margin: 0 -27px 6px;padding: 0 27px 5px;color:#666}
 .hashTab{display:flex;display:-webkit-flex;align-items:center;padding-bottom:0;}
@@ -956,10 +921,10 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .typeTit .type{color:#000;margin-bottom:15px}
 .typeTit .type .top{font-size:14px}
 .typeTit .box{border-radius:5px;background:#f8f9fb;font-size:12px;margin-bottom:10px;border-color:#f2f2f2;padding:6px 10px 4px;color: #666;line-height:21px}
-.typeBtn{color:#4a4a4a;font-size:12px;display:inline-block;position:absolute;border:1px solid #e6e6e6;border-radius: 5px;background: url(../../../../static/images/special/ico_change.png) no-repeat left 6px center;background-size:13px 13px;position:absolute;top:0;right:0;padding-left: 17px;min-width: 75px;height: 23px;line-height: 23px;}
+.typeBtn{color:#4a4a4a;font-size:12px;display:inline-block;position:absolute;border:1px solid #e6e6e6;border-radius: 5px;background-size:13px 13px;position:absolute;top:0;right:0;padding-left: 17px;min-width: 75px;height: 23px;line-height: 23px;}
 .typeTit [class^=icoList1], .typeTit [class^=icoList2]{font-size:18px;font-weight:700;}
 .typeTit .best{font-size:18px;font-weight:700;margin-top:5px}
-.typeTit .icoLogo{font-size:17px;font-weight:700;margin-top:5px;background:url(../../../../static/images/special/ico_logo.png) no-repeat left 1px;padding-left:23px;background-size:17px 17px}
+.typeTit .icoLogo{font-size:17px;font-weight:700;margin-top:5px;padding-left:23px;background-size:17px 17px}
 .typeTit [class^=icoList1]:before, .typeTit [class^=icoList2]:before{display:inline-block;background-size:25px auto;width:25px;height:25px;vertical-align:middle;margin:auto 3px 5px auto;}
 .typeTit .icoList1_2:before, .typeTit .icoList2_2:before{background-position:0 -25px}
 .typeTit .icoList1_3:before, .typeTit .icoList2_3:before{background-position:0 -50px}
@@ -969,7 +934,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .typeTit .icoList1_7:before, .typeTit .icoList2_7:before{background-position:0 -150px}
 .typeTit .icoList1_8:before, .typeTit .icoList2_8:before{background-position:0 -175px}
 .typeTit .icoList2_9:before{background-position:0 -200px}
-[class^=icoList1]:before, .cardList .card.type2:after{content:'';width:39px;height:39px;background:url(../../../../static/images/special/sp_main_icon.png) no-repeat 0 0;background-size:39px auto;display:block;margin:auto auto 5px auto}
+[class^=icoList1]:before, .cardList .card.type2:after{content:'';width:39px;height:39px;background-size:39px auto;display:block;margin:auto auto 5px auto}
 .graphInfo{text-align:center;padding:20px 15px;position:relative;border-top:1px solid #e6e6e6}
 .graphInfo .label{position:absolute;left: 0;top: 0;border-radius:0;font-size:14px;background:#5db0ff;height:28px;line-height:28px;padding:0;width:28px;text-align:center;}
 .graphInfo .infoTit{font-size:16px;padding:0 0 5px;color:#000}
@@ -1025,7 +990,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .graphInfo.listType .cellBtn{top: 0}
 .graphInfo.listType [class^=per]{font-size:12px}
 .graphList .swiper-button-prev, .graphList .swiper-button-next{position:absolute;top:50%;width:20px;height:40px;color:transparent;line-height:0;transform:translateY(-50%);background:none;margin:0; z-index: 1;}
-.graphList .swiper-button-prev::before, .graphList .swiper-button-next::before{content:'';display:block;width:10px;height:18px;margin:auto;background:url(../../../../static/images/special/sp_slide.png) no-repeat;-webkit-background-size:18px auto;-moz-background-size:18px auto;-o-background-size:18px auto;background-size:18px auto;margin-top:50%}
+.graphList .swiper-button-prev::before, .graphList .swiper-button-next::before{content:'';display:block;width:10px;height:18px;margin:auto;-webkit-background-size:18px auto;-moz-background-size:18px auto;-o-background-size:18px auto;background-size:18px auto;margin-top:50%}
 .graphList .swiper-button-next::before{background-position:-9px 0}
 .graphList .swiper-button-prev{left: -7px}
 .graphList .swiper-button-next{right: -7px}
@@ -1136,7 +1101,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .bestIcon .hash{font-size:12px;color:#009bfa;margin-left:10px;font-weight:normal;}
 .bestIcon .best{margin:0 0 0 5px}
 .bestIcon .best > p{font-size:14px;line-height:16px}
-.bestIcon [class^=icoList1]:before, .bestIcon [class^=icoList2]:before{content:'';width:60px;height:60px;background:url(../../../../static/images/special/sp_main_icon2.png) no-repeat 0 0;background-size:60px auto;display:inline-block;margin:auto;}
+.bestIcon [class^=icoList1]:before, .bestIcon [class^=icoList2]:before{content:'';width:60px;height:60px;background-size:60px auto;display:inline-block;margin:auto;}
 .bestIcon .icoList1_2:before, .bestIcon .icoList2_2:before{background-position:0 -60px}
 .bestIcon .icoList1_3:before, .bestIcon .icoList2_3:before{background-position:0 -120px}
 .bestIcon .icoList1_4:before, .bestIcon .icoList2_4:before{background-position:0 -180px}
@@ -1146,7 +1111,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .bestIcon .icoList1_8:before, .bestIcon .icoList2_8:before{background-position:0 -420px}
 .bestIcon .icoList2_9:before{background-position:0 -480px}
 .icoClass{line-height:0;font-size:0}
-.icoClass:before{content:'';display:inline-block;width:60px;height:60px;-vertical-align:middle;background:url(../../../../static/images/finance/ico_graph.png) no-repeat;-webkit-background-size:240px 240px;-moz-background-size:240px 240px;-o-background-size:240px 240px;background-size:240px 240px}
+.icoClass:before{content:'';display:inline-block;width:60px;height:60px;-vertical-align:middle;-webkit-background-size:240px 240px;-moz-background-size:240px 240px;-o-background-size:240px 240px;background-size:240px 240px}
 .icoClass.icoFg:before{background-position:0 0}
 .icoClass.icoId:before{background-position:-60px 0}
 .icoClass.icoOg:before{background-position:-120px 0}
@@ -1298,10 +1263,10 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .sumIcon{font-size:14px;line-height:18px;margin-top:15px;position: relative;padding-left: 50px;min-height:46px}
 .sumIcon:before{content:'';background:#fff;box-shadow:1px 1px 3px 2px rgba(0,0,0,0.1);-moz-box-shadow:1px 1px 3px 2px rgba(0,0,0,0.1);-webkit-box-shadow:1px 1px 3px 2px rgba(0,0,0,0.1);display:block;width:42px;height:42px;border-radius:7px;position: absolute;left: 0;top: 0;}
 .sumIcon span{display:inline-block;padding-top:5px}
-.sumIcon span:before{content:'';background:url(../../../../static/images/special/sp_main_icon.png) no-repeat center;background-size: 30px auto;width: 30px;height: 30px;display:block;background-position:0 0;position: absolute;left: 6px;top: 6px;}
+.sumIcon span:before{content:'';background-size: 30px auto;width: 30px;height: 30px;display:block;background-position:0 0;position: absolute;left: 6px;top: 6px;}
 .sumIcon2{position:relative;}
 .sumIcon2:before{content:'';background:#fff;width:38px;height:38px;display:block;border-radius:50%;top:50%;transform:translateY(-50%);position:absolute;left:0}
-.sumIcon2 span:before{content:'';width:30px;height:30px;background:url(../../../../static/images/special/sp_main_icon2.png) no-repeat 0 0;background-size:30px auto;display:block;margin:auto;position:absolute;top:5px;left:5px}
+.sumIcon2 span:before{content:'';width:30px;height:30px;background-size:30px auto;display:block;margin:auto;position:absolute;top:5px;left:5px}
 .sumIcon.icoList1_1 span:before{background-position:0 0}
 .sumIcon.icoList1_2 span:before, .sumIcon2.icoList2_2 span:before, .iconSet .icoList2_2:before{background-position:0 -30px}
 .sumIcon.icoList1_3 span:before, .sumIcon2.icoList2_3 span:before, .iconSet .icoList2_3:before{background-position:0 -60px;}
@@ -1323,12 +1288,12 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 /*알리미*/
 .alrim_notice{position:relative;height:50px;padding-right:51px;background:#e4f0fe;}
 .alrim_notice button{display:block;height:100%;}
-.alrim_notice button.notice{padding-left:48px;box-sizing:border-box;font-size:14px;line-height:100%;letter-spacing:-1.2px;text-align:left;color:#4a4a4a;width:100%;background:url(../../../../static/images/special/ic_alrim_notice.png) no-repeat 20px center;background-size:18px auto;}
-.alrim_notice button.close{position:absolute;right:0;top:0;width:51px;overflow:hidden;text-indent:-9999px;background:url(../../../../static/images/special/ic_alrim_notice_close.png) no-repeat center center;background-size:11.33px auto;}
+.alrim_notice button.notice{padding-left:48px;box-sizing:border-box;font-size:14px;line-height:100%;letter-spacing:-1.2px;text-align:left;color:#4a4a4a;width:100%;}
+.alrim_notice button.close{position:absolute;right:0;top:0;width:51px;overflow:hidden;text-indent:-9999px;background-size:11.33px auto;}
 
 .alrim_notice2{width:100%;height:60px;}
 .alrim_notice2 button{position:relative;width:100%;height:60px;box-sizing:border-box;padding:0 20px;text-align:left;font-size:16px;color:#666;background:#f7f7f7;}
-.alrim_notice2 button:after{content:"";position:absolute;right:20px;top:50%;display:block;overflow:hidden;width:8px;height:14px;margin-top:-7px;background:url(../../../../static/images/special/arrow_alrim_notice.png) no-repeat left top;background-size:100% 100%;}
+.alrim_notice2 button:after{content:"";position:absolute;right:20px;top:50%;display:block;overflow:hidden;width:8px;height:14px;margin-top:-7px;background-size:100% 100%;}
 .alrim_notice2.fixed button{position:fixed;left:0;bottom:0;}
 .tabType + .alrim_notice2{position:relative;z-index:10;margin-top:35px;}
 
@@ -1344,11 +1309,11 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_list .top .img img{width:100%;}
 .alrim_list .list{padding-top:18px;margin-bottom:-4px;}
 .alrim_list .list li a{display:flex;padding:4px 20px 3px 18.66px;}
-.alrim_list .list li a .subject{flex:auto;overflow:hidden;box-sizing:border-box;display:block;width:75.8%;padding-left:5px;font-size:14px;color:#4a4a4a;white-space:nowrap;text-overflow:ellipsis;background:url(../../../../static/images/special/bu_alrim_list.png) no-repeat left 9px;background-size:2px 2px;}
+.alrim_list .list li a .subject{flex:auto;overflow:hidden;box-sizing:border-box;display:block;width:75.8%;padding-left:5px;font-size:14px;color:#4a4a4a;white-space:nowrap;text-overflow:ellipsis;background-size:2px 2px;}
 .alrim_list .list li a .date{flex:auto;text-align:right;box-sizing:border-box;width:24.2%;padding-left:5px;font-size:13px;color:#999;}
 
 .alrim_apply{padding:35.33px 10px 49.33px;text-align:center;}
-.alrim_apply p{padding-top:68.66px;font-size:14px;color:#262626;background:url(../../../../static/images/special/ic_alrim_apply.png) no-repeat center top;background-size:60px 60px;line-height:21px}
+.alrim_apply p{padding-top:68.66px;font-size:14px;color:#262626;background-size:60px 60px;line-height:21px}
 .alrim_apply button{margin-top:16px;display:inline-block;padding:0 12px;height:30px;font-size:14px;color:#fff;line-height:30px;border-radius:4px;background:#5db0ff;}
 .alrim_apply.type1{position:absolute;left:0;top:95px;bottom:60px;width:100%;height:calc(100% - 155px);padding:0;display:table;}
 .alrim_apply.type1 .inner{display:table-cell;vertical-align:middle;}
@@ -1368,7 +1333,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_infobox .dl_type1 > dd{padding-top:4px;padding-left:8px;font-size:14px;color:#4a4a4a;}
 .alrim_guide .cont1{position:relative;width:100%;overflow:hidden;}
 .alrim_guide .cont1 .fingerClick .ripples{background:#f04b4c;opacity:0;width:30px;height:30px;border-radius:50%;animation:ripples 2.4s infinite linear;-webkit-animation:ripples 2.4s infinite linear;position:absolute;right:22.83%;top:57.71%;color:#262626;text-align:center;line-height:43px;font-weight:700;display:flex;display:-webkit-flex;justify-content:center;align-items:center;font-size:14px}
-.alrim_guide .cont1 .fingerClick .finger{width:10.5%;height:20%;background:url(../../../../static/images/account/img_cursor.png) no-repeat;background-size:100%;display:inline-block;position:absolute;left:0;bottom:0;transform:rotate(-25deg);animation:finger 2.4s infinite linear;-webkit-animation:finger 2.4s infinite linear;z-index:10}
+.alrim_guide .cont1 .fingerClick .finger{width:10.5%;height:20%;background-size:100%;display:inline-block;position:absolute;left:0;bottom:0;transform:rotate(-25deg);animation:finger 2.4s infinite linear;-webkit-animation:finger 2.4s infinite linear;z-index:10}
 .alrim_guide img {width:100%;}
 
 @keyframes finger{
@@ -1411,10 +1376,10 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .sec_alrim > .flexbox .select a {display: inline-block; font-size: 14px; color: #999999; padding: 0 4px 0 0}
 .sec_alrim > .flexbox .select a:after {display: inline-block; width: 1px; height: 13px; margin: 3px 0 0 0px; padding: 0 8px  0 0px; border-right:1px solid #999999; content: ''; box-sizing: border-box; vertical-align: top;}
 .sec_alrim > .flexbox .select a.on {color: #3583e3;letter-spacing: -0.1rem;}
-.sec_alrim > .flexbox .select select{padding: 0 12px 0 0; color: #999999;  border:none; -webkit-appearance:none; font-size: 14px; background: url(../../../../static/images/special/arr_01.png) no-repeat right 7px;background-size: 8px auto;  letter-spacing: -0.1rem;line-height:21px}
-.sec_alrim > .flexbox .select select.on{color:#3583e3;background:url(../../../../static/images/special/arr_01_on.png) no-repeat right 7px;background-size: 8px auto;}
+.sec_alrim > .flexbox .select select{padding: 0 12px 0 0; color: #999999;  border:none; -webkit-appearance:none; font-size: 14px; background-size: 8px auto;  letter-spacing: -0.1rem;line-height:21px}
+.sec_alrim > .flexbox .select select.on{color:#3583e3;background-size: 8px auto;}
 .sec_alrim > .flexbox .select select option{color:#999;}
-.sec_alrim > .flexbox .btn_goto{top:-2px;display:inline-block;position:relative;padding-right:12.66px;color:#4a4a4a;background:url(../../../../static/images/special/arrow_alrim_btn_goto.png) no-repeat right 4px;background-size:6px auto;}
+.sec_alrim > .flexbox .btn_goto{top:-2px;display:inline-block;position:relative;padding-right:12.66px;color:#4a4a4a;background-size:6px auto;}
 .sec_alrim > .flexbox .date{position:relative;top:1px;text-align:right;color:#999;letter-spacing:0;font-size:15px}
 .sec_alrim .tabContList.type1{padding:0 15px;background:#fff;}
 .sec_alrim .tabContList.type1 > .inner{overflow-x:hidden;overflow-y:auto;max-height:400px;padding:0 14px;border:1px solid #ddd;border-radius:9px;}
@@ -1455,7 +1420,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_issue_list{padding:0 15px;}
 .alrim_issue_list > a{position:relative;display:block;margin-top:12px;padding:16px 13.33px 13px;border-radius:9px;border:1px solid #e4eaf7;box-shadow:1px 1px 5px rgba(0,0,0,.12);background:#fff;}
 .alrim_issue_list > a:first-child{margin-top:0;}
-.alrim_issue_list > a:after{content:"";display:block;position:absolute;right:14.66px;top:17.33px;width:8.66px;height:14.66px;background:url(../../../../static/images/special/arrow_alrim_issue_list.png) no-repeat left top;background-size:100% 100%;}
+.alrim_issue_list > a:after{content:"";display:block;position:absolute;right:14.66px;top:17.33px;width:8.66px;height:14.66px;background-size:100% 100%;}
 .alrim_issue_list > a .item{padding-bottom:7px;font-weight:700;font-size:16px;color:#4a4a4a;}
 .alrim_issue_list > a .etc:after{content:"";display:block;overflow:hidden;height:0;clear:both;}
 .alrim_issue_list > a .etc .type{float:left;min-width:65px;line-height:20px;text-align:center;font-size:14px;color:#1a6bc5;background:#e9f2fd;border-radius:3px;}
@@ -1478,7 +1443,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_none p{position:relative;min-height:88px;box-sizing:border-box;margin-top:10px;padding:22px 5px 22px 73.33px;letter-spacing:-1.5px;font-size:14px;border-radius:9px;border:1px solid #cfdcf4;box-shadow:1px 1px 3px rgba(0,0,0,.2);background:#edf4ff;}
 .alrim_none p.type1{box-shadow:none;border-color:#e4e8ee;background:#fff;}
 .alrim_none p:first-child{margin-top:0;}
-.alrim_none p:before{content:"";position:absolute;left:13px;top:16.66px;display:block;overflow:hidden;width:50px;height:50px;background:url(../../../../static/images/special/bg_alrim_none.png) no-repeat left top;background-size:50px auto;}
+.alrim_none p:before{content:"";position:absolute;left:13px;top:16.66px;display:block;overflow:hidden;width:50px;height:50px;background-size:50px auto;}
 .alrim_none p.icon_type1:before{background-position:left top;}
 .alrim_none p.icon_type2:before{background-position:left -50px;}
 .alrim_none p.icon_type3:before{background-position:left -100px;}
@@ -1521,7 +1486,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_stock_market > .inner .market dl dt.name{font-size:14px;color:#262626;}
 .alrim_stock_market > .inner .market dl dd.index{padding-top:2px;font-size:16px;letter-spacing:0;}
 .alrim_stock_market > .inner .market dl dd.fluc{position:relative;font-size:12px;letter-spacing:0;}
-.alrim_stock_market > .inner .market dl dd.fluc:before{content:"";display:none;overflow:hidden;margin-right:3px;width:7px;height:6px;margin-top:-2px;vertical-align:middle;background:url(../../../../static/images/special/bg_alrim_market_fluc.png) no-repeat left top; background-size:7px auto;}
+.alrim_stock_market > .inner .market dl dd.fluc:before{content:"";display:none;overflow:hidden;margin-right:3px;width:7px;height:6px;margin-top:-2px;vertical-align:middle; background-size:7px auto;}
 .alrim_stock_market > .inner .market dl dd.fluc.fColorRed2:before{display:inline-block;background-position:left top;}
 .alrim_stock_market > .inner .market dl dd.fluc.fColorBlue:before{display:inline-block;background-position:left -6px;}
 .alrim_stock_market > .inner .market dl dd.graph{position:relative;box-sizing:border-box;width:69px;height:34px;padding-top:5px;margin:0 auto;}
@@ -1545,7 +1510,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_stock_market2 > .inner .market > dl dd.value > div{display:table-cell;vertical-align:middle;}
 .alrim_stock_market2 > .inner .market > dl dd.value .index{font-size:19px;}
 .alrim_stock_market2 > .inner .market > dl dd.value .fluc{font-size:12px;text-align:right;line-height:120%;}
-.alrim_stock_market2 > .inner .market > dl dd.value .fluc:before{content:"";display:none;overflow:hidden;margin-right:3px;width:7px;height:6px;margin-top:-2px;vertical-align:middle;background:url(../../../../static/images/special/bg_alrim_market_fluc.png) no-repeat left top; background-size:7px auto;}
+.alrim_stock_market2 > .inner .market > dl dd.value .fluc:before{content:"";display:none;overflow:hidden;margin-right:3px;width:7px;height:6px;margin-top:-2px;vertical-align:middle; background-size:7px auto;}
 .alrim_stock_market2 > .inner .market > dl dd.value .fluc.fColorRed2:before{display:inline-block;background-position:left top;}
 .alrim_stock_market2 > .inner .market > dl dd.value .fluc.fColorBlue:before{display:inline-block;background-position:left -6px;}
 .alrim_stock_market2 > .inner .market > dl dd.graph{margin-bottom:17px;padding-top:2px;border-bottom:1px solid #e8e8e8;}
@@ -1605,7 +1570,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_purchase_list > ol > li dl dd.table th{padding:5px 0 3px;font-size:13px;}
 .alrim_purchase_list > ol > li dl dd.table td{padding:6px 5px;font-size:13px;color:#262626;line-height:120%;}
 .alrim_purchase_list > ol > li dl dd.btn button{display:block;width:100%;height:37px;font-size:14px;color:#7e8595;background:#eff1f6;}
-.alrim_purchase_list > ol > li dl dd.btn button span{display:inline-block;padding-right:25px;background:url(../../../../static/images/special/arrow_alrim_purchase_graph_off.png) no-repeat right center;background-size:auto 10px;}
+.alrim_purchase_list > ol > li dl dd.btn button span{display:inline-block;padding-right:25px;background-size:auto 10px;}
 .alrim_purchase_list > ol > li dl dd.graph{display:none;padding:0 14px;margin-top:-7px;}
 .alrim_purchase_list > ol > li dl dd.graph .etc{padding:0 0 6px 0;}
 .alrim_purchase_list > ol > li dl dd.graph .etc:after{content:"";display:block;clear:both;overflow:hidden;height:0;}
@@ -1616,7 +1581,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_purchase_list > ol > li dl dd.graph .legend li:last-child:before{background:#f5c430;}
 .alrim_purchase_list > ol > li dl dd.graph .thumb{background:#61a6e6;text-align:center;padding:20px;font-size:16px;font-weight:700;color:#fff;}
 .alrim_purchase_list > ol > li.on dl dd.graph{display:block;}
-.alrim_purchase_list > ol > li.on dl dd.btn button span{background-image:url(../../../../static/images/special/arrow_alrim_purchase_graph_on.png);}
+.alrim_purchase_list > ol > li.on dl dd.btn button span{}
 
 .alrim_purchase_list2{padding:0 15px;}
 .alrim_purchase_list2 dl{margin-top:13px;overflow:hidden;border-radius:9px;border:1px solid #e4e9ef;background:#fff;}
@@ -1644,7 +1609,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .alrim_fluc_list ol li > dl > dd.cont{padding-top:9px;}
 .alrim_fluc_list ol li > dl > dd.cont dl{position:relative;padding-left:17px;margin-top:2px;}
 .alrim_fluc_list ol li > dl > dd.cont dl:first-child{margin-top:0;}
-.alrim_fluc_list ol li > dl > dd.cont dl:before{content:"";position:absolute;left:0;top:5px;display:block;width:11px;height:10px;background:url(../../../../static/images/special/bg_alrim_fluc_cont.png) no-repeat left top;background-size: auto 20px;}
+.alrim_fluc_list ol li > dl > dd.cont dl:before{content:"";position:absolute;left:0;top:5px;display:block;width:11px;height:10px;background-size: auto 20px;}
 .alrim_fluc_list ol li > dl > dd.cont dl dt{font-weight:700;font-size:13px;color:#e0415d;}
 .alrim_fluc_list ol li > dl > dd.cont dl dd{font-size:13px;margin-top:-2px;}
 .alrim_fluc_list.type1 ol li > dl > dt .num{background:#3583e3;}
@@ -1664,7 +1629,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .tableType4 .trBg td{background:#e8f0fa}
 .tableType4 th, .tableType4 td{height:30px;}
 .tableType4 .rate{margin-left:4px}
-.tableType4 .rate::before{content:'';display:inline-block;width: 10px;height: 6px;margin:0 3px 0 0;background:url(../../../../static/images/common/sp_rate2.png) no-repeat;-webkit-background-size:10px 12px;-moz-background-size:10px 12px;-o-background-size:10px 12px;background-size: 10px 12px;vertical-align:middle;}
+.tableType4 .rate::before{content:'';display:inline-block;width: 10px;height: 6px;margin:0 3px 0 0;-webkit-background-size:10px 12px;-moz-background-size:10px 12px;-o-background-size:10px 12px;background-size: 10px 12px;vertical-align:middle;}
 .tableType4 .rate.plus{color:#ff6060}
 .tableType4 .rate.minus{color:#3469bf}
 .tableType4 .rate.minus::before{background-position:0 -6px}
@@ -1691,7 +1656,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .fixBtnWrap{position:fixed;right:14px;bottom:16px;z-index:11}
 .fixBtnWrap > a + a{margin-top:10px}
 .fixBtnWrap > a{display:block;width:44px;height:44px;border-radius:50px;background:#fff;opacity:0.8;box-shadow:0px 2px 4px 2px rgba(0,0,0,0.2);border:1px solid #fff;color:#353535;position:relative;line-height:21px}
-.fixBtnWrap > a.type1{border-color:#516480;background:#516480 url(../../../../static/images/special/bg_fixbtn_my.png) no-repeat center 10px;background-size:24px auto;color:#fff;}
+.fixBtnWrap > a.type1{border-color:#516480;background-size:24px auto;color:#fff;}
 .fixBtnWrap > a.type1 span{margin-top:19px;}
 .fixBtnWrap > a.type1 span:before{display:none;}
 .fixBtnWrap > a.type1 span:after{display:none;}
