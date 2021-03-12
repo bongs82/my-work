@@ -3265,9 +3265,10 @@
         b.color = CIRCLE_GRAY;
         b.graphics.ss(LINE_WIDTH, "round", "round").s(b.color).arc(x, y, CIRCLE_RADIUS, 0, 360, false);
 
+        console.log(Math.PI/180);
         var c = new createjs.Shape();
         c.color = CIRCLE_BLUE;
-        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, -90*(Math.PI/180), 0*(Math.PI/180), false);
+        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, -90*(Math.PI/180), (63*3.6 - 90)*(Math.PI/180), false);
         c.angle=0;
         c.thickness = LINE_WIDTH;
         //c.color = CIRCLE_BLUE;
