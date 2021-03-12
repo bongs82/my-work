@@ -185,8 +185,8 @@
                         sround.y    =   (y)+(CIRCLE_RADIUS)*Math.sin(start);
                         c.circle = sround;
 
-                        var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(63,100,360)}, 1000, createjs.Ease.circInOut);
-                        tween.addEventListener("change", handleChange);
+                        //var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(63,100,360)}, 1000, createjs.Ease.circInOut);
+                        //tween.addEventListener("change", handleChange);
                         function handleChange(event)
                         {
                             var start = 270*Math.PI/180;
@@ -204,7 +204,7 @@
                         graph.addChild(sround);
                         //graph.addChild(txt1);
                         content.addChild(graph);
-                        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+                        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
                         stage           =   new createjs.Stage(canvas.get(0));
                         //stage.autoClear =   true;
