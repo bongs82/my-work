@@ -3225,6 +3225,7 @@
         function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
+        console.log('a-1');
     }
     commonJs.graph.basicCircle2 = function(opt)
     {
@@ -3256,7 +3257,7 @@
         txt1.textAlign  =   'center';
         txt1.x = x;
         txt1.y = y-26;
-
+        console.log('c');
        // var graphArr = [];
         //var chValue = commonJs.graph.changeValue;
 
@@ -3306,7 +3307,7 @@
         function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
-        console.log('c');
+        console.log('d');
     }
     commonJs.graph.basicCircle3 = function(opt)
     {
