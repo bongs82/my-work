@@ -3216,7 +3216,7 @@
         graph.addChild(txt1);
         content.addChild(graph);
         // ���ػ� ��������
-        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
         //stage.autoClear =   true;
@@ -3298,7 +3298,7 @@
         //graph.addChild(txt1);
         content.addChild(graph);
         // ���ػ� ��������
-        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
         //stage.autoClear =   true;
