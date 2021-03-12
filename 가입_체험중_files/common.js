@@ -3280,17 +3280,17 @@
 
         //var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(opt.value,100,360)}, 1000, createjs.Ease.circInOut);
         //tween.addEventListener("change", handleChange);
-        function handleChange(event)
-        {
-            var start = 270*Math.PI/180;
-            var s = event.target.target;
-            s.angle += 1;
-            var endAngle = (s.angle) * Math.PI / 180;
-            s.graphics.clear();
-            s.circle.x = (x)+(CIRCLE_RADIUS)*Math.cos(endAngle+start);
-            s.circle.y = (y)+(CIRCLE_RADIUS)*Math.sin(endAngle+start);
-            s.graphics.ss(s.thickness, "round", "round").s(s.color).arc(x, y, CIRCLE_RADIUS, 0+start, endAngle+start, false);
-        }
+        // function handleChange(event)
+        // {
+        //     var start = 270*Math.PI/180;
+        //     var s = event.target.target;
+        //     s.angle += 1;
+        //     var endAngle = (s.angle) * Math.PI / 180;
+        //     s.graphics.clear();
+        //     s.circle.x = (x)+(CIRCLE_RADIUS)*Math.cos(endAngle+start);
+        //     s.circle.y = (y)+(CIRCLE_RADIUS)*Math.sin(endAngle+start);
+        //     s.graphics.ss(s.thickness, "round", "round").s(s.color).arc(x, y, CIRCLE_RADIUS, 0+start, endAngle+start, false);
+        // }
 
         graph.addChild(b);
         graph.addChild(c);
@@ -3298,13 +3298,13 @@
         //graph.addChild(txt1);
         content.addChild(graph);
         // ���ػ� ��������
-        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
         //stage.autoClear =   true;
         //createjs.Ticker.setFPS(24);
         //createjs.Ticker.addEventListener("tick", tick);
-        function tick() { stage.update(); }
+        //function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
         console.log(stage);
