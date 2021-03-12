@@ -20,17 +20,28 @@
         <div class="contents-view">
             
             <div>
-                <canvas id="basicCircle" width="240" height="240"></canvas>
+                <canvas id="demoCanvas" width="500" height="200"></canvas>
+                <!-- <canvas id="basicCircle" width="240" height="240"></canvas> -->
                 <script>
                     //종목분석 조건검색 그래프 샘플
                     //원형그래프
                     $(window).load(function () {
-                        commonJs.graph.basicCircle({
-                        value   :   64
-                    });
-                    commonJs.graph.basicCircle2({
-                        value   :   63
-                    });
+                        function init() {
+                            var stage = new createjs.Stage("demoCanvas");
+                            var circle = new createjs.Shape();
+                            circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
+                            circle.x = 100;
+                            circle.y = 100;
+                            stage.addChild(circle);
+                            stage.update();
+                        }
+                        init();
+                    //     commonJs.graph.basicCircle({
+                    //     value   :   64
+                    // });
+                    // commonJs.graph.basicCircle2({
+                    //     value   :   63
+                    // });
                     });
                 </script>
             </div>
