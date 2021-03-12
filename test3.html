@@ -136,11 +136,13 @@
                 <script>
                     //종목분석 조건검색 그래프 샘플
                     //원형그래프
-                    commonJs.graph.basicCircle({
+                    $(window).load(function () {
+                        commonJs.graph.basicCircle({
                         value   :   64
                     });
                     commonJs.graph.basicCircle2({
                         value   :   63
+                    });
                     });
                 </script>
             </div>
