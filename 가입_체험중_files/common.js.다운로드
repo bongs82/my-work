@@ -22,7 +22,7 @@
         //return true;
         var x = navigator.userAgent;
         var index = x.indexOf('Android');
-        if(index==-1) return false; //¾ÆÀÌÆù ºÐ±â Ã³¸®.
+        if(index==-1) return false; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½ Ã³ï¿½ï¿½.
         var and_v = eval(x.substr(index+8,1));
         //console.log( and_v);
         var check = false;
@@ -34,7 +34,7 @@
 
     commonJs.graph ={}
 
-    // 3°³¾¿ ÄÞ¸¶Âï±â
+    // 3ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½
     var comma = function(str){
         str = String(str);
         return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
@@ -62,7 +62,7 @@
 
         for( var i =0; i<txtArr.length; i++)
         {
-            // °£°ÝÀÌ Á¤·Ä µÇ´Â ¹æ½Ä¿¡ ºÐ·ù
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½Ä¿ï¿½ ï¿½Ð·ï¿½
             if( type == 'type1')
             {
                 txtV.push(  Math.floor( ((i)/(txtArr.length))*(arr.length) ));
@@ -221,7 +221,7 @@
 
         var tarr = [];
 
-        // -°ª ºñÀ²Ã³¸®½Ã
+        // -ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½
         min = Math.abs(min)*2;
         for(var i = 0; i<vArr.length; i++)
         {
@@ -315,7 +315,7 @@
             s.graphics.ss(s.thickness).s(s.color).arc(x, y, s.radius, 0+start, endAngle+start, false);
         }
         //content.addChild(pos);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         stage.addChild(content);
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
         stage.update();
@@ -360,7 +360,7 @@
         //var perV    =   opt.perV;
         var perV    =   opt.perV;
         var target  =   opt.target;
-        var valueV  =   opt.valueV;         // °ªÀÌ 0ÀÏ°æ¿ì ¾Èº¸ÀÌ°Ô ÇÒ°ÍÀÎÁö ¿©ºÎ : true º¸ÀÌ°Ô , false : ¾Èº¸ÀÌ°Ô
+        var valueV  =   opt.valueV;         // ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ï°ï¿½ï¿½ ï¿½Èºï¿½ï¿½Ì°ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : true ï¿½ï¿½ï¿½Ì°ï¿½ , false : ï¿½Èºï¿½ï¿½Ì°ï¿½
 
         var title = new Container();
         title.x = x;
@@ -410,7 +410,7 @@
         //var perV    =   opt.perV;
         var perV    =   opt.perV;
         var target  =   opt.target;
-        var valueV  =   opt.valueV;         // °ªÀÌ 0ÀÏ°æ¿ì ¾Èº¸ÀÌ°Ô ÇÒ°ÍÀÎÁö ¿©ºÎ : true º¸ÀÌ°Ô , false : ¾Èº¸ÀÌ°Ô
+        var valueV  =   opt.valueV;         // ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ï°ï¿½ï¿½ ï¿½Èºï¿½ï¿½Ì°ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : true ï¿½ï¿½ï¿½Ì°ï¿½ , false : ï¿½Èºï¿½ï¿½Ì°ï¿½
         var title = new Container();
         title.x = x;
         title.y = y;
@@ -460,7 +460,7 @@
         //var perV    =   opt.perV;
         var perV    =   opt.perV;
         var target  =   opt.target;
-        var valueV  =   opt.valueV;         // °ªÀÌ 0ÀÏ°æ¿ì ¾Èº¸ÀÌ°Ô ÇÒ°ÍÀÎÁö ¿©ºÎ : true º¸ÀÌ°Ô , false : ¾Èº¸ÀÌ°Ô
+        var valueV  =   opt.valueV;         // ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ï°ï¿½ï¿½ ï¿½Èºï¿½ï¿½Ì°ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : true ï¿½ï¿½ï¿½Ì°ï¿½ , false : ï¿½Èºï¿½ï¿½Ì°ï¿½
         var title = new Container();
         title.x = x;
         title.y = y;
@@ -499,7 +499,7 @@
         target.addChild(title);
     }
 
-    // ¹æ»çÇüÂ÷Æ®
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     commonJs.graph.assetCheckRadial = function(v1,v2,v3)
     {
         var canvas;
@@ -518,11 +518,11 @@
         graph.addChild(tri);
         function drawPolygon( arr )
         {
-            // n °¢Çü °¹¼ö
+            // n ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             var numSides = 3;
             //var radius = document.getElementById('radius').value;
 
-            // x,y ÁÂÇ¥
+            // x,y ï¿½ï¿½Ç¥
             var xCenter = 0;
             var yCenter = 0;
 
@@ -593,7 +593,7 @@
     commonJs.graph.assetCheckBar = function( v1,v2,v3)
     {
         var graph   =   doc.find('div.assetCheckBarJs>ul>li');
-        var txt     =   ['¸Å¿ì³·À½','³·À½','º¸Åë','³ôÀ½','¸Å¿ì³ôÀ½'];
+        var txt     =   ['ï¿½Å¿ì³·ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','ï¿½Å¿ï¿½ï¿½ï¿½ï¿½'];
         var str     =   ['veryLow','low','normal','high','veryHigh'];
         var arr     =   arguments;
 
@@ -605,7 +605,7 @@
             div.addClass(str[n]);
             div.children('strong').text(txt[n]);
 
-            // Â÷Æ® ¾Ö´Ï¸ÞÀÌ¼Ç
+            // ï¿½ï¿½Æ® ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½
             var bar = div.children('span.grpBar');
             var w = bar.width();
             bar.css('width','0px');
@@ -638,14 +638,14 @@
         var graphW      =   775;
         var lineW       =   3;
         var lineB       =   5;
-        var color1      =   '#84bdf1';          // ¼³Á¤1
-        var color2      =   '#5c75b6';          // ±âÁØ2
+        var color1      =   '#84bdf1';          // ï¿½ï¿½ï¿½ï¿½1
+        var color2      =   '#5c75b6';          // ï¿½ï¿½ï¿½ï¿½2
 
         var yTxt1        =   new Container();
         yTxt1.x = 100;
         yTxt1.y = 490;
 
-        // ±âÁØ
+        // ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.yTextAlign(
         {
             target      :   yTxt1,
@@ -699,7 +699,7 @@
         dotArr1[0].visible = false;
         dotArr1[4].visible = false;
 
-        // ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½
         var chart1       =   new Container();
         drawLine({
             target      :   chart1,
@@ -733,7 +733,7 @@
         dotArr2[4].visible = false;
         //console.log( stMin,stMax,seMin,seMax )
 
-        // ±âÁØ
+        // ï¿½ï¿½ï¿½ï¿½
         var chart2       =   new Container();
         drawLine({
             target      :   chart2,
@@ -809,13 +809,13 @@
         var next        =   opt.next;
         var end         =   opt.end;
 
-        //ÃÖÃÊ ±âÁØ°¡
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø°ï¿½
         var firstS      =   new Shape();
         firstS.graphics.ss(lineB).s('#92c15c').lineTo(0,0).lineTo(graphW,0).es();
         firstS.y        =   startY - chValue(first-min,max-min,graphH);
         firstS.x        =   startX;
 
-        //Â÷±â ¹è¸®¾î
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½è¸®ï¿½ï¿½
         var nextS       =   new Shape();
         nextS.graphics.ss(lineB).s('#716cbf').lineTo(0,0).lineTo(graphW,0).es();
         nextS.y        =   startY - chValue(next-min,max-min,graphH);
@@ -1041,7 +1041,7 @@
         content.addChild(graph);
         stage.addChild(content);
 
-        // ÀúÇØ»óµµ ¸ðµå Ã¼Å©
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ Ã¼Å©
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage });
 
         if( !lowMode() ){
@@ -1066,9 +1066,9 @@
 
     commonJs.graph.portfolioGraph = function( opt )
     {
-        var heightGap = 206 //±âÁ¸ Â÷Æ®¿¡¼­ ¼¼·Î ±æÀÌ¸¸ º¸Á¤
-        var heightGap2 = 50 //±âÁ¸ Â÷Æ®¿¡¼­ ¼¼·Î ±æÀÌ¸¸ º¸Á¤
-        //mask.height ´Ã¸²
+        var heightGap = 206 //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+        var heightGap2 = 50 //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+        //mask.height ï¿½Ã¸ï¿½
 
         var canvas;
         var stage;
@@ -1192,7 +1192,7 @@
         content.addChild(graph);
         stage.addChild(content);
 
-        // ÀúÇØ»óµµ ¸ðµå Ã¼Å©
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ Ã¼Å©
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage });
 
         if( !lowMode() ){
@@ -1356,7 +1356,7 @@
         content.addChild(yTxt);
         content.addChild(xTxt);
         stage.addChild(content);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         if( !lowMode() ){
@@ -1401,7 +1401,7 @@
         var a1 = (v1/total)*100;
         var a2 = (v2/total)*100;
 
-        var totalT      =   new Text('Æò±Õ»ýÈ°ºñ','42px sdsGnsb','#262626');
+        var totalT      =   new Text('ï¿½ï¿½Õ»ï¿½È°ï¿½ï¿½','42px sdsGnsb','#262626');
         var totalV      =   new Text(comma(total),'42px Arial','#262626')
         totalV.textAlign='right';
         totalV.x        =   textWidth;
@@ -1414,7 +1414,7 @@
         vDot1.graphics.f(vColor1).arc(10, 0, 10, 0, 360, false);
         vDot1.y         =  140;
 
-        var vText1      =   new Text('ºÎÁ·±Ý¾×','42px sdsGnsb','#262626');
+        var vText1      =   new Text('ï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½','42px sdsGnsb','#262626');
         vText1.x        =   30;
         vText1.y        =   120;
         var vTextPer1      =   new Text('('+a1.toFixed(1)+'%)','42px Arial','#666666');
@@ -1436,7 +1436,7 @@
         vTextValue2.x   =   textWidth
         vTextValue2.y   =   200;
 
-        var vText2      =   new Text('ÁØºñÀÚ»ê','42px sdsGnsb','#262626');
+        var vText2      =   new Text('ï¿½Øºï¿½ï¿½Ú»ï¿½','42px sdsGnsb','#262626');
         vText2.x        =   30;
         vText2.y        =   200;
         var vTextPer2      =   new Text('('+a2.toFixed(1)+'%)','38px Arial','#666666');
@@ -1477,8 +1477,8 @@
 
     commonJs.graph.simulation2 = function( type , arr )
     {
-        var array1      =   ['ÁÖ½ÄÇü','Ã¤±Ç/À¯µ¿¼º','´ëÃ¼ÅõÀÚ','ELS/DLS','WRAP','½ÅÅ¹','Áõ±Ý¿¹±Ý'];
-        var array2      =   ['ÁÖ½Ä','Ã¤±Ç','ÆÝµå','ELS/DLS','WRAP','½ÅÅ¹','Áõ±Ý¿¹±Ý'];
+        var array1      =   ['ï¿½Ö½ï¿½ï¿½ï¿½','Ã¤ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½','ELS/DLS','WRAP','ï¿½ï¿½Å¹','ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½'];
+        var array2      =   ['ï¿½Ö½ï¿½','Ã¤ï¿½ï¿½','ï¿½Ýµï¿½','ELS/DLS','WRAP','ï¿½ï¿½Å¹','ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½'];
 
         var option      =   {
             canvas      :   "#simulation2",
@@ -1489,7 +1489,7 @@
             value       :   arr,
             title       :   (type=='type1')?array1:array2,
             color       :   ['#5f82d2','#314689','#1598dc','#ff8e2b','#887be4','#5bd6a0','#ee74b3'],
-            titleX:560,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:560,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:30,
             perV:false,
             valueV:false,
@@ -1589,7 +1589,7 @@
         content.addChild(yTxt);
         content.addChild(xTxt);
         stage.addChild(content);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         if( !lowMode() ){
@@ -1701,7 +1701,7 @@
         content.addChild(yTxt);
         content.addChild(xTxt);
         stage.addChild(content);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         if( !lowMode() ){
@@ -1738,9 +1738,9 @@
             outWidth    :   250,
             inWidth     :   125,
             value       :   arr,
-            title       :   ['±¹³»ÁÖ½Ä','ÇØ¿Ü¼±Áø','ÇØ¿ÜÀÌ¸ÓÂ¡','±¹³»Ã¤±Ç','ÇØ¿ÜÃ¤±Ç','¿øÀÚÀç','À¯µ¿¼º','´ëÃ¼ÅõÀÚ'],
+            title       :   ['ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½','ï¿½Ø¿Ü¼ï¿½ï¿½ï¿½','ï¿½Ø¿ï¿½ï¿½Ì¸ï¿½Â¡','ï¿½ï¿½ï¿½ï¿½Ã¤ï¿½ï¿½','ï¿½Ø¿ï¿½Ã¤ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½'],
             color       :   ['#5f82d2','#314689','#1598dc','#ff8e2b','#887be4','#5bd6a0','#ee74b3','#fc8778'],
-            titleX:560,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:560,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:30,
             perV:true,
             valueV:false,
@@ -1751,10 +1751,10 @@
         canvas              =   $("#mfolioPortfolio");
         stage               =   new createjs.Stage(canvas.get(0));
 
-        // ¿ùÇ¥½Ã
+        // ï¿½ï¿½Ç¥ï¿½ï¿½
         var monthT = new Container();
         var txt1 = new Text(month,'60px Arial','#262626');
-        var txt2 = new Text('¿ù','42px sdsGnsb','#262626');
+        var txt2 = new Text('ï¿½ï¿½','42px sdsGnsb','#262626');
         txt1.textAlign = 'right';
         if(month.length>0)
         {
@@ -1780,7 +1780,7 @@
             value       :   arguments,
             title       :   '',
             color       :   ['#52a4e9','#887be4'],
-            titleX:0,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:0,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:0,
             perV:false,
             valueV:false,
@@ -1794,7 +1794,7 @@
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 230;
         var y = 230;
         var LINE_WIDTH = 60;
@@ -1859,7 +1859,7 @@
         graph.addChild(txt1);
         graph.addChild(txt2);
         content.addChild(graph);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
@@ -1880,9 +1880,9 @@
             outWidth    :   230,
             inWidth     :   95,
             value       :   arguments,
-            title       :   ['ÁÖ½Ä','À¯µ¿¼º','¼±¹°¿É¼Ç','Ã¤±Ç','±âÅ¸'],
+            title       :   ['ï¿½Ö½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½','Ã¤ï¿½ï¿½','ï¿½ï¿½Å¸'],
             color       :   ['#887be4','#7bd9e4','#96df8d','#52a4e9'],
-            titleX:680,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:680,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:250,
             perV:false,
             valueV:false,
@@ -2012,9 +2012,9 @@
             outWidth    :   230,
             inWidth     :   110,
             value       :   arguments,
-            title       :   ['¿¹¼ö±Ý','ÁÖ½Ä','ÇØ¿ÜÁÖ½Ä','¼±¹°¿É¼Ç','±ÝÀ¶»óÇ°','ÇØ¿Ü¼±¹°/FX¸¶Áø','KRX±ÝÇö¹°','±âÅ¸'],
+            title       :   ['ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½Ö½ï¿½','ï¿½Ø¿ï¿½ï¿½Ö½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°','ï¿½Ø¿Ü¼ï¿½ï¿½ï¿½/FXï¿½ï¿½ï¿½ï¿½','KRXï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½Å¸'],
             color       :   ['#9bbb59','#33b6a5','#efae3d','#8dc63f','#4e73c0','#9bbb59','#1e69c8','#babcd1'],
-            titleX:530,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:530,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:65,
             perV:true,
             valueV:false,
@@ -2034,9 +2034,9 @@
             outWidth    :   230,
             inWidth     :   110,
             value       :   arguments,
-            title       :   ['±ÝÀ¶»óÇ°','ÁÖ½Ä','¼±¹°¿É¼Ç','ÇØ¿ÜÁÖ½Ä','½Å¿ë´ëÃâ','ÇØ¿Ü¼±¹°/FX¸¶Áø','¿¹¼ö±Ý','KRX±ÝÇö¹°','±âÅ¸'],
+            title       :   ['ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°','ï¿½Ö½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½É¼ï¿½','ï¿½Ø¿ï¿½ï¿½Ö½ï¿½','ï¿½Å¿ï¿½ï¿½ï¿½ï¿½','ï¿½Ø¿Ü¼ï¿½ï¿½ï¿½/FXï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','KRXï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½Å¸'],
             color       :   ['#4e73c0','#33b6a5','#8dc63f','#efae3d','#f75e5e','#9bbb59','#4f6228','#1e69c8','#babcd1'],
-            titleX:530,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:530,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:65,
             perV:true,
             valueV:false,
@@ -2102,37 +2102,37 @@
                    color    :   '#ff6678',
                    img      :   null,
                    bullet   :   '',
-                   title    :   '¸Å¿ì³ôÀºÀ§Çè'
+                   title    :   'ï¿½Å¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                },{
                    value    :   0,
                    color    :   '#e46eef',
                    img      :   null,
                    bullet   :   '',
-                   title    :   '³ôÀºÀ§Çè'
+                   title    :   'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                },{
                    value    :   0,
                    color    :   '#a082f3',
                    img      :   null,
                    bullet   :   '',
-                   title    :   '´Ù¼Ò³ôÀºÀ§Çè'
+                   title    :   'ï¿½Ù¼Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                },{
                    value    :   0,
                    color    :   '',
                    img      :   '',
                    bullet   :   '',
-                   title    :   'º¸ÅëÀ§Çè'
+                   title    :   'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                },{
                    value    :   0,
                    color    :   '',
                    img      :   '',
                    bullet   :   '',
-                   title    :   '³·ÀºÀ§Çè'
+                   title    :   'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                },{
                    value    :   0,
                    color    :   '',
                    img      :   '',
                    bullet   :   '',
-                   title    :   '¸Å¿ì³·ÀºÀ§Çè'
+                   title    :   'ï¿½Å¿ì³·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
                }]
         };
 
@@ -2205,8 +2205,8 @@
        }
 
         /*
-        var array1      =   ['ÁÖ½ÄÇü','Ã¤±Ç/À¯µ¿¼º','´ëÃ¼ÅõÀÚ','ELS/DLS','WRAP','½ÅÅ¹','Áõ±Ý¿¹±Ý'];
-        var array2      =   ['ÁÖ½Ä','Ã¤±Ç','ÆÝµå','ELS/DLS','WRAP','½ÅÅ¹','Áõ±Ý¿¹±Ý'];
+        var array1      =   ['ï¿½Ö½ï¿½ï¿½ï¿½','Ã¤ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½','ELS/DLS','WRAP','ï¿½ï¿½Å¹','ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½'];
+        var array2      =   ['ï¿½Ö½ï¿½','Ã¤ï¿½ï¿½','ï¿½Ýµï¿½','ELS/DLS','WRAP','ï¿½ï¿½Å¹','ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½'];
 
         var option      =   {
             canvas      :   "#simulation2",
@@ -2217,7 +2217,7 @@
             value       :   arr,
             title       :   (type=='type1')?array1:array2,
             color       :   ['#5f82d2','#314689','#1598dc','#ff8e2b','#887be4','#5bd6a0','#ee74b3'],
-            titleX:560,                                                 // ¹ü·ÊXÁÂÇ¥
+            titleX:560,                                                 // ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½Ç¥
             titleY:30,
             perV:false,
             valueV:false,
@@ -2234,7 +2234,7 @@
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 250;
         var y = 250;
         var LINE_WIDTH = 50;
@@ -2259,7 +2259,7 @@
             cuC     :   '#3698d9',
             x       :   28,
             y       :   12,
-            txt     :   '±¹³»ÁÖ½ÄÇü',
+            txt     :   'ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½',
             won     :   arr[0].won,
             value   :   arr[0].value
         };
@@ -2269,7 +2269,7 @@
             cuC     :   '#358fda',
             x       :   500,
             y       :   12,
-            txt     :   'ÇØ¿ÜÁÖ½ÄÇü',
+            txt     :   'ï¿½Ø¿ï¿½ï¿½Ö½ï¿½ï¿½ï¿½',
             won     :   arr[1].won,
             value   :   arr[1].value
         };
@@ -2279,7 +2279,7 @@
             cuC     :   '#003d8a',
             x       :   28,
             y       :   510,
-            txt     :   'Ã¤±ÇÇü',
+            txt     :   'Ã¤ï¿½ï¿½ï¿½ï¿½',
             won     :   arr[2].won,
             value   :   arr[2].value
         };
@@ -2289,7 +2289,7 @@
             cuC     :   '#413b9f',
             x       :   500,
             y       :   510,
-            txt     :   '´ë¾ÈÅõÀÚ',
+            txt     :   'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
             won     :   arr[3].won,
             value   :   arr[3].value
         };
@@ -2316,7 +2316,7 @@
             s.color = info.bgC;
             s.circle = sround;
 
-            // °ªÀÌ 0ÀÏ°æ¿ì´Â ±×¸®Áö ¾È´Â´Ù.
+            // ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½È´Â´ï¿½.
             if(info.value>0){
                 var tween = createjs.Tween.get(s, {loop:false}).wait(i*100).to({angle:chValue(info.value,100,360)}, 1000, createjs.Ease.circInOut);
                 tween.addEventListener("change", handleChange);
@@ -2335,7 +2335,7 @@
             vTxt.x = 250;
             vTxt.y = 190;
             vTxt.textAlign='center';
-            var wTxt = new Text(info.won+'¿ø','46px Arial','#262626');
+            var wTxt = new Text(info.won+'ï¿½ï¿½','46px Arial','#262626');
             wTxt.x = 130;
             wTxt.y = 460;
 
@@ -2381,7 +2381,7 @@
             createjs.Ticker.removeEventListener("tick", tick);
         });
 
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage = new createjs.Stage(canvas.get(0));
@@ -2433,7 +2433,7 @@
         var LINE_W = 5;
 
         bmShape.graphics.setStrokeStyle(LINE_W).beginStroke(COLOR_GRAY);
-        // bm ¼³Á¤
+        // bm ï¿½ï¿½ï¿½ï¿½
         var bPoint = opt.bm;
         bmContain.addChild(bmShape);
         for( var i=0; i<bPoint.length; i++)
@@ -2450,7 +2450,7 @@
         bmContain.x = startX;
         bmContain.y = 0;
 
-        //kospi ¼³Á¤
+        //kospi ï¿½ï¿½ï¿½ï¿½
         var pPoint = opt.kospi;
         var checkColor = function( n )
         {
@@ -2546,7 +2546,7 @@
         content.addChild(xTxt);
         content.addChild(yTxt);
 
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage });
         if( !lowMode() ){
             var mask = new Shape();
@@ -2660,7 +2660,7 @@
             .es();
         }
 
-        // ¸¶½ºÅ© ¸é »ý¼º
+        // ï¿½ï¿½ï¿½ï¿½Å© ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         var red_up      = new Shape();
         var red_down    = new Shape();
         red_down.graphics.f(COLOR_RED).dr(0,startY-center,1008,center);
@@ -2761,7 +2761,7 @@
         function lineShow( idx , str)
         {
             var v =  value[idx];
-            /** ¾Èµå·ÎÀÌµå ÀúÇØ»óµµ¹× ¼º´É¿¡ ¹®Á¦°¡ ÀÖ´Â °Í °°¾Æ¼­ ÇÊÅÍ¸¦ ´ë½Å ±×·ÁÁöµµ·Ï º¯°æ **/
+            /** ï¿½Èµï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½Ø»óµµ¹ï¿½ ï¿½ï¿½ï¿½É¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¼ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ **/
             var c;
             v.line.visible = true;
             //v.line.graphics.clear();
@@ -2817,7 +2817,7 @@
 
         stage.addChild(content);
 
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
         stage.update();
 
@@ -2851,7 +2851,7 @@
                     if( _this.is(':checked'))
                     {
                         if(n>3){
-                            alert('ÃÖ´ë 3°³¸¸ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.');
+                            alert('ï¿½Ö´ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.');
                             //commonJs.layerShow('.message')
 
                             formDiv.removeAttr('class');
@@ -2894,10 +2894,10 @@
         }
     }
 
-    // °øÅëÆû¿ä¼Ò
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     function formReoad()
     {
-        // ±â°£¹öÆ° Å¬¸¯½Ã ÆË¾÷Ã¢ ¿ÀÇÂ
+        // ï¿½â°£ï¿½ï¿½Æ° Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½
         doc.find('div.termBox').on('click','a.termBtnJs',function()
         {
             var select = $('div.termSelect');
@@ -3107,7 +3107,7 @@
         //var txt = tm.next().text(per+'%');
     }
 
-    //  °£´Ü¼³¹® Â÷Æ®
+    //  ï¿½ï¿½ï¿½Ü¼ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®
     commonJs.surveyResult = function( opt )
     {
         var box = $('div.graphBox');
@@ -3129,28 +3129,28 @@
             y = Math.floor((o/total)*100);
         }
         no.find('span.num>em').text( (n<y)?100-y:n );
-        no.find('span.total').text('('+x+'¸í)');
+        no.find('span.total').text('('+x+'ï¿½ï¿½)');
 
         var yes = box.find('dl.yes>dd');
 
         yes.find('span.num>em').text( (n>y)?100-n:y );
-        yes.find('span.total').text('('+o+'¸í)');
+        yes.find('span.total').text('('+o+'ï¿½ï¿½)');
     }
 
-    // Á¾¸ñºÐ¼®
+    // ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½
     commonJs.graph.basicCircle = function(opt)
     {
         console.log('a');
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 120;
         var y = 120;
         var LINE_WIDTH = 21;
-        var CIRCLE_GRAY = '#d9d9d9';  //¹ÙÅÁ
-        var CIRCLE_BLUE1 = '#53a2da';  //0~40¹Ì¸¸
-        var CIRCLE_GRAY1 = '#777';  //40~60¹Ì¸¸
+        var CIRCLE_GRAY = '#d9d9d9';  //ï¿½ï¿½ï¿½ï¿½
+        var CIRCLE_BLUE1 = '#53a2da';  //0~40ï¿½Ì¸ï¿½
+        var CIRCLE_GRAY1 = '#777';  //40~60ï¿½Ì¸ï¿½
         var CIRCLE_RED1 = '#ff3330';  //60~100
         var CIRCLE_RADIUS = 108;
         canvas = $("#basicCircle");
@@ -3215,7 +3215,7 @@
         graph.addChild(sround);
         graph.addChild(txt1);
         content.addChild(graph);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
@@ -3232,7 +3232,7 @@
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 105;
         var y = 105;
         var LINE_WIDTH = 22;
@@ -3296,7 +3296,7 @@
         graph.addChild(sround);
         //graph.addChild(txt1);
         content.addChild(graph);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
@@ -3306,13 +3306,14 @@
         function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
+        console.log('c');
     }
     commonJs.graph.basicCircle3 = function(opt)
     {
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 120;
         var y = 120;
         var LINE_WIDTH = 21;
@@ -3370,7 +3371,7 @@
         graph.addChild(c);
         graph.addChild(sround);
         content.addChild(graph);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
@@ -3387,7 +3388,7 @@
         var canvas;
 
         /**/
-        // ¿øÇüÂ÷Æ®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         var x = 98;
         var y = 98;
         var LINE_WIDTH = 28;
@@ -3447,7 +3448,7 @@
         graph.addChild(sround);
         graph.addChild(txt1);
         content.addChild(graph);
-        // ÀúÇØ»óµµ ¸®»çÀÌÁî
+        // ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
@@ -3509,7 +3510,7 @@
 
             var popCon = _box.find('.popCon>.layerConJs');
             popCon.css('height','');
-            // ÆË¾÷Ã¢ Á¤·Ä¹× ½ºÅ©·Ñ »çÀÌÁî Á¦¾î
+            // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½Ä¹ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             var h = (_box.height() > winHeight )? winHeight - 200 : _box.height();
 
             popCon.css({
@@ -3572,7 +3573,7 @@
 
     }
 
-    // µå·¡±× ¿µ¿ª   sp>myfeedsearch.html
+    // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   sp>myfeedsearch.html
     commonJs.dragFeed = dragFeed;
     function dragFeed()
     {
@@ -3685,7 +3686,7 @@
             $('input:checkbox').on('change',function()
             {
                 if($('input:checkbox:checked').length < 4) {
-                    var str = ($(this).is(':checked'))?'Ä«Å×°í¸®°¡ Ãß°¡µÇ¾ú½À´Ï´Ù.':'Ä«Å×°í¸®°¡ ÇØÁ¦µÇ¾ú½À´Ï´Ù.';
+                    var str = ($(this).is(':checked'))?'Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.':'Ä«ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.';
                     setRtxt.html('<em class="fColor1">'+$('label[for='+$(this).attr('id')+']').text()+'</em>'+ str );
 
                     setRtxt.show();
@@ -3695,7 +3696,7 @@
                         setRtxt.stop().animate({'opacity':0},100);
                     },1000);
                 } else {
-                    alert('MyÇÇµå ¼³Á¤Àº ÃÖ´ë 3°³±îÁö °¡´ÉÇÕ´Ï´Ù');
+                    alert('Myï¿½Çµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½');
                     $(this).prop('checked',false);
                     var form = $(this).closest('.form');
                     form.removeClass('checked');
@@ -3755,7 +3756,7 @@
                     input.find('input:text').focus();
                     //keyword.show();
                 }
-                // 2016.06.16 ±âÈ¹¿äÃ»À¸·Î ¼¿·ºÆ® ´Ý±â Ãß°¡
+                // 2016.06.16 ï¿½ï¿½È¹ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ý±ï¿½ ï¿½ß°ï¿½
                 doc.find('.select1').each(function()
                 {
                     var se = $(this);
@@ -3779,10 +3780,10 @@
             });
         });
 
-        // ½ºÅ©·Ñ ÀÌº¥Æ® test
+        // ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Ìºï¿½Æ® test
         doc.find('.accordionJs1').each(function()
         {
-            $('#wrap').before('<div class="loading" style="display:none"><span>·ÎµùÁß</span></div>');
+            $('#wrap').before('<div class="loading" style="display:none"><span>ï¿½Îµï¿½ï¿½ï¿½</span></div>');
 
             var _this = $(this);
             _this.on('click','li>a',function(evt)
@@ -3804,7 +3805,7 @@
             var time = null;
             var call = true;
 
-            //½ºÅ©·Ñ ÀÌº¥Æ®
+            //ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Ìºï¿½Æ®
             $(window).scroll(function () {
                 if( !_this.hasClass('noMore') )
                 {
@@ -3837,7 +3838,7 @@
 
         doc.find('.accordionJs').each(function()
         {
-            $('#wrap').before('<div class="loading" style="display:none"><span>·ÎµùÁß</span></div>');
+            $('#wrap').before('<div class="loading" style="display:none"><span>ï¿½Îµï¿½ï¿½ï¿½</span></div>');
 
             var _this = $(this);
             _this.on('click','li>a',function(evt)
@@ -3915,7 +3916,7 @@
                 var li = $(this).closest('li');
                 li.addClass('on');
                 doc.find('div.tabCon2>h3.hidden').text(li.text());
-                li.find('a').append('<em class="hidden">ÇöÀçÆäÀÌÁö</em>');
+                li.find('a').append('<em class="hidden">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</em>');
             });
         });
     }
@@ -3931,7 +3932,7 @@
         target.bind('touchstart , mousedown' , function(e)
         {
             if(e.type == 'mousedown'){
-                // input ÇÊµå Ã¼Å©
+                // input ï¿½Êµï¿½ Ã¼Å©
                 if( $(e.target).filter('input').length == 0){
                     e.preventDefault();
                 }
@@ -4080,7 +4081,7 @@
         });
     }
     function showChk()
-    //Á¾¸ñºÐ¼® À¯ÀÇ»çÇ× toggle
+    //ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ toggle
     {
         $('.showChk a').on('click',function(){
             $(this).parents('dl').toggleClass('on');
@@ -4088,7 +4089,7 @@
         });
     }
 
-    //ÃÖ±Ù ¸¹ÀÌº» °ø½Ã 2020-11-20 Ãß°¡
+    //ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ 2020-11-20 ï¿½ß°ï¿½
      function showChk1()
     {
         $('.showChk1 .btnToggle').on('click',function(){
@@ -4097,7 +4098,7 @@
         });
     }
     function scrTop()
-    //¸Ç À§·Î ¹öÆ°
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
     {
         var topBtn = $('.scrTop');
         topBtn.click(function(){
@@ -4114,7 +4115,7 @@
     }
 
     function menuLink()
-    //¸Þ´º ´©¸£¸é ÀÌµ¿
+    //ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
     {
         $('.menuLink li a').click(function(){
         $('html,body').animate({scrollTop:$(this.hash).offset().top}),400;
@@ -4122,7 +4123,7 @@
     }
 
     function tabSticky()
-     //irp tab ÀÌµ¿
+     //irp tab ï¿½Ìµï¿½
     {
         var sticky = $('.tabSticky');
         var stickyLi = $('.tabSticky > li');
@@ -4142,7 +4143,7 @@
             scroll = $(window).scrollTop();
             swiperH = $('.swiper-container').height();
 
-            //»ó´Ü °íÁ¤¸Þ´º
+            //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ´ï¿½
             if (scroll >= swiperH) sticky.addClass('fixed');
             else sticky.removeClass('fixed');
 
@@ -4166,14 +4167,14 @@
             }
         })
 
-        //¸Þ´º ´©¸£¸é ÀÌµ¿
+        //ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         stickyLink.click(function(){
             $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}),300;
         })
     }
 
     function arcList()
-    // ¾ÆÄÚµð¾ð ½ºÅ¸ÀÏ Ãß°¡
+    // ï¿½ï¿½ï¿½Úµï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ß°ï¿½
     {
         var dep1 = $('.arcList2');
         dep1.find('li>a').on('click', function (){
@@ -4189,7 +4190,7 @@
     }
 
     function fixTab()
-    // »ó´Ü °íÁ¤ ÅÇ
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     {
         var fixTab = $('.fixTab');
         $(window).scroll(function(){
@@ -4275,7 +4276,7 @@
             var posY = $(window).scrollTop();
             {
                 fixBtn.removeClass('show').addClass('comm');
-                //2020-11-09 ÁÖ¼®Ã³¸®
+                //2020-11-09 ï¿½Ö¼ï¿½Ã³ï¿½ï¿½
                 // $('.popLayerDimm, .popLayerDimm2').css('display','none');
                 $('body').removeClass('overHidden').off('scroll touchmove mousewheel');
                 posY = $(window).scrollTop(posY);
@@ -4348,13 +4349,13 @@
         tabCon();
         tabData();
         showChk();
-        showChk1(); // 2020-11-20Ãß°¡
+        showChk1(); // 2020-11-20ï¿½ß°ï¿½
         scrTop();
         menuLink();
         tabSticky();
         arcList();
         fixTab();
-        //ÀÌ½´Áø´Ü
+        //ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½
         if($("#pgSchool").html() !== undefined){
             tabScrTop2();
         }
@@ -4371,7 +4372,7 @@
 })
 (jQuery,window);
 
-//¼¿·ºÆ® ¹Ú½º
+//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ú½ï¿½
 (function( $ , window )
 {
     if( !window.commonJs )
@@ -4448,7 +4449,7 @@
 
             var _creatLayout2=function(target)
             {
-                // ¸Þ´ºÇüÅÂ
+                // ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½
                 var tmpStr='<div class="select1" id="ls_'+sltBoxIdx+'">';
                 tmpStr += '<a><span>'+OrglSlt.attr('title')+'</span></a>';
                 tmpStr+='<ul class="list">';
@@ -4491,7 +4492,7 @@
                 sltVal=sltArrVal[idx];
 
                 selectListA.attr('title','');
-                selectListA.eq(idx).attr('title','¼±ÅÃ');
+                selectListA.eq(idx).attr('title','ï¿½ï¿½ï¿½ï¿½');
 
                 selectBoxSpan.html(sltTxt);
 
@@ -4534,7 +4535,7 @@
                     $( 'html, body' ).animate( { scrollTop : 0 }, 1 );
 
                 }else{
-                    // 2016.06.16 ±âÈ¹¿äÃ»À¸·Î ¼¿·ºÆ® ´Ý±â Ãß°¡
+                    // 2016.06.16 ï¿½ï¿½È¹ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ý±ï¿½ ï¿½ß°ï¿½
                     $('div#content').css('height','');
                     $('.select1').removeClass('on');
                     $('.select1>.list').hide();
@@ -4667,7 +4668,7 @@
 /**
  * datepicker
  */
-//¼¿·ºÆ® ¹Ú½º
+//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ú½ï¿½
 (function( $ , window ) {
     if (!window.commonJs) {
         window.commonJs = {};
@@ -4699,7 +4700,7 @@
 
             if(!this.wrapper.length) { return; }
 
-            // targetÀÇ ¼ö°¡ ¿©·¯°³ ÀÏ ¶§
+            // targetï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
             if(this.wrapper.length > 1) {
                 this.wrapper.each(function() {
                     var dateFlipbox = new DateBox(this, settings);
@@ -4708,7 +4709,7 @@
                 return this;
             }
 
-            // ÀÌ¹Ì Jscroll°¡ »ý¼ºµÇ¾î ÀÖÀ» °æ¿ì
+            // ï¿½Ì¹ï¿½ Jscrollï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             if(this.wrapper.data('DateBox')){
                 this.wrapper.data('DateBox').refresh();
                 return this;
@@ -4727,9 +4728,9 @@
                 this.monthElem = this.wrapper.find(this.settings.month);
                 this.dayElem = this.wrapper.find(this.settings.day);
 
-                // date Á¤º¸¸¦ °¡Áø °´Ã¼ »ý¼º
+                // date ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
                 this.dateInfo = {};
-                // ÇöÀç ½Ã°£ ÀúÀå
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
                 this.dateInfo.today = new Date().toJSON().slice(0,10).replace(/-/g,'/').split('/');
                 this.dateInfo.lastDay = (new Date(this.dateInfo.year, this.dateInfo.month, 0)).getDate();
                 this.dateInfo.year = parseInt(this.dateInfo.today[0], 10);
@@ -4739,7 +4740,7 @@
 
                 this._setup();
 
-                // data ÀúÀå
+                // data ï¿½ï¿½ï¿½ï¿½
                 this.wrapper.data('DateBox', this);
 
                 return this;
@@ -4753,7 +4754,7 @@
                 this._swiperInit();
                 this._bindEvents();
 
-                // ÃÊ±â ¼¼ÆÃ
+                // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½
                 this.setDate(this.dateInfo);
             },
 
@@ -4822,7 +4823,7 @@
 
                 $target.html($docFrag);
 
-                // swiper°¡ Àû¿ëµÇ¾î ÀÖ´Ù¸é refresh
+                // swiperï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´Ù¸ï¿½ refresh
                 if($target.data('jscroll')) {
                     $target.data('jscroll').refresh();
                 }
@@ -4860,16 +4861,16 @@
             /**
              * @memberOf DateBox
              * @method
-             * @param {Object} opts Àû¿ë½ÃÅ³ option
-             * @param {Number} opts.year Àû¿ë½ÃÅ³ ³â
-             * @param {Number} opts.month Àû¿ë½ÃÅ³ ¿ù
-             * @param {Number} opts.day Àû¿ë½ÃÅ³ ÀÏ
+             * @param {Object} opts ï¿½ï¿½ï¿½ï¿½ï¿½Å³ option
+             * @param {Number} opts.year ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½
+             * @param {Number} opts.month ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½
+             * @param {Number} opts.day ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½
              *
              * @example
-             * // datebox ÃÊ±âÈ­
+             * // datebox ï¿½Ê±ï¿½È­
              * var datebox = new DateBox(target, option);
              *
-             * // datebox date °ª ¾Æ·¡ ³¯Â¥·Î Àû¿ë
+             * // datebox date ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
              * datebox.setDate({
              *     year : 2017,
              *     month : 12,
@@ -4889,16 +4890,16 @@
             },
 
             /**
-             * ÇöÀç ¼±ÅÃµÈ ³¯Â¥ get
+             * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Â¥ get
              * @memberOf DateBox
              * @method
              * @returns {Array} [Year, Month, Day]
              *
              * @example
-             * // datebox ÃÊ±âÈ­
+             * // datebox ï¿½Ê±ï¿½È­
              * var datebox = new DateBox(target, option);
              *
-             * // [YYYY, MM, DD] ÇüÅÂ·Î ¹è¿­ ¸®ÅÏ
+             * // [YYYY, MM, DD] ï¿½ï¿½ï¿½Â·ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
              * datebox.getDate();
              */
             getDate : function () {
@@ -4918,7 +4919,7 @@
             },
 
             /**
-             * ´Þ·Â refresh
+             * ï¿½Þ·ï¿½ refresh
              * @memberOf DateBox
              * @method
              */
@@ -4936,7 +4937,7 @@
 
     commonJs.Jscroll = (function() {
         // cubic-bezier(0.1, 0.57, 0.1, 1)
-        // easing ¿É¼Ç Ãß°¡
+        // easing ï¿½É¼ï¿½ ï¿½ß°ï¿½
         if(!$.easing.hasOwnProperty('circularOut')) {
             $.extend($.easing, {
                 'circularOut' : function(k) {
@@ -4968,7 +4969,7 @@
          * @param {Object} settings Jscroll option
          * @param {String} settings.container Jscroll container element class name
          * @param {String} settings.wrapper Jscroll wrapper element class name
-         * @param {String} settings.activeClass Jscroll È°¼ºÈ­ »óÅÂÀÏ¶§ Àû¿ëÇÒ class name
+         * @param {String} settings.activeClass Jscroll È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ class name
          * @param {String} settings.easing Jscroll animation easing value
          * @param {String} settings.duration Jscroll animation duration value
          * @param {Function} settings.onInit init callback
@@ -4990,7 +4991,7 @@
 
             if(!this.ul.length) { return; }
 
-            // targetÀÇ ¼ö°¡ ¿©·¯°³ ÀÏ ¶§
+            // targetï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
             if(this.ul.length > 1) {
                 this.ul.each(function() {
                     var jscroll = new Jscroll(this, settings);
@@ -4999,16 +5000,16 @@
                 return this;
             }
 
-            // ÀÌ¹Ì Jscroll°¡ »ý¼ºµÇ¾î ÀÖÀ» °æ¿ì
+            // ï¿½Ì¹ï¿½ Jscrollï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             if(this.ul.data('jscroll')){
                 this.ul.data('jscroll').refresh();
                 return this;
             }
 
-            // ÃÊ±âÈ­
+            // ï¿½Ê±ï¿½È­
             this._init(settings);
 
-            // ÀÌ¹ÌÁö°¡ ÀÖÀ» °æ¿ì ÀÌ¹ÌÁö°¡ ·ÎµåµÈ ÈÄ refresh();
+            // ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ ï¿½ï¿½ refresh();
             imgLen = this.ul.find('img').length;
             if(imgLen > 0) {
                 this.ul.find('img').one('load', function () {
@@ -5045,7 +5046,7 @@
                 this.settings.onInit(this);
             }
 
-            // data ÀúÀå
+            // data ï¿½ï¿½ï¿½ï¿½
             this.ul.data('jscroll', this);
 
             return this;
@@ -5068,7 +5069,7 @@
          * @private
          */
         Jscroll.prototype._setup = function() {
-            // Wrapper°¡ ¾øÀ» °æ¿ì »ý¼º
+            // Wrapperï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if(!this.wrapper.length) {
                 this.ul.wrap('<div class="' + this.settings.wrapper.substring(1) + '" />');
                 this.wrapper = this.ul.parent(this.settings.wrapper);
@@ -5085,7 +5086,7 @@
                 overflow: 'hidden'
             });
 
-            // ÇöÀç ¼±ÅÃµÈ index °ª ÀúÀå
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ index ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             this.currentIndex = this.ul.children().filter('.on').index() > 0 ? this.ul.children().filter('.on').index() : 0;
         };
 
@@ -5094,18 +5095,18 @@
          * @private
          */
         Jscroll.prototype._render = function() {
-            // list item ÀúÀå
+            // list item ï¿½ï¿½ï¿½ï¿½
             this.li = this.ul.children();
-            // list item length ÀúÀå
+            // list item length ï¿½ï¿½ï¿½ï¿½
             this.liLen = this.li.length;
 
             this.minY = 0;
             this.maxY = this._getMaxMove();
 
-            // li position °ª ÀúÀå
+            // li position ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             this.liPos = this._getPosition();
 
-            // ÀúÀåÇÑ li position °ªÀ¸·Î min, max °ª Àç¼³Á¤
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ li position ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ min, max ï¿½ï¿½ ï¿½ç¼³ï¿½ï¿½
             this.minY = this.liPos.y[0];
             this.maxY = this.liPos.y[this.liLen-1];
 
@@ -5136,7 +5137,7 @@
             var _this = this,
                 resizeTimer = null;
 
-            // resize event ¿¬°á
+            // resize event ï¿½ï¿½ï¿½ï¿½
             $(window).on('resize.swiper', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
@@ -5146,7 +5147,7 @@
         };
 
         /**
-         * Jscroll °ü·Ã ¿¬°áµÈ ÀÌº¥Æ® ¸ðµÎ ÇØÁ¦
+         * Jscroll ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
          * @private
          */
         Jscroll.prototype._unBindEvents = function() {
@@ -5172,7 +5173,7 @@
          * @private
          */
         Jscroll.prototype._touchInit = function() {
-            // touch option °ª
+            // touch option ï¿½ï¿½
             this.touchOption = {
                 locked : 'n',                       // scroll lock ( v : vertical, h : horizontal, n : none)
                 threshold : 15,
@@ -5197,7 +5198,7 @@
                 }
             };
 
-            // fliking µµÁß ½ºÅ©·Ñ ¿òÁ÷ÀÓ ¹æÁö
+            // fliking ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             this.container.on('touchstart.swiper', $.proxy(this._onTouchStart, this));
         };
 
@@ -5216,7 +5217,7 @@
                 this.ul.stop(true, false);
             }
 
-            // locked 'n'°ªÀ¸·Î Àç¼³Á¤
+            // locked 'n'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç¼³ï¿½ï¿½
             this.touchOption.locked = 'n';
             this.touchOption.move.x = 0;
             this.touchOption.move.y = 0;
@@ -5253,11 +5254,11 @@
             absX = Math.abs(this.touchOption.move.x);
             absY = Math.abs(this.touchOption.move.y);
 
-            // y ½ºÅ©·Ñ ¸·±â
+            // y ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (absX > absY + this.touchOption.threshold && this.touchOption.locked !== 'h') {
                 this.touchOption.locked = 'v';
 
-                // x ½ºÅ©·Ñ ¸·±â
+                // x ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             } else if ( absY >= absX + this.touchOption.threshold && this.touchOption.locked !== 'v') {
                 this.touchOption.locked = 'h';
             }
@@ -5294,7 +5295,7 @@
 
             this.touchOption.endTime = new Date().getTime();
 
-            // momentum value Àû¿ë
+            // momentum value ï¿½ï¿½ï¿½ï¿½
             if(duration < 150) {
                 if(this.touchOption.locked === 'h' && this.touchOption.y < this.minY && this.touchOption.y > this.maxY) {
                     momentumX = this._momentum(this.touchOption.y, this.touchOption.start.y, duration, this.minY, this.maxY, this.touchOption.deceleration);
@@ -5303,15 +5304,15 @@
                 }
             }
 
-            // ¼¼·Î ½ºÅ©·Ñ
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½
             if(this.touchOption.locked === 'h') {
                 this.scrollTo(this._getMoveIndex(newY), time);
             } else {
-                // touchstart, touchend ½Ã°£Â÷·Î Å¬¸¯ Ã¼Å©
+                // touchstart, touchend ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ Ã¼Å©
                 if(this.touchOption.endTime - this.touchOption.startTime < 150) {
                     $(e.target).trigger('click');
 
-                 // Å¬¸¯ÀÌ ¾Æ´Ò °æ¿ì ÇöÀç °ªÀ¸·Î Àç ÀÌµ¿ (Áß°£¿¡¼­ ¸ØÃß´Â Çö»ó ¹æÁö)
+                 // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ìµï¿½ (ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
                 } else {
                     this.scrollTo(this.currentIndex);
                 }
@@ -5357,7 +5358,7 @@
         };
 
         /**
-         * ¸®½ºÆ®ÀÇ position °ªÀ» ÀúÀåÇÑ °´Ã¼ ¸®ÅÏ
+         * ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ position ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
          * @returns {Object}
          * @private
          */
@@ -5394,8 +5395,8 @@
         };
 
         /**
-         * ÀÌµ¿ÇÑ x, y °ªÀ¸·Î ÇöÀç À§Ä¡ÀÇ ¸®½ºÆ® index return
-         * @param {Number} moveValue ÇöÀç ÀÌµ¿ °ª
+         * ï¿½Ìµï¿½ï¿½ï¿½ x, y ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® index return
+         * @param {Number} moveValue ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½
          * @private
          */
         Jscroll.prototype._getMoveIndex = function(moveValue) {
@@ -5453,16 +5454,16 @@
         };
 
         /**
-         * index¿¡ ÇØ´çÇÏ´Â °ª¸¸Å­ ÀÌµ¿ ( ¾Ö´Ï¸ÞÀÌ¼Ç ÀÖÀ½ )
-         * @param {Number} index item index (ÇÊ¼ö °ª)
+         * indexï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Å­ ï¿½Ìµï¿½ ( ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ )
+         * @param {Number} index item index (ï¿½Ê¼ï¿½ ï¿½ï¿½)
          * @param {Number} duration animation duration
          * @memberOf Jscroll
          * @method
          * @example
-         * // ½º¿ÍÀÌÇÁ ÃÊ±âÈ­
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
          * var jscroll = new Jscroll(target, settings);
          *
-         * // µÎ¹øÂ° ½½¶óÀÌµå·Î ÀÌµ¿
+         * // ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½Ìµï¿½
          * jscroll.scrollTo(1);
          */
         Jscroll.prototype.scrollTo = function(index, duration) {
@@ -5503,15 +5504,15 @@
         };
 
         /**
-         * index¿¡ ÇØ´çÇÏ´Â °ª¸¸Å­ ÀÌµ¿ ( ¾Ö´Ï¸ÞÀÌ¼Ç ¾øÀ½ )
+         * indexï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Å­ ï¿½Ìµï¿½ ( ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ )
          * @param {Number} index item index
          * @memberOf Jscroll
          * @method
          * @example
-         * // ½º¿ÍÀÌÇÁ ÃÊ±âÈ­
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
          * var jscroll = new Jscroll(target, settings);
          *
-         * // µÎ¹øÂ° ½½¶óÀÌµå·Î ÀÌµ¿
+         * // ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½Ìµï¿½
          * jscroll.currentTo(1);
          */
         Jscroll.prototype.currentTo = function(index) {
@@ -5519,14 +5520,14 @@
         };
 
         /**
-         * ½½¶óÀÌµå »õ·Î°íÄ§
+         * ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½Î°ï¿½Ä§
          * @memberOf Jscroll
          * @method
          * @example
-         * // ½º¿ÍÀÌÇÁ ÃÊ±âÈ­
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
          * var swiper = new Jscroll(target, settings);
          *
-         * // ½½¶óÀÌµå »õ·Î°íÄ§
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½Î°ï¿½Ä§
          * jscroll.refresh();
          */
         Jscroll.prototype.refresh = function() {
@@ -5535,14 +5536,14 @@
         };
 
         /**
-         * ½½¶óÀÌµå ±â´É ÆÄ±«
+         * ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
          * @memberOf Jscroll
          * @method
          * @example
-         * // ½º¿ÍÀÌÇÁ ÃÊ±âÈ­
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
          * var swiper = new Jscroll(target, settings);
          *
-         * // ½½¶óÀÌµå ±â´É ÆÄ±«
+         * // ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
          * swiper.refresh();
          */
         Jscroll.prototype.destroy = function() {
@@ -5575,9 +5576,9 @@
     //End Google Tag Manager
 })
 (jQuery,window);
-//À¯Çü ¸µÅ©
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©
 
-//ÀÌ½´Áø´Ü
+//ï¿½Ì½ï¿½ï¿½ï¿½ï¿½ï¿½
 function tabScrTop()
 {
     var fixTab = $('.tabScrTop');
@@ -5610,7 +5611,7 @@ function tabScrTop()
 }
 
 
-//·¹ÀÌ¾îÆË¾÷ È£Ãâ½Ã ½ºÅ©·Ñ Àá±Ý 2021-03-11
+//ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½Ë¾ï¿½ È£ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ 2021-03-11
 function layer_scroll_lock(el){
     var $el = $(el);
     var posY = $(window).scrollTop();
