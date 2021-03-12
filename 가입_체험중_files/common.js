@@ -3185,7 +3185,7 @@
 
         var c = new createjs.Shape();
         c.color = color;
-        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, 0, 10, false);
+        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, 270*Math.PI/180, 270*Math.PI/180, false);
         c.angle=0;
         c.thickness = LINE_WIDTH;
         //c.color = CIRCLE_BLUE;
@@ -3265,10 +3265,9 @@
         b.color = CIRCLE_GRAY;
         b.graphics.ss(LINE_WIDTH, "round", "round").s(b.color).arc(x, y, CIRCLE_RADIUS, 0, 360, false);
 
-        console.log(Math.PI/180);
         var c = new createjs.Shape();
         c.color = CIRCLE_BLUE;
-        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, 270*(Math.PI/180), (0*3.6 + 270)*(Math.PI/180), false);
+        c.graphics.ss(LINE_WIDTH, "round", "round").s(c.color).arc(x, y, CIRCLE_RADIUS, 270*Math.PI/180, 270*Math.PI/180, false);
         c.angle=0;
         c.thickness = LINE_WIDTH;
         //c.color = CIRCLE_BLUE;
@@ -3278,7 +3277,6 @@
         sround.x    =   (x)+(CIRCLE_RADIUS)*Math.cos(start);
         sround.y    =   (y)+(CIRCLE_RADIUS)*Math.sin(start);
         c.circle = sround;
-        
 
         var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(opt.value,100,360)}, 1000, createjs.Ease.circInOut);
         tween.addEventListener("change", handleChange);
@@ -3300,7 +3298,7 @@
         //graph.addChild(txt1);
         content.addChild(graph);
         // ���ػ� ��������
-        //commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
+        commonJs.graph.Resize({ canvas:canvas , img:canvas.next() , content:content , stage:stage })
 
         stage           =   new createjs.Stage(canvas.get(0));
         //stage.autoClear =   true;
