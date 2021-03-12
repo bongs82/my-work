@@ -336,7 +336,6 @@ body,div,form,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,em,p,span,textarea,pre,label
   font-family: "Spoqa Han Sans Neo", dotum, sans-serif;
   word-break: break-all;
   vertical-align: top;
-  -webkit-tap-highlight-color: transparent;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
 }
@@ -931,7 +930,6 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .graphInfo .month{display:flex;display:-webkit-flex;align-items:center;justify-content:space-between;}
 .graphInfo .month li a{min-width:26px;;height:21px;font-size:14px;line-height:23px;color:#999;display:inline-block;padding:0 5px;}
 .graphInfo .month li.on a{background:#4a4a4a;color:#fff;border-radius:10px}
-.graphInfo canvas{letter-spacing:-0.1px}
 .graphInfo .tit{padding-left:40px;position:relative;}
 .graphInfo .tit .infoTit{font-weight:700;font-size:15px;}
 .graphInfo .tit .infoTit > span{font-weight:normal;}
