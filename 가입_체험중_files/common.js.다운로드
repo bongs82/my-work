@@ -3140,6 +3140,7 @@
     // 종목분석
     commonJs.graph.basicCircle = function(opt)
     {
+        console.log('a');
         var canvas;
 
         /**/
@@ -3227,6 +3228,7 @@
     }
     commonJs.graph.basicCircle2 = function(opt)
     {
+        console.log('b');
         var canvas;
 
         /**/
@@ -5605,4 +5607,22 @@ function tabScrTop()
         else fixTab.removeClass('fixed');
 
     })
+}
+
+
+//레이어팝업 호출시 스크롤 잠금 2021-03-11
+function layer_scroll_lock(el){
+    var $el = $(el);
+    var posY = $(window).scrollTop();
+    $el.css('display','flex');
+    $('body').addClass('overHidden').on('scroll touchmove mousewheel', function(e){
+        e.preventDefault();
+     });
+    $('.popup').css('top',-posY);
+    $el.find('a.close, button.close').click(function(){
+        $el.css('display','none');
+        $('body').removeClass('overHidden').off('scroll touchmove mousewheel');
+        posY = $(window).scrollTop(posY);
+        return false;
+    });
 }

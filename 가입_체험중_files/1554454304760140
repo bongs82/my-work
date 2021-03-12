@@ -56,7 +56,7 @@ config.set(null, "microdata", {"waitTimeMs":500});
 config.set("1554454304760140", "prohibitedSources", {"prohibitedSources":[]});
 fbq.loadPlugin("prohibitedsources");
 instance.optIn("1554454304760140", "ProhibitedSources", true);
-config.set("1554454304760140", "unwantedData", {"blacklisted_keys":{},"sensitive_keys":{}});
+config.set("1554454304760140", "unwantedData", {"blacklisted_keys":{"PageView":{"cd":[],"url":["dev_ip"]}},"sensitive_keys":{}});
 fbq.loadPlugin("unwanteddata");
 instance.optIn("1554454304760140", "UnwantedData", true);
 fbq.loadPlugin("iabpcmaebridge");
