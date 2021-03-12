@@ -1034,6 +1034,8 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .graphImg.half .imgCont .topTi{font-size:14px}
 .graphInfo .basicGraph{position:relative;width:70px;height:70px;margin:auto}
 .graphInfo .basicGraph > canvas{}
+#basicCircle{width:70px;height:70px}
+#basicCircle2{position:absolute;top:5px;left:5px;width:60px;height:60px;font-weight:700}
 .icoList.rBg{display:flex;display:-webkit-flex;align-content:center;margin-top:3px;justify-content:center;}
 .icoList.rBg li{display: flex;align-items: center;}
 .icoList.rBg li + li{margin-left:5px}
@@ -1211,7 +1213,7 @@ div.infoTxt::before,ul.infoTxt>li::before{content:'?';display:inline-block;posit
 .graphInfo .basicGraph{position:relative;width:270px;height:270px;margin:auto}
 .graphInfo .basicGraph > canvas{}
 #basicCircle{width:270px;height:270px}
-#basicCircle2{width:260px;height:260px;font-weight:700}
+#basicCircle2{position:absolute;top:5px;left:5px;width:260px;height:260px;font-weight:700}
 .graphInfo .evtList{width:calc(100% - 42%);border-left:1px solid #e6e6e6}
 .graphInfo .evtList .flexSel + .flexSel{border-top:1px solid #e6e6e6}
 .graphInfo .evtList .flexSel .em{font-size:14px}

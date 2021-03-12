@@ -3279,7 +3279,7 @@
         c.circle = sround;
 
         var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(opt.value,100,360)}, 1000, createjs.Ease.circInOut);
-        //tween.addEventListener("change", handleChange);
+        tween.addEventListener("change", handleChange);
         function handleChange(event)
         {
             var start = 270*Math.PI/180;
