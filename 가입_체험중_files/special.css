@@ -330,26 +330,6 @@ template {
 [hidden] {
   display: none;
 }
-@font-face {
-  font-family: "Spoqa Han Sans Neo";
-  src: local("Spoqa Han Sans Regular"),
-    url("../../../fonts/SpoqaHanSansNeo-Regular.eot") format("eot"),
-    url("../../../fonts/SpoqaHanSansNeo-Regular.woff") format("woff"),
-    url("../../../fonts/SpoqaHanSansNeo-Regular.woff") format("woff2"),
-    url("../../../fonts/SpoqaHanSansNeo-Regular.ttf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Spoqa Han Sans Neo";
-  src: local("Spoqa Han Sans Bold"),
-    url("../../../fonts/SpoqaHanSansNeo-Bold.eot") format("eot"),
-    url("../../../fonts/SpoqaHanSansNeo-Bold.woff") format("woff"),
-    url("../../../fonts/SpoqaHanSansNeo-Bold.woff") format("woff2"),
-    url("../../../fonts/SpoqaHanSansNeo-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 body,div,form,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,em,p,span,textarea,pre,label,fieldset,th,td,button,a,input,select,hr {
   margin: 0;
   padding: 0;
