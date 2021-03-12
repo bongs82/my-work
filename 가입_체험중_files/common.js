@@ -3278,8 +3278,8 @@
         sround.y    =   (y)+(CIRCLE_RADIUS)*Math.sin(start);
         c.circle = sround;
 
-        var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(opt.value,100,360)}, 1000, createjs.Ease.circInOut);
-        tween.addEventListener("change", handleChange);
+        //var tween = createjs.Tween.get(c, {loop:false}).to({angle:chValue(opt.value,100,360)}, 1000, createjs.Ease.circInOut);
+        //tween.addEventListener("change", handleChange);
         function handleChange(event)
         {
             var start = 270*Math.PI/180;
@@ -3302,8 +3302,8 @@
 
         stage           =   new createjs.Stage(canvas.get(0));
         //stage.autoClear =   true;
-        createjs.Ticker.setFPS(24);
-        createjs.Ticker.addEventListener("tick", tick);
+        //createjs.Ticker.setFPS(24);
+        //createjs.Ticker.addEventListener("tick", tick);
         function tick() { stage.update(); }
         stage.addChild(content);
         stage.update();
