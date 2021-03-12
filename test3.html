@@ -21,6 +21,18 @@
             
             <div>
                 <canvas id="basicCircle" width="240" height="240"></canvas>
+                <script>
+                    //종목분석 조건검색 그래프 샘플
+                    //원형그래프
+                    $(window).load(function () {
+                        commonJs.graph.basicCircle({
+                        value   :   64
+                    });
+                    commonJs.graph.basicCircle2({
+                        value   :   63
+                    });
+                    });
+                </script>
             </div>
             <div style="width: 240px; height: 240px;">
                 <canvas id="basicCircle2" width="210" height="210"></canvas>
@@ -133,18 +145,7 @@
                     </div>
                 </div>
                 <!-- // 종목분석 조건검색 랜덤 데이터형 -->
-                <script>
-                    //종목분석 조건검색 그래프 샘플
-                    //원형그래프
-                    $(window).load(function () {
-                        commonJs.graph.basicCircle({
-                        value   :   64
-                    });
-                    commonJs.graph.basicCircle2({
-                        value   :   63
-                    });
-                    });
-                </script>
+                
             </div>
         </div>
     </body>
