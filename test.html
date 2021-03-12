@@ -99,7 +99,7 @@
             header.on div {position: fixed; background-color: #47a7f5;}
             header.cont2.on div {top:50px;}
 
-            .fix-button {position: -webkit-sticky; position: sticky; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0);}
+            .fix-button {position: -webkit-sticky; position: sticky; left: 0; bottom: 0; width: 100%; height: 50px; -webkit-transform: translateZ(0); z-index: 2;}
             .fix-button button { width: 100%; height: 50px;}
             .fix-button.off {position: static;}
 
@@ -134,7 +134,7 @@
     <body style="margin: 0; padding: 0;">
         <header>
             <div>
-                김신한님 반갑습니다.4
+                김신한님 반갑습니다.9
             </div>
         </header>
         <!-- <div id="container" style="height: 400px; width: 100%;"></div>
@@ -1098,7 +1098,7 @@
                 [new Date('2020-02-11').getTime(),0],
                 [new Date('2020-02-16').getTime(),0],
                 [new Date('2020-02-20').getTime(),0],
-                [new Date('2020-02-31').getTime(),0],
+                [new Date('2020-02-26').getTime(),0],
                 [new Date('2020-03-01').getTime(),0],
                 [new Date('2020-03-10').getTime(),0],
                 [new Date('2020-03-14').getTime(),0],
@@ -1125,9 +1125,30 @@
                     //margin: [0, 60, 0, 60]
                     marginLeft: 60,
                     marginRight: 60,
-                    zoomType: '',
+                    // zoomType: '',
                     pinchType: '',
-                    panning: false
+                    // panning: false,
+                    events: {
+                        click: function (event) {
+                            var closePlot = [];
+                            for(var i = 0; i < chartCont.series[2].xData.length; i++) {
+                                closePlot[i] = parseInt(Math.abs(this.hoverPoint.plotX - chartCont.series[2].points[i].plotX));
+                            }
+                            $('#issu').remove();
+                            issuIdx = closePlot.indexOf(Math.min.apply(null, closePlot));
+                            chartCont.renderer.path(['M', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.xAxis[0].bottom, 'L', 60 + chartCont.series[2].points[issuIdx].plotX, chartCont.chartHeight - chartCont.yAxis[0].height - chartCont.xAxis[0].bottom])
+                            .attr({
+                                'stroke-width': 1,
+                                stroke: '#000',
+                                zIndex: 3,
+                                id: 'issu'
+                            })
+                            .add();
+                            $(chartCont.scrollingContainer).stop().animate({
+                                scrollLeft : chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)
+                            }, Math.abs($(chartCont.scrollingContainer).scrollLeft() - (chartCont.series[2].points[issuIdx].plotX - (screen.width/2 - 60)))/3);
+                        }
+                    }
                 },
 
                 navigator: {
@@ -1229,7 +1250,7 @@
 
                 tooltip: {
                     //snap:0,
-                    //enabled: false,
+                    enabled: false,
                     followTouchMove: false,
                     //flollowPointer: false,
                     //split: false,
@@ -1253,6 +1274,7 @@
                         },
                         //stickyTracking: false,
                         // allowPointSelect: true
+                        
                     },
                     candlestick: {
                         color: 'blue',
@@ -1286,6 +1308,7 @@
                     type: 'line',
                     data: data2,
                     animation: false,
+                    lineColor: 'green',
                     // marker: {
                     //     enabled: true,
                     //     radius: 4,
@@ -1309,7 +1332,7 @@
                     data: data3,
                     animation: false,
                     marker: {
-                        enabled: true,
+                        enabled: false,
                         radius: 4,
                         symbol: 'circle',
                         fillColor: '#fff',
@@ -1345,7 +1368,7 @@
                                 .attr({
                                     'stroke-width': 1,
                                     stroke: '#000',
-                                    zIndex: 1,
+                                    zIndex: 3,
                                     id: 'issu'
                                 })
                                 .add();
@@ -1356,8 +1379,8 @@
                     yAxis:1
                 }]
             }, function (chart) { // on complete
-                let i = 0;
-                issuIdx = chart.series[2].xData.length -2;
+                //let i = 0;
+                issuIdx = chart.series[2].xData.length -1;
 
                 // chart.renderer.button('do stuff',0, 0)
                 // .attr({
@@ -1374,11 +1397,23 @@
                 //     zIndex: 3
                 // })
                 // .add();
+                for(var i = 0; i < chart.series[2].xData.length; i++) {
+                    //closePlot[i] = parseInt(Math.abs(this.hoverPoint.plotX - chartCont.series[2].points[i].plotX));
+                    chart.renderer.circle(60 + chart.series[2].points[i].plotX, chart.chartHeight - chart.xAxis[0].bottom, 4)
+                    .attr({
+                        'stroke-width': 1,
+                        stroke: '#000',
+                        zIndex: 4,
+                        fill: '#fff',
+                        id: 'circle' + i
+                    })
+                    .add();
+                }
                 chart.renderer.path(['M', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.xAxis[0].bottom, 'L', 60 + chart.series[2].points[issuIdx].plotX, chart.chartHeight - chart.yAxis[0].height - chart.xAxis[0].bottom])
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1398,7 +1433,7 @@
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1410,8 +1445,8 @@
                 if($(chartCont.scrollingContainer).is(':animated')) {
                     return false;
                 }
-                if (issuIdx >= chartCont.series[2].xData.length -2) {
-                    issuIdx = chartCont.series[2].xData.length -2;
+                if (issuIdx >= chartCont.series[2].xData.length -1) {
+                    issuIdx = chartCont.series[2].xData.length -1;
                 }else {
                     issuIdx += 1;
                 }
@@ -1420,7 +1455,7 @@
                 .attr({
                     'stroke-width': 1,
                     stroke: '#000',
-                    zIndex: 1,
+                    zIndex: 3,
                     id: 'issu'
                 })
                 .add();
@@ -1445,9 +1480,11 @@
             });
             $('#sortable').disableSelection();
             $('#sortable').sortable( "disable" );
+            var chartScrollLeft;
             $('#editor').on('click',function() {
                 $('#sortable').sortable( "enable" ).addClass('on');
                 $(window).off('touchmove');
+                chartScrollLeft = $(chartCont.scrollingContainer).scrollLeft();
             });
             let sortArr = [];
             $('#save').on('click',function() {
@@ -1470,7 +1507,7 @@
                     $('.sortCont').append(sortContArr[l]);
                 }
                 
-                //chartCont.redraw();
+                $(chartCont.scrollingContainer).scrollLeft(chartScrollLeft);
             });
 
             $('header').each(function() {
